@@ -633,11 +633,11 @@ body:not(.res-v4) #header-bottom-right #RESSettingsButton {
 	background: hsl(0, 0%, 88%);
 }
 .side .md hr {
-	margin: 15px -10px;
+	margin: 10px -10px;
 }
 .side .md > blockquote hr {
 	width: auto;
-	background: hsla(0,0%,0%,.1);
+	background: hsla(0,0%,100%,.12);
 }
 .titlebox .bottom {
 	color: hsl(0,0%,60%);
