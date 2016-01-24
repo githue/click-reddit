@@ -139,7 +139,7 @@ body {
 }
 #header-img-a {
 	display: inline-block;
-	margin: 0 0 45px 10px;
+	margin: 0 0 45px 20px;
 	position: relative;
 	z-index: 2;
 }
@@ -149,7 +149,7 @@ body {
 }
 #header-img.default-header {
 	position: relative;
-	margin: 0 0 45px 10px;
+	margin: 0 0 45px 20px;
 	width: 32px;
 	z-index: 2;
 }
@@ -519,6 +519,7 @@ h1.redditname + div {
 }
 /* work with and around RES */
 .side .subButtons {
+	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
 	border-width: 10px 0 10px 0;
@@ -982,7 +983,7 @@ body:not(.submit-page) .usertext-buttons {
 .side .md > h5 + ul > li > sup,
 .side .md > h5 + ul > li > p sup {
 	position: absolute;
-	top: 11px;
+	top: 10px;
 	left: 10px;
 	display: block;
 	overflow: hidden;
@@ -1200,11 +1201,11 @@ body > div.content,
  * links
  */
 .thing .title {
-	color: hsl(210,100%,50%);
+	color: hsl(210,100%,45%);
 }
 .thing .title:visited, .thing.visited .title,
 body:not(.res-styleTweaks-visitedStyle) .comment .md p > a:visited {
-	color: hsl(280,50%,50%);
+	color: hsl(300,10%,50%);
 }
 body.comments-page .link a.title {
 	/*color: black;*/
@@ -1360,11 +1361,11 @@ ul#image-preview-list li {
   position: relative;
 }
 .combined-search-page .search-result > div {
+	-ms-flex-basis: 670px;
+	-webkit-flex-basis: 670px;
 	flex-basis: 670px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid hsl(0,0%,93%);
-  -webkit-transition: background-color 1s ease 1s;
-  -moz-transition: background-color 1s ease 1s;
 	transition: background-color 1s ease 1s;
 }
 .combined-search-page .search-result:hover > div {
@@ -1376,6 +1377,7 @@ ul#image-preview-list li {
 }
 /* Submission with no thumbnail */
 .combined-search-page .search-result-link:not(.has-thumbnail) {
+	display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
@@ -1439,8 +1441,6 @@ ul#image-preview-list li {
 .combined-search-page .search-result-link .search-expando.collapsed .search-result-body {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: opacity .1s;
-  -moz-transition: opacity .1s;
 	transition: opacity .1s;
 }
 .combined-search-page .search-result-link .search-expando.collapsed:hover .search-result-body {
@@ -1469,8 +1469,6 @@ ul#image-preview-list li {
   width: 19px;
   height: 125px;
   min-width: 0;
-  -webkit-transition: width .2s, padding .2s;
-  -moz-transition: width .2s, padding .2s;
   transition: width .2s, padding .2s;
   box-shadow: none;
   box-sizing: content-box;
@@ -1601,7 +1599,7 @@ body.moderator #REScommentNavToggle {
 	padding-right: 10px !important;
 }
 .link.last-clicked {
-	border: 1px solid hsl(0, 0%, 90%)
+	border: none;
 }
 .nav-buttons {
 	margin: 10px -10px 0 -10px;
@@ -1780,8 +1778,7 @@ html.res-nightmode .livePreview {
 	padding: 0 0px 0 0;
 	max-width: 150px;
 	font-size: 1.2rem;
-	font-weight: bold;
-	color: hsl(0,0%,50%);
+	color: hsl(0,0%,0%);
 	border: none;
 	background: none;
 	line-height: 1;
