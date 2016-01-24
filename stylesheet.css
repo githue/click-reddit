@@ -1778,7 +1778,8 @@ html.res-nightmode .livePreview {
 	padding: 0 0px 0 0;
 	max-width: 150px;
 	font-size: 1.2rem;
-	color: hsl(0,0%,0%);
+	font-family: "arial black";
+	color: hsl(200,20%,60%);
 	border: none;
 	background: none;
 	line-height: 1;
