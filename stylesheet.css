@@ -1,6 +1,8 @@
 /**
  * Theme: /r/click
  * Author:/u/postpics
+ * Instruction: add your customizations at the bottom and avoid changing the
+ * original CSS, you can then upgrade to new versions without losing your changes.
  */
 
 html {
@@ -898,9 +900,11 @@ h2#wiki_heading_2 {
 }
 /* .end */
 
+/* button common styles */
 .side .md a[title="click"],
 .usertext button,
-#url-field button  {
+#url-field button,
+.usertext-buttons button.save  {
 	display: inline-block;
 	margin: 0;
 	padding: 0 8px;
@@ -921,7 +925,6 @@ h2#wiki_heading_2 {
 .usertext button,
 #url-field button {
 	color: hsla(0,0%,100%,.8);
-	/*border: 1px solid;*/
 }
 .side .md > blockquote a[title="click"]:hover,
 .usertext button:hover,
@@ -936,7 +939,8 @@ h2#wiki_heading_2 {
 /* .end */
 
 /* addon raised-button */
-.side .md > p a[title="click"] {
+.side .md > p a[title="click"],
+.usertext-buttons button.save {
 	color: white;
 	background: hsl(200,20%,50%);
 	transition: box-shadow .25s;
@@ -944,11 +948,22 @@ h2#wiki_heading_2 {
 .side .md > p a[title="click"]:hover,
 .side .subscribe-button a:hover,
 .side .subButtons .RESshortcut:hover,
-.side .subButtons .RESDashboardToggle:hover {
+.side .subButtons .RESDashboardToggle:hover,
+.usertext-buttons button.save:hover {
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 /* .end */
 
+.res-commentBoxes .comment {
+	overflow: visible;
+}
+.link .usertext .usertext-edit .md {
+	padding-left: 0;
+}
+.usertext .bottom-area {
+	overflow: visible;
+	width: auto;
+}
 .usertext .help-toggle,
 .usertext a.reddiquette {
 	line-height: 32px;
@@ -958,13 +973,11 @@ h2#wiki_heading_2 {
 .usertext a.reddiquette {
 	color: hsl(0,0%,60%);
 }
-
 body:not(.submit-page) .usertext-buttons {
 	padding-bottom: 7px;
-	border-bottom: 1px solid hsl(0, 0%, 88%);
 }
-.usertext-buttons button.save:after {
-	content: " comment";
+.usertext-buttons .status {
+	font-size: 1rem;
 }
 
 /* addon side-menu */
