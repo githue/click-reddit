@@ -957,7 +957,7 @@ h2#wiki_heading_2 {
 .res-commentBoxes .comment {
 	overflow: visible;
 }
-.link .usertext .usertext-edit .md {
+.link .usertext .usertext-edit > .md {
 	padding-left: 0;
 }
 body:not(.submit-page) .usertext .bottom-area {
