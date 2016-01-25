@@ -960,7 +960,7 @@ h2#wiki_heading_2 {
 .link .usertext .usertext-edit .md {
 	padding-left: 0;
 }
-.usertext .bottom-area {
+body:not(.submit-page) .usertext .bottom-area {
 	overflow: visible;
 	width: auto;
 }
