@@ -214,7 +214,8 @@ html.res #header-bottom-right .separator {
 	margin: 0;
 	visibility: hidden;
 }
-body > div.content {
+body > div.content,
+.modtools-page > div.content {
 	margin: 20px 330px 0 10px;
 	padding: 0px 10px 40px 10px;
 	position: relative;
@@ -244,7 +245,9 @@ body > div.content {
 	background-color: hsl(0, 0%, 93%);
 }
 .RESDropdownList li a,
-.RESDropdownList li a:visited {
+.RESDropdownList li a:visited,
+.subreddit-rule-form .c-form-group .label,
+.subreddit-rule-form .c-form-group .text-counter {
 	color: inherit;
 }
 .RESMenuItemButton {
@@ -1767,6 +1770,9 @@ html.res-nightmode .livePreview {
 }
 .usertext-body > .md {
 	padding-right: 0;
+}
+.subreddit-rules-page:before {
+	top: auto;
 }
 
 /* addon animate-thumbs */
