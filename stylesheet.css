@@ -421,7 +421,7 @@ body:not(.res-console-open):not(.modal-open) .side #search {
   font-size: 12px;
 }
 .searchpane {
-	margin-right: 0;
+	margin: 10px 0 20px 0;
 }
 .combined-search-page .searchpane,
 .combined-search-page #search {
@@ -429,11 +429,12 @@ body:not(.res-console-open):not(.modal-open) .side #search {
 }
 .combined-search-page #search input[type=text] {
 	max-width: none;
+	margin-right: -35px;
 	padding-right: 35px;
 	border-color: #4f86b5;
 }
 .combined-search-page .search-submit-button {
-	margin: -5px 0 -5px -35px;
+	margin: 0;
 	width: 35px;
 	height: 2.5em;
 	padding: 0;
@@ -1219,9 +1220,12 @@ body > div.content,
 .thing .title {
 	color: hsl(210,100%,45%);
 }
-.thing .title:visited, .thing.visited .title,
-body:not(.res-styleTweaks-visitedStyle) .comment .md p > a:visited {
+.thing .title:visited, .thing.visited .title {
 	color: hsl(300,10%,50%);
+}
+body:not(.res-styleTweaks-visitedStyle) .comment .md a:visited,
+body:not(.res-styleTweaks-visitedStyle) .link.self .md a:visited {
+	color: hsl(280,60%,40%);
 }
 body.comments-page .link a.title {
 	/*color: black;*/
@@ -1356,36 +1360,30 @@ ul#image-preview-list li {
 /**
  * addon search-results
  */
-.search-summary:hover {
-  border-color: rgb(200,200,200);
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,.2);
+.search-result-group {
+	max-width: none;
+	padding: 0;
 }
-.search-summary .debuginfo {
-  clear: none;
-  height: auto;
-  text-align: left;
-}
-.search-summary .debuginfo .content {
-  margin: 0;
+.search-summary {
+  display: none;
 }
 .combined-search-page .search-result-group .search-result-group-header {
   margin: 0;
 }
 .combined-search-page .search-result {
-  margin: 5px 0;
-  padding: 5px 0;
+  margin: 0;
   position: relative;
-}
-.combined-search-page .search-result > div {
-	-ms-flex-basis: 670px;
-	-webkit-flex-basis: 670px;
-	flex-basis: 670px;
-	padding-bottom: 5px;
-	border-bottom: 1px solid hsl(0,0%,93%);
 	transition: background-color 1s ease 1s;
 }
-.combined-search-page .search-result:hover > div {
+.combined-search-page .search-result:not(.search-result-subreddit) > div {
+	padding: 10px 0;
+	border-bottom: 1px solid hsl(0,0%,93%);
+}
+.combined-search-page .search-result:hover {
   background-color: rgb(250,250,250);
+}
+.search-result.has-thumbnail>.thumbnail {
+	margin: 10px 10px 0 0;
 }
 .combined-search-page .search-result.has-thumbnail .thumbnail.self {
   visibility: hidden;
@@ -1393,16 +1391,12 @@ ul#image-preview-list li {
 }
 /* Submission with no thumbnail */
 .combined-search-page .search-result-link:not(.has-thumbnail) {
-	display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+	margin-left: 80px;
 }
 /* create empty thumbnail */
 .combined-search-page .search-result-link:not(.has-thumbnail):before {
   content: " ";
   display: block;
-  -webkit-flex: 0 0 70px;
-  flex: 0 0 70px;
   margin: 0 10px 0 0;
 }
 .combined-search-page .search-result .search-result-header .search-title {
@@ -1425,7 +1419,7 @@ ul#image-preview-list li {
   max-height: none;
   width: 24px;
   position: absolute;
-  left: 44px;
+  margin-left: -35px;
   top: 30px;
   overflow: visible;
 }
@@ -1450,9 +1444,8 @@ ul#image-preview-list li {
 }
 .combined-search-page .search-result-link .search-result-body {
   padding: 10px;
-  border: 1px solid rgb(135, 182, 229);
-  background-color: rgb(250,250,250);
-  box-shadow: 3px 3px 5px 0 rgba(0,0,0,.2);
+  background-color: white;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .combined-search-page .search-result-link .search-expando.collapsed .search-result-body {
   visibility: hidden;
@@ -1467,6 +1460,9 @@ ul#image-preview-list li {
   overflow: auto;
   height: auto;
   max-height: 300px;
+	max-width: none;
+	background: white;
+	padding: 10px;
 }
 .combined-search-page .search-expando-button {
   display: none;
@@ -1523,27 +1519,10 @@ ul#image-preview-list li {
 .combined-search-page .searchfacets .list {
   line-height: 0;
 }
-.combined-search-page .searchfacets li {
-  display: block;
-  width: auto;
-  min-width: 0;
-}
 .searchfacets:not(.res-search-pane) .title {
   margin: 0;
 }
-/* RES fixes */
-.content .search-result-listing .nav-buttons,
-.content .search-result-listing .nav-buttons .nextprev {
-  display: block;
-}
-.searchpane-toggle-hide {
-  display: none;
-}
 /* RES nightmode */
-.res-nightmode .search-summary {
-  background: transparent;
-}
-.res-nightmode .search-summary:hover,
 .res-nightmode .combined-search-page .search-result-link .search-result-body {
   background-color: rgb(34,34,34);
   border-color: rgb(80,80,80);
