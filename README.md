@@ -7,7 +7,7 @@
 
 ## Contributing
 
-You will need the CSS preprocessor SASS.
+To contribute changes to the main project you will need the CSS preprocessor SASS.
 
 Make your changes to one of the SCSS files and then run the commaned:
 
