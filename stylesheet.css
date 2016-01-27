@@ -1,10 +1,9 @@
 /**
  * Theme: /r/click
  * Author:/u/postpics
- * Instruction: add your customizations at the bottom and avoid changing the
- * original CSS, you can then upgrade to new versions without losing your changes.
+ * Instruction: add your customizations at the bottom. You may remove built-in
+ * addons, but remember to remove them again when you upgrade.
  */
-
 html {
 	font: normal 10px/1 verdana, arial, sans-serif;
 }

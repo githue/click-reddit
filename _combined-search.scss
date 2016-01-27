@@ -1,0 +1,227 @@
+#previoussearch label {
+	display: inline-block;
+}
+
+.search-summary {
+  display: none;
+}
+
+.combined-search-page {
+
+	.searchpane {
+		margin: 10px 0 20px 0;
+		padding: 0;
+	}
+
+	#search {
+		padding: 0;
+		white-space: normal;
+
+		input[type="text"] {
+			max-width: none;
+			margin-right: -35px;
+			padding-right: 35px;
+			border-color: #4f86b5;
+		}
+
+		.search-submit-button {
+			margin: 0;
+			width: 35px;
+			height: 2.5em;
+			padding: 0;
+			border: none;
+			border-radius: 0 3px 3px 0;
+		}
+	}
+
+	.search-result-group {
+		max-width: none;
+		padding: 0;
+	}
+
+	.search-result-group .search-result-group-header {
+		margin: 0;
+	}
+
+	.search-result {
+		margin: 0;
+		position: relative;
+		transition: background-color 1s ease 1s;
+
+		&:not(.search-result-subreddit) > div {
+			padding: 10px 0;
+			border-bottom: 1px solid hsl(0,0%,93%);
+		}
+
+		&:hover {
+			background-color: rgb(250,250,250);
+		}
+
+		&.has-thumbnail .thumbnail {
+			margin: 10px 10px 0 0;
+		}
+
+		&.has-thumbnail .thumbnail.self {
+			visibility: hidden;
+			display: block;
+		}
+
+		.search-result-header .search-title {
+			font-size: 14px;
+		}
+
+		.search-result-meta {
+			font-size: 11px;
+		}
+
+		.search-result-icon-score {
+			display: none;
+		}
+
+		.search-subreddit-link {
+			font-weight: bold;
+		}
+	}
+
+	.search-result-subreddit .search-subscribe-button .add,
+	.search-result-subreddit .search-subscribe-button .remove {
+		width: auto;
+	}
+
+	.search-result-link {
+
+		&:not(.has-thumbnail) {
+			margin-left: 80px;
+			display: block;
+		}
+
+		// create pseudo thumbnail
+		&:not(.has-thumbnail):before {
+			content: " ";
+			display: block;
+			margin: 0 10px 0 0;
+		}
+
+		.search-expando.collapsed {
+			height: 0px;
+			max-height: none;
+			width: 24px;
+			position: absolute;
+			margin-left: -35px;
+			top: 30px;
+			overflow: visible;
+		}
+
+		.search-expando.collapsed:before {
+			width: 24px;
+			height: 24px;
+			font: 16px/1 "times";
+			color: rgb(51, 102, 153);
+			border: 1px solid rgb(51, 102, 153);
+			border-radius: 5px;
+			background: rgb(255,255,255);
+			top: -24px;
+			content: "Aa";
+			display: block;
+			text-align: center;
+			cursor: default;
+		}
+
+		.search-expando.collapsed:hover {
+			width: 90%;
+			height: auto;
+			z-index: 1;
+		}
+
+		.search-result-body {
+			padding: 10px;
+			background-color: white;
+			box-shadow: $shadow-8dp;
+		}
+
+		.search-expando.collapsed .search-result-body {
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .1s;
+		}
+
+		.search-expando.collapsed:hover .search-result-body {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.search-result-body .md {
+			overflow: auto;
+			height: auto;
+			max-height: 300px;
+			max-width: none;
+			background: white;
+			padding: 10px;
+		}
+	}
+
+	.search-expando-button {
+		display: none;
+	}
+	// facets
+	.searchfacets {
+
+		.list {
+			line-height: 0;
+		}
+
+		&:not(.res-search-pane) {
+			position: fixed;
+			top: 40%;
+			left: 0px;
+			margin: 0;
+			padding: 0;
+			border: 1px solid rgb(95, 153, 207);
+			background-color: rgb(255,255,255);
+			z-index: 2;
+			overflow: hidden;
+			width: 19px;
+			height: 125px;
+			min-width: 0;
+			transition: width .2s, padding .2s;
+			box-shadow: none;
+			box-sizing: content-box;
+
+			&:hover {
+				width: 600px;
+				height: auto;
+				max-width: none;
+				min-width: 0;
+				padding: 10px 20px 10px 40px;
+				box-shadow: $shadow-8dp;
+			}
+
+			&:before {
+				content: "Filter by sub";
+				font: normal normal 12px/20px sans-serif;
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: rgb(50,100,150);
+				display: block;
+				width: 125px;
+				height: 20px;
+				background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(220, 220, 220));
+				left: -53px;
+				top: 52px;
+				position: absolute;
+				cursor: default;
+				@include transform(rotate(270deg));
+			}
+
+			h4.title,
+			.list {
+				width: 600px;
+			}
+		}
+	}
+}
+
+.searchfacets:not(.res-search-pane) .title {
+  margin: 0;
+}

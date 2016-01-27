@@ -1,0 +1,1892 @@
+/*!
+ * Theme: /r/click
+ * Author:/u/postpics
+ * Instruction: add your customizations at the bottom. You may remove built-in
+ *  addons, but remember to remove them again when you upgrade.
+ */
+
+$shadow-2dp: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
+$shadow-8dp: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18);
+
+@mixin transform($args) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	transform: $args;
+}
+
+@mixin flexbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+// Placeholders
+%flexbox { @include flexbox; }
+
+%sheet {
+	background: white;
+	border: 1px solid hsl(30,20%,85%);
+	border-radius: 2px;
+}
+
+%button-base {
+	display: inline-block;
+	margin: 0;
+	padding: 0 8px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	font: 1.3rem/32px tahoma, arial, sans-serif;
+	border: none;
+	background: none;
+	transition: all .25s;
+}
+
+%button-flat {
+	color: hsla(0,0%,100%,.8);
+
+	&:hover {
+		background: hsla(200,100%,0%,.12);
+		text-decoration: none;
+	}
+}
+
+%button-raised {
+	color: white;
+	background: hsl(200,20%,50%);
+	transition: box-shadow .25s;
+
+	&:hover {
+		box-shadow: $shadow-2dp;
+	}
+}
+
+html {
+	font: normal 10px/1 verdana, arial, sans-serif;
+}
+
+body {
+	background: hsl(30,10%,92%);
+
+	&>div.content,
+	&.modtools-page > div.content {
+		margin: 20px 330px 0 10px;
+		padding: 0px 10px 40px 10px;
+		position: relative;
+		z-index: 100;
+	}
+
+	&.res #header-bottom-right .separator {
+		margin: 0;
+		visibility: hidden;
+	}
+
+	// RES < 4.6
+	&:not(.res-v4) #header-bottom-right #RESSettingsButton {
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	&>.content .spacer {
+		margin: 0;
+	}
+
+	&.mod-toolbox {
+		overflow: visible;
+	}
+
+	&.res-commentBoxes {
+
+		&>.content {
+			padding-right: 10px !important;
+		}
+
+		.comment {
+			overflow: visible;
+		}
+	}
+}
+
+#header {
+	border-bottom: none;
+	background-color: hsl(250,5%,30%);
+	background-repeat: no-repeat;
+	background-position: 50% 0%;
+	box-shadow: $shadow-2dp;
+}
+
+#srLeftContainer, #RESShortcutsViewport, #RESShortcutsEditContainer {
+	max-height: none;
+}
+
+#RESShortcutsEditContainer {
+	opacity: 0;
+	transition: all .1s .1s;
+	z-index: 1;
+}
+
+#RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
+	color: hsla(0,0%,100%,.8) !important;
+	background: none !important;
+}
+
+#sr-more-link {
+	background: none;
+}
+
+#sr-header-area {
+	font-family: arial, sans-serif;
+	color: hsla(0,0%,100%,.3);
+	border-bottom: none;
+	background: none;
+	box-sizing: border-box;
+	line-height: 22px;
+	height: 22px;
+	transition-property: background, height, margin, z-index;
+	transition-duration: .2s;
+	transition-delay: .2s;
+	position: relative;
+	z-index: 2;
+
+	&:hover {
+		background: hsla(0,0%,0%,.8);
+		height: 30px;
+		margin-bottom: -8px;
+		z-index: 4;
+
+		#sr-more-link {
+			background: hsl(0,0%,10%);
+		}
+
+		a,
+		#RESShortcutsEditContainer {
+			opacity: 1;
+			color: hsla(0,0%,100%,.8);
+		}
+	}
+
+	a.RESShortcutsCurrentSub,
+	.selected a {
+		color: white !important;
+	}
+}
+
+.dropdown.srdrop {
+
+	.selected {
+		color: hsla(0,0%,100%,.6);
+		background: none;
+		padding-right: 5px;
+
+		&:after {
+			content: "";
+			display: inline-block;
+			height: 0px;
+			width: 1px;
+			border: 5px solid transparent;
+			border-top-color: hsla(0,0%,100%,.6);
+			position: relative;
+			left: 5px;
+			top: 3px;
+		}
+	}
+}
+
+#sr-header-area {
+
+	a {
+		color: hsla(0,0%,100%,.6);
+	}
+
+	.drop-choices.srdrop {
+		max-height: 152px;
+		overflow-y: auto;
+		width: 200px;
+		border: none;
+		box-shadow: $shadow-8dp;
+
+		a {
+			color: black;
+		}
+	}
+}
+
+#header-bottom-left {
+	padding: 30px 0 0 0;
+	min-height: 104px;
+	position: relative;
+}
+
+#header {
+
+	.tabmenu {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		box-sizing: border-box;
+		display: block !important;
+		font-size: 1.2rem;
+		font-family: tahoma, arial, sans-serif;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 29px 0 0px 10px;
+		z-index: 1;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+
+		a {
+			display: block;
+			font-weight: bold;
+			color: hsla(0,0%,100%,.8);
+			border: none;
+			border-bottom: 4px solid transparent;
+			background: none;
+			line-height: 40px;
+			padding: 0 10px;
+			text-shadow: 1px 1px 1px hsla(0,0%,0%,.4);
+			position: relative;
+			z-index: 1;
+
+			&:hover {
+				color: hsla(0,0%,100%,1);
+			}
+		}
+
+		.selected a,
+		a:active {
+			color: white;
+			border-bottom-color: white;
+		}
+	}
+}
+
+#header-img-a {
+	display: inline-block;
+	margin: 0 0 45px 20px;
+	position: relative;
+	z-index: 2;
+}
+
+#header-img {
+	margin: 0;
+	display: block;
+
+	&.default-header {
+		position: relative;
+		margin: 0 0 45px 20px;
+		width: 32px;
+		z-index: 2;
+	}
+}
+
+.pagename {
+	display: inline-block;
+	margin: 0px 10px 45px 10px;
+	color: hsla(0,0%,100%,1);
+	font: normal 24px/1 tahoma, arial, sans-serif;
+	position: relative;
+	z-index: 2;
+
+	a {
+		letter-spacing: 1px;
+		font-size: 36px;
+		color: hsla(0,0%,100%,1);
+		position: relative;
+		text-shadow: 0px 1px 1px hsla(0,0%,0%,.5), 0px 1px 5px hsla(0,0%,0%,.3);
+		transition: text-shadow .3s;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+#header-bottom-right {
+	color: hsla(0,0%,100%,.8);
+	padding: 0 10px 0 10px !important;
+	line-height: 22px;
+	background: hsla(0,0%,20%,.9);
+	z-index: 3;
+	top: 0 !important;
+	bottom: auto !important;
+	border-radius: 3px 0 0 3px;
+
+	&:hover {
+		background: hsl(0,0%,20%);
+	}
+
+	a {
+		color: hsla(0,0%,100%,.8);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.user {
+		color: hsla(0,0%,100%,.6);
+	}
+
+	// RES > 4.5
+	.gearIcon::after {
+		color: hsl(0,0%,90%);
+		text-shadow: none;
+	}
+
+	.userkarma,
+	.userkarma a {
+		font-weight: normal;
+		color: hsl(0,0%,60%);
+	}
+
+	.message-count {
+		color: black;
+		display: inline;
+	}
+}
+
+#userbarToggle {
+	min-height: 0 !important;
+	border: none !important;
+	padding: 0 5px !important;
+	background: none !important;
+	text-align: left !important;
+	left: 0 !important;
+	bottom: auto !important;
+	width: auto !important;
+	height: 22px !important;
+}
+
+.pref-lang {
+	font-weight: normal;
+}
+
+.RESDropdownList {
+	width: 200px;
+	border-radius: 0;
+	border: none;
+	color: black;
+	background-color: hsl(0, 0%, 100%);
+	box-shadow: $shadow-8dp;
+
+	li {
+		font-weight: normal;
+		font-size: 1.2rem;
+		line-height: 1.5;
+		height: auto;
+		padding: 6px 10px;
+		width: auto;
+		border: none;
+	}
+
+	li,
+	li:hover,
+	a,
+	a:visited {
+		color: inherit;
+	}
+
+	li:hover,
+	li a:hover {
+		color: inherit;
+		background-color: hsl(0, 0%, 88%);
+	}
+
+	.RESMenuItemButton {
+		position: static;
+		margin-left: -100%;
+		float: right;
+
+		&:hover {
+			color: inherit;
+			background-color: hsl(0, 0%, 88%);
+		}
+	}
+}
+
+.subreddit-rule-form .c-form-group {
+
+	.label,
+	.text-counter {
+		color: inherit;
+	}
+}
+
+// RES < 4.6
+body.res-v430:not(.res-v4) #RESSearchMenuItem {
+	margin: 0px;
+	border: none;
+	width: 13px;
+	height: 16px;
+	background: url(%%sprite%%) no-repeat -21px 3px;
+}
+
+body.res-v430:not(.res-v4) .RESDropdownList .toggleButton {
+	margin: 0;
+	line-height: 1;
+}
+
+.side {
+	width: 310px;
+	margin: 20px 10px 0 0;
+	padding: 0;
+	background: transparent;
+
+	// the spacer divs can be a nuisance, so make them do nothing
+	&>.spacer {
+		display: inline;
+	}
+
+	.linkinfo {
+		padding: 10px;
+		line-height: 1.5;
+		font-family: verdana, sans-serif;
+
+		.shortlink,
+		.shortlink input,
+		.score .number,
+		.score .word {
+				font-size: inherit;
+		}
+	}
+
+	.shortlink input {
+		color: blue;
+		border-color: hsl(0,0%,90%);
+	}
+
+	#search {
+		position: relative;
+		margin: 0 0 25px;
+
+		input[type=text] {
+			width: 310px;
+			margin-bottom: 1px;
+			padding: 8px 8px 8px 0px;
+			border-width: 0 0 1px;
+			border-color: hsl(0,0%,80%);
+			background: transparent;
+			transition: all .2s;
+
+			&:hover,
+			&:focus {
+				box-shadow: 0 1px 0px 0 #F44336;
+				border-color: #F44336;
+				outline: none;
+			}
+		}
+
+		input[type=submit] {
+			width: 30px;
+			height: 30px;
+			margin-left: -30px;
+			opacity: .5;
+			background: url(%%sprite%%) no-repeat -13px 9px;
+
+			&:hover {
+				background: url(%%sprite%%) no-repeat -13px 9px;
+			}
+		}
+
+		#searchexpando {
+			margin: 0px 0 0 0;
+			padding: 20px 10px 0 10px;
+			border: transparent;
+			border-top: none;
+			border-radius: 0;
+			background: hsl(30,10%,92%);
+			box-shadow: $shadow-8dp;
+			position: absolute;
+			width: 310px;
+			box-sizing: border-box;
+		}
+
+		#search_showmore:after {
+			display: inline-block;
+			margin: 1rem 0;
+		}
+
+		// Improve search expando UI.
+		#moresearchinfo {
+			padding: 20px 0 20px 0;
+			border-width: 0;
+			position: relative;
+
+			&+p {
+				margin: 10px 0 0 0;
+
+				a {
+					line-height: 0;
+					font-size: 0;
+
+					&:after {
+						text-indent: 0;
+						height: auto;
+						line-height: 1;
+						content: "More options...";
+						font-size: 12px;
+					}
+				}
+			}
+
+			p:first-of-type {
+				font-weight: bold;
+				line-height: 1;
+			}
+
+			#search_hidemore {
+				display: block;
+				color: transparent;
+				float: none;
+				text-align: center;
+				margin: 0 -10px 0px -10px;
+				padding: 0;
+				position: absolute;
+				top: auto; right: 0; bottom: 0; left: 0;
+				font-size: 0;
+				line-height: 0;
+				border-bottom: 5px solid #F44336;
+
+				&:after {
+					content: "";
+					display: inline-block;
+					border: 8px solid transparent;
+					border-bottom-color: #F44336;
+				}
+			}
+		}
+
+		dt {
+			font-weight: normal;
+			margin-left: 0;
+		}
+		dd {
+			margin: 0 0 5px;
+			color: rgb(150,150,150);
+		}
+	}
+
+	.morelink .nub,
+	.morelink:hover .nub{
+		display: none;
+	}
+}
+
+// Create our own spacing between sideboxes
+#login_login-main,
+#moderation_tools,
+#ad_main,
+.sidebox.create,
+.sidecontentbox,
+.account-activity-box,
+.linkinfo,
+.titlebox {
+	margin: 10px 0 10px 0;
+	clear: both;
+}
+
+// Override subreddit style checkbox
+body:not(.res-console-open) #RESNotifications,
+body:not(.res-console-open) #RESShortcutsAddFormContainer,
+body:not(.res-console-open) .RESDropdownList,
+body:not(.res-console-open):not(.modal-open) .side #search {
+	z-index: 2147483647 !important;
+}
+
+// Submit buttons
+.sidebox {
+
+	&.submit {
+		display: inline-block;
+		box-sizing: border-box;
+		position: absolute;
+		top: 114px;
+		z-index: 100;
+		width: 136px;
+
+		.mod-override .morelink {
+
+			a:after {
+				margin: 0;
+				left: 0;
+				top: -8px;
+			}
+
+			&:hover a:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.submit-text {
+		right: 10px;
+		width: 166px;
+	}
+
+	&:not(.create) .morelink {
+		font: normal 1.2rem/1 tahoma, arial, sans-serif;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		border: none;
+		background: none;
+		height: auto;
+		letter-spacing: 0;
+		text-shadow: 1px 1px 0px hsla(0,0%,100%,.2);
+
+		a {
+			display: block;
+			height: auto;
+			line-height: 32px;
+			white-space: nowrap;
+			padding: 0px 1px;
+			width: auto;
+			background: hsla(0,0%,100%,.9);
+			color: hsla(0,0%,0%,1);
+			border-radius: 2px;
+			box-shadow: $shadow-2dp;
+			transition: all .3s;
+
+			&:active {
+				background: hsl(0,0%,50%);
+			}
+		}
+
+		&:hover {
+			background: none;
+
+			a {
+				background: hsla(0,0%,100%,1);
+				box-shadow: $shadow-8dp;
+			}
+		}
+	}
+
+	&.submit.disabled {
+		width: 310px;
+
+		.morelink {
+			display: inline-block;
+			width: 149px;
+			margin-right: 1px;
+			text-transform: none;
+
+			a {
+				padding-left: 5px;
+				padding-right: 5px;
+				color: hsl(0,0%,40%);
+				background: hsl(0,0%,80%);
+			}
+		}
+
+		.spacer {
+			display: inline-block;
+			width: 150px;
+			vertical-align: top;
+			font-family: arial, sans-serif;
+			background: none;
+			box-shadow: none;
+			border: none;
+
+			.subtitle {
+				color: white;
+				font-weight: bold;
+				font-size: 1rem;
+			}
+		}
+	}
+}
+h1.redditname {
+	display: none;
+}
+h1.redditname + div {
+	text-align: right;
+}
+// Adjust positioning when submit buttons are gone
+
+.side form.usertext {
+	margin: 10px 0px 0 0;
+	padding: 20px 10px 0px 10px;
+
+	.md {
+		line-height: 1.5;
+	}
+}
+
+// The ordering of this section is important.
+.side {
+
+	// subscribe button and its neighbors
+	.subscribe-button {
+		margin: 5px 5px 5px 0;
+
+		.option.active {
+			display: block;
+		}
+	}
+
+	.subButtons {
+		@extend %flexbox;
+		border-width: 10px 0 10px 0;
+		border-style: solid;
+		border-color: transparent;
+
+		span {
+			width: 100%;
+			margin: 0;
+			box-sizing: border-box;
+
+			&:first-child {
+				margin-right: 8px;
+			}
+
+			&:last-child {
+				margin-left: 8px;
+			}
+		}
+
+		&+.subscribers,
+		&+.subscribers + .users-online {
+			margin: 0;
+			font-size: 1.2rem;
+		}
+	}
+
+	.subscribe-button a,
+	.subButtons .RESshortcut,
+	.subButtons .RESDashboardToggle {
+		font: 1.3rem/32px tahoma, arial, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		transition: box-shadow .25s, background .25s, color .25s;
+		padding: 0;
+		border: none;
+		white-space: nowrap;
+	}
+
+	.subscribe-button a {
+		padding: 0 8px;
+		color: white;
+		background: #F44336;
+	}
+
+	.subButtons {
+
+		.subscribe-button a {
+			padding: 0;
+		}
+
+		.RESshortcut,
+		.RESDashboardToggle {
+			background: white;
+			color: hsl(0,0%,20%);
+			border-radius: 2px;
+		}
+	}
+
+	// selected
+	.subscribe-button a.remove,
+	.subButtons .RESshortcut.remove,
+	.subButtons .RESDashboardToggle.remove {
+		color: hsl(0,0%,20%);
+		border-color: transparent;
+		background: inherit;
+	}
+
+	.subscribe-button a.remove:hover,
+	.subButtons .RESshortcut.remove:hover,
+	.subButtons .RESDashboardToggle.remove:hover {
+		box-shadow: none;
+	}
+}
+
+.titlebox {
+	margin-left: 0;
+	margin-right: 0;
+	background: transparent;
+	color: hsla(0,0%,50%,1);
+
+	.subscribers,
+	.users-online {
+		display: inline-block;
+		font-size: 1.1rem;
+		font-family: arial, sans-serif;
+		vertical-align: baseline;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.users-online {
+
+		&:before {
+			content: none;
+		}
+
+		.number:after {
+			content: " here now";
+		}
+		.word {
+			display: none;
+		}
+	}
+
+	.subscribers {
+		margin-right: 1rem;
+	}
+
+	.bottom {
+		color: hsl(0,0%,60%);
+		border: none;
+		padding: 10px 0 0 0;
+
+		a {
+			color: inherit;
+		}
+	}
+}
+
+.titlebox form.toggle,
+.leavemoderator {
+	font-size: 1.1rem;
+	color: hsl(0,0%,40%);
+	background: none;
+	padding: 10px 0 0 0;
+	clear: left;
+}
+.link .usertext-body .md {
+	border: none;
+	background: none;
+	border-radius: 0;
+	padding: 0 0 10px;
+}
+.usertext-body > .md {
+	padding-right: 0;
+}
+
+ul.tabmenu.formtab {
+	margin: 0 0 5px;
+	padding: 0;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	text-align: center;
+
+	li {
+		display: inline-block;
+
+		&.selected a {
+			font-size: inherit;
+			background: none;
+			color: inherit;
+			border-bottom: 2px solid;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 5px 15px;
+		border: none;
+		color: hsl(0,0%,50%);
+		background: none;
+
+		&:hover {
+			color: inherit;
+		}
+	}
+}
+
+.formtabs-content {
+	border-top: none;
+
+	.roundfield {
+		border-radius: 0;
+	}
+}
+
+form .spacer+.spacer {
+	margin: 0px 0;
+}
+
+// Misc
+.organic-listing.loading {
+	display: none; // improves perceived load time
+}
+
+// HR
+.md hr {
+	height: 1px;
+	margin: 10px 0px;
+	background: hsl(0, 0%, 88%);
+}
+
+.side .md {
+
+	hr {
+		margin: 10px -10px;
+	}
+
+	&>blockquote hr {
+		width: auto;
+		background: hsla(0,0%,100%,.12);
+	}
+}
+.link {
+	margin: 0 -10px;
+	padding: 10px 10px 0 10px;
+
+	.flat-list {
+		padding: 0;
+		margin-bottom: 8px;
+	}
+
+	.entry {
+		overflow: visible;
+		margin-left: 64px;
+	}
+
+	.title {
+		font: 1.8rem/1.1 arial, sans-serif;
+		text-rendering: optimizeLegibility;
+		margin: 0;
+
+		&+.expando-button {
+			margin: 7px 5px 0 0;
+		}
+	}
+
+	.midcol {
+		font-weight: normal;
+		margin-top: 1px;
+	}
+
+	.tagline {
+		margin: 2px 0;
+
+		&:first-letter {
+			text-transform: capitalize;
+		}
+	}
+
+	.rank {
+		position: absolute;
+		font-size: 1.2rem;
+		left: -10px;
+		line-height: 2em;
+		padding: 0px 3px;
+		background: hsl(0,0%,90%);
+		color: hsl(0,0%,60%);
+		border-radius: 50%;
+		text-align: center;
+		opacity: 0;
+		transition: opacity .1s;
+	}
+
+	&:hover .rank {
+		opacity: 1;
+	}
+}
+body.listing-page .link .entry {
+	border-bottom: 1px solid hsl(0,0%,88%);
+}
+// Handle links that have thumbnails
+.link .thumbnail + .entry {
+	margin-left: 165px;
+}
+body.comments-page .link:not(.self) .thumbnail:not(.default) + .entry {
+	margin-left: 210px;
+}
+.link div.madeVisible {
+	overflow: visible;
+	position: relative;
+	background: white;
+}
+.link .thumbnail + .entry div.madeVisible {
+	margin-left: -101px;
+}
+body.comments-page .link .thumbnail + .entry div.madeVisible {
+	margin-left: -156px;
+}
+
+div.madeVisible a.madeVisible {
+	overflow: visible;
+
+	video,
+	img {
+		display: block;
+		box-shadow: $shadow-8dp;
+	}
+}
+
+.error {
+	color: hsl(0,70%,50%);
+}
+
+#noresults {
+	font-size: 0;
+	text-align: center;
+	margin-right: 0;
+	color: transparent;
+
+	&:after {
+		font-size: 2rem;
+		content: "Why not add something?";
+		color: hsl(0,0%,50%);
+		display: block;
+		margin: 2rem 0;
+	}
+}
+
+.thing.stickied.link a.title {
+	font-weight: normal;
+}
+body > .content .link .midcol, .midcol-spacer {
+	width: 50px !important;
+}
+.tagline {
+	line-height: 1.4;
+	transition: background .1s;
+}
+.comment .tagline {
+	display: block; // RES fix
+}
+.tagline, .search-result-meta {
+	color: hsl(0,0%,20%);
+	font-size: 1.1rem;
+}
+.tagline a, .search-result-meta a {
+	color: inherit;
+}
+.entry {
+
+	.buttons {
+
+		li,
+		li+li {
+			padding: 0;
+		}
+
+		li {
+
+			a {
+				font-weight: normal;
+				font-size: 1.1rem;
+				color: hsl(200,15%,55%);
+				text-transform: capitalize;
+				padding: 2px 6px;
+				border-radius: 3px;
+
+				&:hover {
+					color: black;
+					text-decoration: none;
+				}
+			}
+
+			&:first-of-type a {
+				padding-left: 0;
+			}
+		}
+	}
+}
+// Remove margins meant for sidebar
+.panestack-title {
+	margin: 10px -10px;
+	padding: 15px 20px 10px 20px;
+	border-top: 1px solid hsl(0, 0%, 88%);
+	border-bottom: none;
+	text-transform: capitalize;
+}
+.wiki-page {
+
+	.wikititle,
+	.pageactions {
+		display: inline-block;
+		margin: 0 10px 15px 0;
+	}
+
+	.wiki-page-content {
+		margin: 0;
+	}
+}
+
+.wiki-page-content .md pre {
+	border-color: hsl(0,0%,80%);
+}
+
+.commentarea .menuarea,
+.sheets {
+	margin-right: 0;
+}
+.gold-accent.comment-visits-box {
+	max-width: none !important;
+	display: block;
+}
+.rounded {
+	border-radius: 3px;
+}
+
+// Headings
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md h6,
+.side .md h1,
+.side .md h2,
+.side .md h3,
+.side .md h4,
+.side .md h5,
+.side .md h6,
+.wiki-page-content .md h1,
+.wiki-page-content .md h2,
+.wiki-page-content .md h3,
+.wiki-page-content .md h4,
+.wiki-page-content .md h5,
+.wiki-page-content .md h6,
+h2#wiki_heading_2 {
+	color: inherit;
+	font-weight: normal;
+	font-family: tahoma, arial, sans-serif;
+	line-height: 1;
+	margin: 1.2em 0 .5em;
+}
+.md h1 {
+	font-size: 2rem;
+}
+.side .md h1, .wiki-page-content .md h1 {
+	font-size: 2.25rem;
+	margin: .5em 0 .5em;
+}
+.side .md h2, .wiki-page-content .md h2 {
+	font-size: 2rem;
+}
+.side .md h3, .wiki-page-content .md h3 {
+	font-size: 1.75rem;
+	font-weight: normal;
+}
+.side .md h4, .wiki-page-content .md h4 {
+	font-size: 1.6rem;
+	font-style: normal;
+}
+.side .md h5, .wiki-page-content .md h5 {
+	font-size: 1.4rem;
+	text-decoration: none;
+}
+.side .md h6, .wiki-page-content .md h6 {
+	font-size: 1.3rem;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.side .md {
+
+	ul {
+		padding-left: 16px;
+	}
+
+	ul,
+	ol {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	ul li,
+	ol li {
+		line-height: 1.6;
+	}
+
+	p {
+		line-height: inherit;
+	}
+}
+
+/* addon blockquote-cards */
+.side .md > blockquote {
+	margin: 15px 10px 20px 10px;
+	padding: 10px;
+	color: hsl(0,0%,100%);
+	border: none;
+	background: hsl(200,20%,50%);
+	border-radius: 3px;
+
+	blockquote {
+		color: hsl(0,0%,100%);
+	}
+
+	h2 {
+		margin-right:-10px;
+		margin-left:-10px;
+		margin-top: .5em;
+		padding: 3px 10px;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a {
+		color: white;
+		border-bottom: 1px solid hsla(0,0%,100%,.4);
+
+		&:hover {
+			border-bottom-color: hsla(0,0%,100%,.8);
+		}
+	}
+}
+/* .end */
+
+.side .md a[title="click"],
+.usertext button,
+#url-field button,
+.usertext-buttons button.save  {
+	@extend %button-base;
+}
+
+.content .RESBigEditorPop,
+.usertext button.cancel,
+#url-field button  {
+	margin: 0 0 0 8px;
+}
+
+// Flat buttons
+.side .md > blockquote a[title="click"],
+.usertext button,
+#url-field button {
+	@extend %button-flat;
+}
+
+.usertext button,
+#url-field button {
+	color: hsl(200,70%,0%);
+}
+
+// Raised buttons
+.side .md > p a[title="click"],
+.usertext-buttons button.save {
+	@extend %button-raised;
+}
+
+.side .subscribe-button a:hover,
+.side .subButtons .RESshortcut:hover,
+.side .subButtons .RESDashboardToggle:hover {
+	box-shadow: $shadow-2dp;
+}
+
+.link .usertext .usertext-edit > .md {
+	padding-left: 0;
+}
+body:not(.submit-page) .usertext .bottom-area {
+	overflow: visible;
+	width: auto;
+}
+.usertext .help-toggle,
+.usertext a.reddiquette {
+	line-height: 32px;
+	margin: 0 5px;
+}
+.usertext .help-toggle a,
+.usertext a.reddiquette {
+	color: hsl(0,0%,60%);
+}
+body:not(.submit-page) .usertext-buttons {
+	padding-bottom: 7px;
+}
+.usertext-buttons .status {
+	font-size: 1rem;
+}
+
+/* addon side-menu */
+.side .md > h5 + ul {
+	margin: 10px -10px 20px -10px;
+	padding: 0;
+	list-style: none;
+	font-size: 1.4rem;
+	cursor: default;
+
+	&>li {
+		padding: 6px 10px 6px 30px;
+		position: relative;
+		transition: background .1s;
+
+		&:hover > ul {
+			visibility: visible;
+			opacity: 1;
+			right: 300px;
+		}
+
+		&>sup,
+		&>p sup {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			display: block;
+			overflow: hidden;
+			text-indent: -1000px;
+			width: 10px;
+			height: 12px;
+			opacity: .4;
+			background-position: -20px -22px;
+			background-image: url(%%sprite%%);
+			pointer-events: none;
+		}
+
+		&:hover > sup,
+		&:hover > p sup {
+			left: 8px;
+		}
+
+		&>p,
+		&>ul > li > p {
+			margin: 0;
+		}
+
+		&>a,
+		&>p > a {
+			display: block;
+			margin: -6px -10px -6px -30px;
+			padding: 6px 10px 6px 30px;
+			white-space: nowrap;
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+		}
+
+		&:hover,
+		&>ul > li:hover > a {
+			background: hsl(0,0%,88%);
+		}
+
+		&:hover > p > a,
+		&>ul > li > a:hover,
+		&>ul > li > p a:hover {
+			color: #0079d3;
+		}
+
+		&>ul {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			top: 0px;
+			right: 295px;
+			width: 300px;
+			max-height: 700px;
+			overflow-y: auto;
+			list-style: none;
+			margin: 0;
+			padding: 8px 0;
+			z-index: 101;
+			border-radius: 2px;
+			background: white;
+			box-shadow: $shadow-8dp;
+			transition-property: visibility opacity;
+			transition-duration: .2s;
+			transition-delay: .12s;
+
+			&>li {
+				padding: 6px 10px;
+
+				&>a,
+				&>p a {
+					display: block;
+					margin: -6px -10px;
+					padding: 6px 10px;
+				}
+			}
+		}
+	}
+}
+/* .end */
+
+body.submit-page {
+
+	&>.content {
+		border: none;
+		background: none;
+		padding: 0;
+	}
+
+	.formtabs-content {
+  	width: auto;
+
+		.roundfield {
+			max-width: 520px;
+			width: auto;
+			box-sizing: border-box;
+			background-color: white;
+		}
+
+		.submit_text > h1 {
+			display: none;
+		}
+	}
+
+	&:not(.res-nightmode) .formtabs-content .submit_text {
+		padding: 20px 10px;
+	}
+
+	form .spacer:first-of-type,
+	form .spacer:last-of-type {
+		margin: 0 auto 15px auto;
+		width: 520px;
+	}
+}
+
+.submit_text.enabled {
+	display: block;
+	max-height: 500px;
+}
+
+.roundfield,
+.linefield {
+	margin: 1px auto;
+	padding: 5px 10px 15px;
+}
+
+div.save-button,
+form.submit > .spacer {
+	margin: 20px auto;
+	width: 520px;
+}
+
+#suggested-reddits {
+	font-size: 1.2rem;
+	font-family: arial;
+	text-align: center;
+	overflow-y: auto;
+	margin: 10px -10px -10px;
+	padding: 1px 0;
+
+	&>h3 {
+		display: none;
+	}
+
+	li {
+		display: inline-block;
+		margin: 0 0 4px 0;
+
+		a {
+			display: block;
+			padding: 2px 8px;
+			color: hsl(0,0%,50%);
+
+			&:hover {
+				color: hsl(0,0%,30%);
+				outline: 1px solid hsl(0,0%,80%);
+			}
+		}
+	}
+}
+
+body > div.content,
+.linkinfo,
+.sidecontentbox,
+.login-form-side,
+.sidebox .spacer,
+.side form.usertext {
+	@extend %sheet;
+}
+
+.sidecontentbox,
+.login-form-side {
+	padding: 10px;
+}
+
+.sidecontentbox .content {
+	border: none;
+	font-size: 1.2rem;
+}
+
+.sidebox .spacer {
+	margin-top: 0;
+	padding: 10px 10px 10px 54px;
+
+	a {
+		top: 10px;
+		left: 10px;
+	}
+}
+
+// Links
+.thing .title {
+	color: hsl(210,100%,45%);
+}
+
+.thing .title:visited,
+.thing.visited .title {
+	color: hsl(300,10%,50%);
+}
+
+body:not(.res-styleTweaks-visitedStyle) .comment .md a:visited,
+body:not(.res-styleTweaks-visitedStyle) .link.self .md a:visited {
+	color: hsl(280,80%,40%);
+}
+
+body.comments-page .link a.title {
+	font-size: 2.2rem;
+}
+
+// Hide redundant headings
+body.submit-page > div.content > h1,
+.searchpane h4,
+body.submit-page .formtabs-content .spacer:last-of-type .title {
+	display: none;
+}
+
+#reddit-field .title {
+	font-size: 0;
+	line-height: 0;
+
+	&:after {
+		content: "subreddit";
+		font-size: large;
+		line-height: 1;
+	}
+}
+
+#progressIndicator {
+	font-size: 1.2rem;
+	width: auto;
+	margin: 20px 0px 10px 0px;
+	color: black;
+	border-color: hsl(0,0%,85%);
+	background-color: hsl(0,0%,97%);
+
+	h2 {
+		display: none;
+	}
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+.NERPageMarker {
+	font-size: 1.2rem;
+	width: auto;
+	margin: 20px 0px 10px 0px;
+	line-height: 1.4;
+	color: hsl(0,0%,100%);
+	border-color: transparent;
+	background-color: hsl(250,5%,30%);
+}
+
+// Thumbnails
+.link .thumbnail {
+	margin-bottom: 10px;
+}
+.thing:not(.self) {
+
+	.thumbnail:not(.default):not(.nsfw) {
+		width: 90px;
+		height: 60px;
+		margin: -5px 0 10px 0;
+		position: relative;
+	}
+
+	.thumbnail:not(.default) img {
+		width: 90px;
+		height: auto;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&:not([data-domain="reddit.com"]) .thumbnail:not(.default):hover img {
+		width: 140px;
+		top: -30px;
+		left: -25px;
+	}
+}
+
+body.comments-page .thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default) {
+	width: auto;
+	height: auto;
+	margin: 0 10px 0 0;
+	position: static;
+}
+
+body.comments-page .thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default) img {
+	width: auto;
+	position: static;
+}
+
+.commentarea {
+
+	.menuarea {
+		margin-right: 0;
+		color: hsl(0,0%,70%);
+
+		&>div:hover {
+			color: black;
+		}
+	}
+
+	&>.usertext {
+		margin: 0 -10px 20px;
+		padding: 10px 10px 7px 20px;
+	}
+}
+
+.login-form-side {
+
+	input[type=text],
+	input[type=password] {
+		box-sizing: border-box;
+		border-color: hsl(0,0%,70%);
+		margin: 0;
+		width: 142px;
+	}
+
+	input[type=text] {
+		margin-right: 4px;
+	}
+
+	.submit {
+		margin-right: 0;
+	}
+}
+
+ul#image-preview-list {
+	margin-right: 0;
+	font-size: 1.2rem;
+
+	li {
+		margin-bottom: 0;
+		width: 50%;
+		height: auto;
+		float: none;
+		display: inline-block;
+	}
+}
+
+/* addon search-results */
+@import 'combined-search';
+/* .end */
+
+#REScommentNavToggle {
+	display: inline;
+	padding-left: 1rem;
+
+	&>.commentNavSortType {
+		font-weight: normal;
+		color: hsl(0,0%,40%);
+		border: none;
+		margin: 0 5px;
+		padding: 0;
+	}
+
+	&>span:not(:first-of-type) {
+		display: none;
+	}
+}
+
+body.moderator #REScommentNavToggle {
+	display: block;
+	padding: 1em 0 0;
+}
+
+.infobar {
+	margin: 10px 0;
+	padding: 10px;
+	border-color: hsl(50, 70%, 70%);
+	background: hsl(50, 90%, 90%);
+}
+
+.RESDialogSmall {
+	z-index: 100 !important;
+}
+.link.last-clicked {
+	border: none;
+}
+.nav-buttons {
+	margin: 10px -10px 0 -10px;
+	padding: 20px 10px 10px 10px;
+	border-top: 1px solid hsl(0,0%,90%);
+}
+.nextprev a,
+.next-suggestions a {
+	display: inline-block;
+}
+
+body.with-listing-chooser {
+
+	#header .pagename {
+		position: relative;
+		bottom: auto;
+	}
+
+	.listing-chooser {
+		z-index: 100;
+		border-radius: 0 10px 0 0;
+	}
+
+	#header .tabmenu {
+		margin-left: 0;
+	}
+}
+.icon-menu a {
+	background-color: transparent !important;
+}
+.side .drop-choices {
+	z-index: 101;
+}
+.domain {
+	font-family: verdana, sans-serif;
+	color: hsl(0,0%,100%);
+	vertical-align: middle;
+}
+.domain a {
+	color: hsl(0,0%,60%);
+}
+.domain a:hover {
+	color: hsl(0,0%,20%);
+	text-decoration: none;
+}
+// RES pinHeader
+body.pinHeader-header {
+
+	.side #search,
+	.sidebox.submit {
+		position: fixed;
+	}
+
+	&>div.content {
+		position: fixed;
+		overflow: auto;
+		top: 160px;
+		bottom: 0;
+	}
+}
+
+body.pinHeader-sub div#header-bottom-right {
+	top: 22px !important;
+}
+
+body.pinHeader-userbar #header-bottom-right {
+	height: 22px;
+}
+
+div.imgCaptions,
+.md div.imgCaptions {
+	white-space: normal;
+}
+.entry.RES-keyNav-activeElement,
+.entry.RES-keyNav-activeElement .md-container {
+	background-color: transparent !important;
+}
+.entry.RES-keyNav-activeElement .tagline,
+.thing.morechildren .entry.RES-keyNav-activeElement {
+	color: black;
+	background-color: hsl(0,0%,90%) !important;
+	border-radius: 5px;
+}
+.hover-bubble {
+	border: 1px solid hsla(0,0%,0%,.3);
+	box-shadow: $shadow-8dp;
+
+	&.multi-selector {
+
+		.title {
+			padding: 5px 12px;
+		}
+
+		strong,
+		a.sr {
+			font-weight: normal;
+			text-align: left;
+			font-size: 1.2rem;
+			margin: 0;
+		}
+
+		strong {
+			font-size: 1.8rem;
+			line-height: 1.4;
+			text-transform: capitalize;
+		}
+
+		a.sr {
+			display: inline;
+			color: hsl(0,0%,60%);
+		}
+
+		.throbber {
+			opacity: .2;
+		}
+	}
+}
+
+.create-reddit .linefield:nth-of-type(3) .usertext::before {
+	content: 'h5 followed by "* text" = menu | > = card | [text](/r/a "click") = button';
+	display: block;
+	margin: 10px -22px;
+	padding: 5px;
+	color: white;
+	font: 1.2rem/1.2 consolas, monospace;
+	background: hsl(250,5%,30%);
+	text-align: center;
+}
+
+.livePreview {
+	margin: 7px 0;
+	background-color: white !important;
+}
+
+.subreddit-rules-page {
+	max-width: none;
+
+	.subreddit-rule-item {
+		border-top: 1px solid hsl(0,0%,88%);
+
+		&:hover {
+			background: none;
+		}
+	}
+
+	&:before {
+		top: auto;
+	}
+}
+
+#srList {
+	border: none;
+	box-shadow: $shadow-8dp;
+}
+
+/* addon animate-thumbs */
+.thing:not(.self) .thumbnail:not(.default) img { transition: width .1s, left .1s, top 1s .75s; }
+/* .end */
+
+/* addon flair-basic */
+.tagline .flair {
+	padding: 0 5px;
+	font-size: inherit;
+	font-style: italic;
+	border: none;
+	color: inherit;
+	background: none;
+	max-width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: bottom;
+}
+.linkflairlabel {
+	padding: 0 0px 0 0;
+	max-width: 150px;
+	font-size: 1.2rem;
+	font-family: "arial black";
+	color: hsl(200,20%,60%);
+	border: none;
+	background: none;
+	line-height: 1;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+.title + .linkflairlabel {
+	padding: 0 0 0 5px;
+}
+/* .end */
+
+@import 'nightmode';
