@@ -368,7 +368,7 @@ body {
 	font-weight: normal;
 }
 
-.RESDropdownList {
+body.res .RESDropdownList {
 	width: 200px;
 	border-radius: 0;
 	border: none;
@@ -720,90 +720,87 @@ h1.redditname + div {
 }
 
 // The ordering of this section is important.
-.side {
+// subscribe button and its neighbors
+.subscribe-button {
+	margin: 5px 5px 5px 0;
 
-	// subscribe button and its neighbors
-	.subscribe-button {
-		margin: 5px 5px 5px 0;
+	.option.active {
+		display: block;
+	}
+}
 
-		.option.active {
-			display: block;
+.subButtons {
+	@extend %flexbox;
+	border-width: 10px 0 10px 0;
+	border-style: solid;
+	border-color: transparent;
+
+	span {
+		width: 100%;
+		margin: 0;
+		box-sizing: border-box;
+
+		&:first-child {
+			margin-right: 8px;
+		}
+
+		&:last-child {
+			margin-left: 8px;
 		}
 	}
 
-	.subButtons {
-		@extend %flexbox;
-		border-width: 10px 0 10px 0;
-		border-style: solid;
-		border-color: transparent;
-
-		span {
-			width: 100%;
-			margin: 0;
-			box-sizing: border-box;
-
-			&:first-child {
-				margin-right: 8px;
-			}
-
-			&:last-child {
-				margin-left: 8px;
-			}
-		}
-
-		&+.subscribers,
-		&+.subscribers + .users-online {
-			margin: 0;
-			font-size: 1.2rem;
-		}
+	&+.subscribers,
+	&+.subscribers + .users-online {
+		margin: 0;
+		font-size: 1.2rem;
 	}
+}
 
-	.subscribe-button a,
-	.subButtons .RESshortcut,
-	.subButtons .RESDashboardToggle {
-		font: 1.3rem/32px tahoma, arial, sans-serif;
-		text-align: center;
-		text-transform: uppercase;
-		transition: box-shadow .25s, background .25s, color .25s;
-		padding: 0;
-		border: none;
-		white-space: nowrap;
-	}
+.side .subscribe-button a,
+.subButtons .RESshortcut,
+.subButtons .RESDashboardToggle {
+	font: 1.3rem/32px tahoma, arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	transition: box-shadow .25s, background .25s, color .25s;
+	padding: 0;
+	border: none;
+	white-space: nowrap;
+}
+
+.side .subscribe-button a {
+	padding: 0 8px;
+	color: white;
+	background: #F44336;
+}
+
+.subButtons {
 
 	.subscribe-button a {
-		padding: 0 8px;
-		color: white;
-		background: #F44336;
+		padding: 0;
 	}
 
-	.subButtons {
-
-		.subscribe-button a {
-			padding: 0;
-		}
-
-		.RESshortcut,
-		.RESDashboardToggle {
-			background: white;
-			color: hsl(0,0%,20%);
-			border-radius: 2px;
-		}
-	}
-
-	// selected
-	.subscribe-button a.remove,
-	.subButtons .RESshortcut.remove,
-	.subButtons .RESDashboardToggle.remove {
+	.RESshortcut,
+	.RESDashboardToggle {
+		background: white;
 		color: hsl(0,0%,20%);
-		border-color: transparent;
-		background: inherit;
+		border-radius: 2px;
 	}
+}
 
-	.subscribe-button a.remove:hover,
-	.subButtons .RESshortcut.remove:hover,
-	.subButtons .RESDashboardToggle.remove:hover {
-		box-shadow: none;
-	}
+// selected
+.side .subscribe-button a.remove,
+.subButtons .RESshortcut.remove,
+.subButtons .RESDashboardToggle.remove {
+	color: hsl(0,0%,20%);
+	border-color: transparent;
+	background: inherit;
+}
+
+.side .subscribe-button a.remove:hover,
+.subButtons .RESshortcut.remove:hover,
+.subButtons .RESDashboardToggle.remove:hover {
+	box-shadow: none;
 }
 
 .titlebox {
@@ -822,6 +819,10 @@ h1.redditname + div {
 		margin-bottom: 0;
 	}
 
+	.subscribers {
+		margin-right: 1rem;
+	}
+
 	.users-online {
 
 		&:before {
@@ -834,10 +835,6 @@ h1.redditname + div {
 		.word {
 			display: none;
 		}
-	}
-
-	.subscribers {
-		margin-right: 1rem;
 	}
 
 	.bottom {
@@ -1320,7 +1317,7 @@ body:not(.submit-page) .usertext-buttons {
 		&>sup,
 		&>p sup {
 			position: absolute;
-			top: 10px;
+			top: 11px;
 			left: 10px;
 			display: block;
 			overflow: hidden;
@@ -1545,7 +1542,7 @@ body.submit-page .formtabs-content .spacer:last-of-type .title {
 	}
 }
 
-#progressIndicator {
+body.res #progressIndicator {
 	font-size: 1.2rem;
 	width: auto;
 	margin: 20px 0px 10px 0px;
@@ -1561,7 +1558,7 @@ body.submit-page .formtabs-content .spacer:last-of-type .title {
 	}
 }
 
-.NERPageMarker {
+body.res .NERPageMarker {
 	font-size: 1.2rem;
 	width: auto;
 	margin: 20px 0px 10px 0px;
@@ -1876,7 +1873,8 @@ div.imgCaptions,
 	padding: 0 0px 0 0;
 	max-width: 150px;
 	font-size: 1.2rem;
-	font-family: "arial black";
+	font-family: "arial black", sans-serif;
+	font-weight: 900; // Firefox fix for arial black
 	color: hsl(200,20%,60%);
 	border: none;
 	background: none;

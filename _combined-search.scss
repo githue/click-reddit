@@ -83,9 +83,13 @@
 		}
 	}
 
-	.search-result-subreddit .search-subscribe-button .add,
-	.search-result-subreddit .search-subscribe-button .remove {
-		width: auto;
+	.search-result-subreddit {
+		padding: 5px 0;
+
+		.search-subscribe-button .add,
+		.search-subscribe-button .remove {
+			width: auto;
+		}
 	}
 
 	.search-result-link {
