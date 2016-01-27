@@ -1,1790 +1,503 @@
-/**
+/*!
  * Theme: /r/click
  * Author:/u/postpics
- * Instruction: add your customizations at the bottom and avoid changing the
- * original CSS, you can then upgrade to new versions without losing your changes.
+ * Instruction: add your customizations at the bottom. You may remove built-in
+ *  addons, but remember to remove them again when you upgrade.
  */
+.subButtons { display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; }
 
-html {
-	font: normal 10px/1 verdana, arial, sans-serif;
-}
-body {
-	background: hsl(30,10%,92%);
-}
-#header {
-	border-bottom: none;
-	background-color: hsl(250,5%,30%);
-	background-repeat: no-repeat;
-	background-position: 50% 0%;
-	box-shadow: 0 1px 1px 1px hsla(0,0%,0%,.1);
-}
-#sr-header-area {
-	font-family: arial, sans-serif;
-	color: hsla(0,0%,100%,.3);
-	border-bottom: none;
-	background: none;
-	box-sizing: border-box;
-	line-height: 22px;
-	height: 22px;
-	transition-property: background, height, margin, z-index;
-	transition-duration: .2s;
-	transition-delay: .2s;
-	position: relative;
-	z-index: 2;
-}
-#sr-header-area:hover {
-	background: hsla(0,0%,0%,.8);
-	height: 30px;
-	margin-bottom: -8px;
-	z-index: 4;
-}
-#srLeftContainer, #RESShortcutsViewport, #RESShortcutsEditContainer {
-	max-height: none;
-}
-#RESShortcutsEditContainer {
-	opacity: 0;
-	transition: all .1s .1s;
-	z-index: 1;
-}
-#RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
-	color: hsla(0,0%,100%,.8) !important;
-	background: none !important;
-}
-#sr-more-link {
-	background: none;
-}
-#sr-header-area:hover #sr-more-link {
-	background: hsl(0,0%,10%);
-}
-#sr-header-area:hover #RESShortcutsEditContainer,
-#sr-header-area:hover a {
-	opacity: 1;
-	color: hsla(0,0%,100%,.8);
-}
-.dropdown.srdrop .selected {
-	background: none;
-	padding-right: 5px;
-}
-.dropdown.srdrop .selected:after {
-	content: "";
-	display: inline-block;
-	height: 0px;
-	width: 1px;
-	border: 5px solid transparent;
-	border-top-color: hsla(0,0%,100%,.6);
-	position: relative;
-	left: 5px;
-	top: 3px;
-}
-#sr-header-area .separator,
-#header-bottom-right .separator {
-	color: hsla(0,0%,100%,.3);
-}
-#sr-header-area .drop-choices.srdrop {
-	max-height: 152px;
-	overflow-y: auto;
-	width: 200px;
-	border: none;
-	box-shadow: 3px 3px 1px -3px hsla(0,0%,0%,.4);
-}
-#sr-header-area .drop-choices.srdrop a {
-	color: black;
-}
-#sr-header-area a,
-.dropdown.srdrop .selected {
-	color: hsla(0,0%,100%,.6);
-}
-#header-bottom-left {
-	padding: 30px 0 0 0;
-	min-height: 104px;
-	position: relative;
-}
-#header .tabmenu {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	box-sizing: border-box;
-	display: block !important;
-	font-size: 1.2rem;
-	font-family: tahoma, arial, sans-serif;
-	text-transform: uppercase;
-	margin: 0;
-	padding: 29px 0 0px 10px;
-	z-index: 1;
-}
-#header .tabmenu li {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	position: relative;
-}
-#header .tabmenu a {
-	display: block;
-	font-weight: bold;
-	color: hsla(0,0%,100%,.8);
-	border: none;
-	border-bottom: 4px solid transparent;
-	background: none;
-	line-height: 40px;
-	padding: 0 10px;
-	text-shadow: 1px 1px 1px hsla(0,0%,0%,.4);
-	position: relative;
-	z-index: 1;
-}
-#header .tabmenu a:hover {
-	color: hsla(0,0%,100%,1);
-}
-#header .tabmenu .selected a,
-#header .tabmenu a:active {
-	color: white;
-	border-bottom-color: white;
-}
-#header-img-a {
-	display: inline-block;
-	margin: 0 0 45px 20px;
-	position: relative;
-	z-index: 2;
-}
-#header-img {
-	margin: 0;
-	display: block;
-}
-#header-img.default-header {
-	position: relative;
-	margin: 0 0 45px 20px;
-	width: 32px;
-	z-index: 2;
-}
-.pagename {
-	display: inline-block;
-	margin: 0px 10px 45px 10px;
-	color: hsla(0,0%,100%,1);
-	font: normal 24px/1 tahoma, arial, sans-serif;
-	position: relative;
-	z-index: 2;
-}
-.pagename a {
-	letter-spacing: 1px;
-	font-size: 36px;
-	color: hsla(0,0%,100%,1);
-	position: relative;
-	text-shadow: 0px 1px 1px hsla(0,0%,0%,.5), 0px 1px 5px hsla(0,0%,0%,.3);
-	transition: text-shadow .3s;
-}
-.pagename a:hover {
-	text-decoration: none;
-}
-#header-bottom-right {
-	color: hsla(0,0%,100%,.8);
-	padding: 0 10px 0 10px !important;
-	line-height: 22px;
-	background: hsla(0,0%,20%,.9);
-	z-index: 3;
-	top: 0 !important;
-	bottom: auto !important;
-	border-radius: 3px 0 0 3px;
-}
-#header-bottom-right:hover {
-	background: hsl(0,0%,20%);
-}
-#header-bottom-right a {
-	color: hsla(0,0%,100%,.8);
-}
-#userbarToggle {
-	min-height: 0 !important;
-	border: none !important;
-	padding: 0 5px !important;
-	background: none !important;
-	text-align: left !important;
-	left: 0 !important;
-	bottom: auto !important;
-	width: auto !important;
-	height: 22px !important;
-}
-.user {
-	color: hsla(0,0%,100%,.6);
-}
-#header-bottom-right a:hover {
-	text-decoration: underline;
-}
-.pref-lang {
-	font-weight: normal;
-}
-html.res #header-bottom-right .separator {
-	margin: 0;
-	visibility: hidden;
-}
-body > div.content,
-.modtools-page > div.content {
-	margin: 20px 330px 0 10px;
-	padding: 0px 10px 40px 10px;
-	position: relative;
-	z-index: 100;
-}
-.RESDropdownList {
-	width: 200px;
-	border-radius: 0;
-	border: none;
-	background-color: hsl(0, 0%, 100%);
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.RESDropdownList li {
-	color: black;
-	font-weight: normal;
-	font-size: 1.2rem;
-	line-height: 1.5;
-	height: auto;
-	padding: 6px 10px;
-	width: auto;
-	border: none;
-}
-.RESDropdownList li:hover,
-.RESDropdownList li a:hover,
-.RESMenuItemButton:hover {
-	color: inherit;
-	background-color: hsl(0, 0%, 93%);
-}
-.RESDropdownList li a,
-.RESDropdownList li a:visited,
-.subreddit-rule-form .c-form-group .label,
-.subreddit-rule-form .c-form-group .text-counter {
-	color: inherit;
-}
-.RESMenuItemButton {
-	position: static;
-	margin-left: -100%;
-	float: right;
-}
-/* RES < 4.6 */
-body.res-v430:not(.res-v4) #RESSearchMenuItem {
-	margin: 0px;
-	border: none;
-	width: 13px;
-	height: 16px;
-	background: url(%%sprite%%) no-repeat -21px 3px;
-}
-body.res-v430:not(.res-v4) .RESDropdownList .toggleButton {
-	margin: 0;
-	line-height: 1;
-}
-/**
- * sidebar
- */
-.side {
-	width: 310px;
-	margin: 20px 10px 0 0;
-	padding: 0;
-	background: transparent;
-}
-/* the spacer divs can be a nuisance, so make them do nothing */
-.side > .spacer {
-	display: inline;
-}
-/* we now need to create our own spacing */
-#login_login-main,
-#moderation_tools,
-#ad_main,
-.sidebox.create,
-.sidecontentbox,
-.account-activity-box,
-.linkinfo,
-.titlebox {
-	margin: 10px 0 10px 0;
-	clear: both;
-}
-.linkinfo {
-	padding: 10px;
-	line-height: 1.5;
-	font-family: verdana, sans-serif;
-}
-.linkinfo .score .number,
-.linkinfo .score .word {
-	font-size: inherit;
-}
-.linkinfo .shortlink {
-	font-size: inherit;
-}
-.linkinfo .shortlink input {
-	font-size: inherit;
-	color: blue;
-	border-color: hsl(0,0%,90%);
-}
-body > .content #search {
-	white-space: normal;
-}
-#previoussearch label {
-	display: inline-block;
-}
-.side #search {
-	position: relative;
-	margin: 0 0 25px;
-}
-/* Override subreddit style checkbox */
-body:not(.res-console-open) #RESNotifications,
-body:not(.res-console-open) #RESShortcutsAddFormContainer,
-body:not(.res-console-open) .RESDropdownList,
-body:not(.res-console-open):not(.modal-open) .side #search {
-	z-index: 2147483647 !important;
-}
-.side #search input[type=text] {
-	width: 310px;
-	margin-bottom: 1px;
-	padding: 8px 8px 8px 0px;
-	border-width: 0 0 1px;
-	border-color: hsl(0,0%,80%);
-	background: transparent;
-	transition: all .2s;
-}
-.side #search input[type=text]:hover,
-.side #search input[type=text]:focus {
-	box-shadow: 0 1px 0px 0 #F44336;
-	border-color: #F44336;
-	outline: none;
-}
-#search input[type=submit] {
-	width: 30px;
-	height: 30px;
-	margin-left: -30px;
-	opacity: .5;
-	background: url(%%sprite%%) no-repeat -13px 9px;
-}
-#search input[type=submit]:hover {
-	background: url(%%sprite%%) no-repeat -13px 9px;
-}
-#searchexpando {
-	margin: 0px 0 0 0;
-	padding: 20px 10px 0 10px;
-	border: transparent;
-	border-top: none;
-	border-radius: 0;
-	background: hsl(30,10%,92%);
-	box-shadow: 0 3px 6px -2px hsla(0,0%,0%,.3);
-	position: absolute;
-	width: 310px;
-	box-sizing: border-box;
-}
-.side #search_showmore:after {
-	display: inline-block;
-	margin: 1rem 0;
-}
-/**
- * Improve search expando UI.
- */
-.side #moresearchinfo {
-  padding: 20px 0 20px 0;
-  border-width: 0;
-  position: relative;
-}
-.side #moresearchinfo p:first-of-type {
-  font-weight: bold;
-  line-height: 1;
-}
-.side #search_hidemore {
-  display: block;
-  color: transparent;
-  float: none;
-  text-align: center;
-  margin: 0 -10px 0px -10px;
-  padding: 0;
-  position: absolute;
-  top: auto; right: 0; bottom: 0; left: 0;
-  font-size: 0;
-  line-height: 0;
-  border-bottom: 5px solid #F44336;
-}
-.side #search_hidemore:after {
-  content: "";
-  display: inline-block;
-  border: 8px solid transparent;
-  border-bottom-color: #F44336;
-}
-.side #moresearchinfo + p {
-  margin: 10px 0 0 0;
-}
-.side dt {
-  font-weight: normal;
-  margin-left: 0;
-}
-.side dd {
-  margin: 0 0 5px;
-  color: rgb(150,150,150);
-}
-.side #moresearchinfo + p a {
-  line-height: 0;
-  font-size: 0;
-}
-.side #moresearchinfo + p a:after {
-  text-indent: 0;
-  height: auto;
-  line-height: 1;
-  content: "More options...";
-  font-size: 12px;
-}
-.searchpane {
-	margin: 10px 0 20px 0;
-}
-.combined-search-page .searchpane,
-.combined-search-page #search {
-	padding: 0;
-}
-.combined-search-page #search input[type=text] {
-	max-width: none;
-	margin-right: -35px;
-	padding-right: 35px;
-	border-color: #4f86b5;
-}
-.combined-search-page .search-submit-button {
-	margin: 0;
-	width: 35px;
-	height: 2.5em;
-	padding: 0;
-	border: none;
-	border-radius: 0 3px 3px 0;
-}
-/**
- * Submit buttons.
- */
-.sidebox.submit {
-	display: inline-block;
-	box-sizing: border-box;
-	position: absolute;
-	top: 114px;
-	z-index: 100;
-	width: 136px;
-}
-.sidebox.submit-text {
-	right: 10px;
-	width: 166px;
-}
-.submit.mod-override .morelink a:after {
-	margin: 0;
-	left: 0;
-	top: -8px;
-}
-.submit.mod-override .morelink:hover a:after {
-	opacity: 1;
-}
-.sidebox:not(.create) .morelink {
-	font: normal 1.2rem/1 tahoma, arial, sans-serif;
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	border: none;
-	background: none;
-	height: auto;
-	letter-spacing: 0;
-	text-shadow: 1px 1px 0px hsla(0,0%,100%,.2);
-}
-.sidebox:not(.create) .morelink a {
-	display: block;
-	height: auto;
-	line-height: 32px;
-	white-space: nowrap;
-	padding: 0px 1px;
-	width: auto;
-	background: hsla(0,0%,100%,.9);
-	color: hsla(0,0%,0%,1);
-	border-radius: 2px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	transition: all .3s;
-}
-.sidebox:not(.create) .morelink:hover {
-	background: none;
-}
-.sidebox:not(.create) .morelink:hover a {
-	background: hsla(0,0%,100%,1);
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.sidebox:not(.create) .morelink a:active {
-	background: hsl(0,0%,50%);
-}
-.morelink .nub,
-.morelink:hover .nub{
-	display: none;
-}
-.titlebox {
-	margin-left: 0;
-	margin-right: 0;
-	background: transparent;
-	color: hsla(0,0%,50%,1);
-}
-h1.redditname {
-	display: none;
-}
-h1.redditname + div {
-	text-align: right;
-}
-/**
- * Adjust positioning when submit buttons are gone.
- */
-.side form.usertext {
-	margin: 10px 0px 0 0;
-	padding: 20px 10px 0px 10px;
-}
-.side form.usertext .md {
-	line-height: 1.5;
-}
-/* work with and around RES */
-.side .subButtons {
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	border-width: 10px 0 10px 0;
-	border-style: solid;
-	border-color: transparent;
-}
-.side .subButtons span {
-	width: 100%;
-	margin: 0;
-	box-sizing: border-box;
-}
-.side .subButtons span:first-child {
-	margin-right: 8px;
-}
-.side .subButtons span:last-child {
-	margin-left: 8px;
-}
-.titlebox .subscribers,
-.titlebox .users-online {
-	display: inline-block;
-	font-size: 1.1rem;
-	font-family: arial, sans-serif;
-	vertical-align: baseline;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-.subButtons + .subscribers,
-.subButtons + .subscribers + .users-online {
-	margin: 0;
-	font-size: 1.2rem;
-}
-.titlebox .subscribers {
-	margin-right: 1rem;
-}
-.titlebox .users-online:before {
-	content: none;
-}
-.side .users-online .number:after {
-  content: " here now";
-}
-.side .users-online .word {
-  display: none;
-}
-.titlebox form.toggle, .leavemoderator {
-	font-size: 1.1rem;
-	color: hsl(0,0%,40%);
-	background: none;
-	padding: 10px 0 0 0;
-	clear: left;
-}
-.link .usertext-body .md {
-	border: none;
-	background: none;
-	border-radius: 0;
-	padding: 0 0 10px;
-}
-.formtabs-content {
-	border-top: none;
-}
-ul.tabmenu.formtab {
-	margin: 0 0 5px;
-	padding: 0;
-	font-size: 1.3rem;
-	text-transform: uppercase;
-	text-align: center;
-}
-.tabmenu.formtab li {
-	display: inline-block;
-}
-.tabmenu.formtab a {
-	display: block;
-	padding: 5px 15px;
-	border: none;
-	color: hsl(0,0%,50%);
-	background: none;
-}
-.tabmenu.formtab a:hover {
-	color: inherit;
-}
-.tabmenu.formtab .selected a {
-	font-size: inherit;
-	background: none;
-	color: inherit;
-	border-bottom: 2px solid;
-}
-form .spacer+.spacer {
-	margin: 0px 0;
-}
-.formtabs-content .roundfield {
-	border-radius: 0;
-}
-/**
- * misc
- */
-.organic-listing.loading {
-	display: none; /* improves perceived load time */
-}
-/* RES > 4.5 */
-#header-bottom-right .gearIcon::after {
-	color: hsl(0,0%,90%);
-	text-shadow: none;
-}
-/* RES < 4.6 */
-body:not(.res-v4) #header-bottom-right #RESSettingsButton {
-	margin: 0;
-	vertical-align: middle;
-}
-.md hr {
-	height: 1px;
-	margin: 10px 0px;
-	background: hsl(0, 0%, 88%);
-}
-.side .md hr {
-	margin: 10px -10px;
-}
-.side .md > blockquote hr {
-	width: auto;
-	background: hsla(0,0%,100%,.12);
-}
-.titlebox .bottom {
-	color: hsl(0,0%,60%);
-	border: none;
-	padding: 10px 0 0 0;
-}
-.titlebox .bottom a {
-	color: inherit;
-}
-.content .spacer {
-	margin: 0;
-}
-.link {
-	margin: 0 -10px;
-	padding: 10px 10px 0 10px;
-}
-.link .flat-list {
-	padding: 0;
-	margin-bottom: 8px;
-}
-.link .entry {
-	overflow: visible;
-	margin-left: 64px;
-}
-body.listing-page .link .entry {
-	border-bottom: 1px solid hsl(0,0%,93%);
-}
-/* indent for thumbnails only */
-.link .thumbnail + .entry {
-	margin-left: 165px;
-}
-body.comments-page .link:not(.self) .thumbnail:not(.default) + .entry {
-	margin-left: 210px;
-}
-.link div.madeVisible {
-	overflow: visible;
-	position: relative;
-	background: white;
-}
-.link .thumbnail + .entry div.madeVisible {
-	margin-left: -101px;
-}
-body.comments-page .link .thumbnail + .entry div.madeVisible {
-	/*float: left;*/
-	margin-left: -156px;
-}
-div.madeVisible a.madeVisible {
-	overflow: visible;
-}
-div.madeVisible a.madeVisible video,
-div.madeVisible a.madeVisible img {
-	display: block;
-	box-shadow: 0px 3px 12px -2px hsla(0,0%,0%,.7);
-}
-.error {
-	color: hsl(0,70%,50%);
-}
-#noresults {
-	font-size: 0;
-	text-align: center;
-	margin-right: 0;
-	color: transparent;
-}
-#noresults:after {
-	font-size: 2rem;
-	content: "Why not add something?";
-	color: hsl(0,0%,50%);
-	display: block;
-	margin: 2rem 0;
-}
-.mod-toolbox {
-	overflow: visible;
-}
-.link .title {
-	font: 1.8rem/1.1 arial, sans-serif;
-	text-rendering: optimizeLegibility;
-	margin: 0;
-}
-.thing.stickied.link a.title {
-	font-weight: normal;
-}
-.link .midcol {
-	font-weight: normal;
-	margin-top: 1px;
-}
-body > .content .link .midcol, .midcol-spacer {
-	width: 50px !important;
-}
-.link .title + .expando-button {
-	margin: 7px 5px 0 0;
-}
-.tagline {
-	line-height: 1.4;
-	transition: background .1s;
-}
-.link .tagline {
-	margin: 2px 0;
-}
-.link .tagline:first-letter {
-	text-transform: capitalize;
-}
-.comment .tagline {
-	display: block; /* RES fix */
-}
-.tagline, .search-result-meta {
-	color: hsl(0,0%,20%);
-	font-size: 1.1rem;
-}
-.tagline a, .search-result-meta a {
-	color: inherit;
-}
-.entry .buttons li,
-.entry .buttons li+li {
-	padding: 0;
-}
-.entry .buttons li a {
-	font-weight: normal;
-	font-size: 1.1rem;
-	color: hsl(200,15%,55%);
-	text-transform: capitalize;
-	padding: 2px 6px;
-	border-radius: 3px;
-}
-.entry .buttons li:first-of-type a {
-	padding-left: 0;
-}
-.entry .buttons li a:hover {
-	color: black;
-	text-decoration: none;
-}
-#sr-header-area a.RESShortcutsCurrentSub,
-#sr-header-area .selected a {
-	color: white !important;
-}
-/* Handle sidebar presence */
-.panestack-title {
-	margin: 10px -10px;
-	padding: 15px 20px 10px 20px;
-	border-top: 1px solid hsl(0, 0%, 93%);
-	border-bottom: none;
-	text-transform: capitalize;
-}
-.wiki-page .wiki-page-content {
-	margin: 0;
-}
-.commentarea .menuarea,
-.infobar,
-.sheets {
-	margin-right: 0;
-}
-.wiki-page .wikititle {
-	margin-left: 0;
-}
-.gold-accent.comment-visits-box {
-	max-width: none !important;
-	display: block;
-}
-.rounded {
-	border-radius: 3px;
-}
-/**
- * Headings
- */
-.md h1,
-.md h2,
-.md h3,
-.md h4,
-.md h5,
-.md h6,
-.side .md h1,
-.side .md h2,
-.side .md h3,
-.side .md h4,
-.side .md h5,
-.side .md h6,
-.wiki-page-content .md h1,
-.wiki-page-content .md h2,
-.wiki-page-content .md h3,
-.wiki-page-content .md h4,
-.wiki-page-content .md h5,
-.wiki-page-content .md h6,
-h2#wiki_heading_2 {
-	color: inherit;
-	font-weight: normal;
-	font-family: tahoma, arial, sans-serif;
-	line-height: 1;
-	margin: 1.2em 0 .5em;
-}
-.md h1 {
-	font-size: 2rem;
-}
-.side .md h1, .wiki-page-content .md h1 {
-	font-size: 2.25rem;
-	margin: .5em 0 .5em;
-}
-.side .md h2, .wiki-page-content .md h2 {
-	font-size: 2rem;
-}
-.side .md h3, .wiki-page-content .md h3 {
-	font-size: 1.75rem;
-	font-weight: normal;
-}
-.side .md h4, .wiki-page-content .md h4 {
-	font-size: 1.6rem;
-	font-style: normal;
-}
-.side .md h5, .wiki-page-content .md h5 {
-	font-size: 1.4rem;
-	text-decoration: none;
-}
-.side .md h6, .wiki-page-content .md h6 {
-	font-size: 1.3rem;
-	text-decoration: none;
-	text-transform: none;
-}
-.side .md ul {
-	padding-left: 16px;
-}
-.side .md ul,
-.side .md ol {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-.side .md ul li,
-.side .md ol li {
-	line-height: 1.6;
-}
-.side .md p {
-	line-height: inherit;
-}
+body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spacer, .side form.usertext { background: white; border: 1px solid #e0d9d1; border-radius: 2px; }
+
+.side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
+
+.side .md > blockquote a[title="click"], .usertext button, #url-field button { color: rgba(255, 255, 255, 0.8); }
+.side .md > blockquote a[title="click"]:hover, .usertext button:hover, #url-field button:hover { background: rgba(0, 0, 0, 0.12); text-decoration: none; }
+
+.side .md > p a[title="click"], .usertext-buttons button.save { color: white; background: #668899; transition: box-shadow .25s; }
+.side .md > p a[title="click"]:hover, .usertext-buttons button.save:hover { box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
+
+html { font: normal 10px/1 verdana, arial, sans-serif; }
+
+body { background: #edebe9; }
+body > div.content, body.modtools-page > div.content { margin: 20px 330px 0 10px; padding: 0px 10px 40px 10px; position: relative; z-index: 100; }
+body.res #header-bottom-right .separator { margin: 0; visibility: hidden; }
+body:not(.res-v4) #header-bottom-right #RESSettingsButton { margin: 0; vertical-align: middle; }
+body > .content .spacer { margin: 0; }
+body.mod-toolbox { overflow: visible; }
+body.res-commentBoxes > .content { padding-right: 10px !important; }
+body.res-commentBoxes .comment { overflow: visible; }
+
+#header { border-bottom: none; background-color: #4a4950; background-repeat: no-repeat; background-position: 50% 0%; box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
+
+#srLeftContainer, #RESShortcutsViewport, #RESShortcutsEditContainer { max-height: none; }
+
+#RESShortcutsEditContainer { opacity: 0; transition: all .1s .1s; z-index: 1; }
+
+#RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash { color: rgba(255, 255, 255, 0.8) !important; background: none !important; }
+
+#sr-more-link { background: none; }
+
+#sr-header-area { font-family: arial, sans-serif; color: rgba(255, 255, 255, 0.3); border-bottom: none; background: none; box-sizing: border-box; line-height: 22px; height: 22px; transition-property: background, height, margin, z-index; transition-duration: .2s; transition-delay: .2s; position: relative; z-index: 2; }
+#sr-header-area:hover { background: rgba(0, 0, 0, 0.8); height: 30px; margin-bottom: -8px; z-index: 4; }
+#sr-header-area:hover #sr-more-link { background: #1a1a1a; }
+#sr-header-area:hover a, #sr-header-area:hover #RESShortcutsEditContainer { opacity: 1; color: rgba(255, 255, 255, 0.8); }
+#sr-header-area a.RESShortcutsCurrentSub, #sr-header-area .selected a { color: white !important; }
+
+.dropdown.srdrop .selected { color: rgba(255, 255, 255, 0.6); background: none; padding-right: 5px; }
+.dropdown.srdrop .selected:after { content: ""; display: inline-block; height: 0px; width: 1px; border: 5px solid transparent; border-top-color: rgba(255, 255, 255, 0.6); position: relative; left: 5px; top: 3px; }
+
+#sr-header-area a { color: rgba(255, 255, 255, 0.6); }
+#sr-header-area .drop-choices.srdrop { max-height: 152px; overflow-y: auto; width: 200px; border: none; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+#sr-header-area .drop-choices.srdrop a { color: black; }
+
+#header-bottom-left { padding: 30px 0 0 0; min-height: 104px; position: relative; }
+
+#header .tabmenu { position: absolute; bottom: 0; width: 100%; box-sizing: border-box; display: block !important; font-size: 1.2rem; font-family: tahoma, arial, sans-serif; text-transform: uppercase; margin: 0; padding: 29px 0 0px 10px; z-index: 1; }
+#header .tabmenu li { display: inline-block; margin: 0; padding: 0; position: relative; }
+#header .tabmenu a { display: block; font-weight: bold; color: rgba(255, 255, 255, 0.8); border: none; border-bottom: 4px solid transparent; background: none; line-height: 40px; padding: 0 10px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); position: relative; z-index: 1; }
+#header .tabmenu a:hover { color: white; }
+#header .tabmenu .selected a, #header .tabmenu a:active { color: white; border-bottom-color: white; }
+
+#header-img-a { display: inline-block; margin: 0 0 45px 20px; position: relative; z-index: 2; }
+
+#header-img { margin: 0; display: block; }
+#header-img.default-header { position: relative; margin: 0 0 45px 20px; width: 32px; z-index: 2; }
+
+.pagename { display: inline-block; margin: 0px 10px 45px 10px; color: white; font: normal 24px/1 tahoma, arial, sans-serif; position: relative; z-index: 2; }
+.pagename a { letter-spacing: 1px; font-size: 36px; color: white; position: relative; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 5px rgba(0, 0, 0, 0.3); transition: text-shadow .3s; }
+.pagename a:hover { text-decoration: none; }
+
+#header-bottom-right { color: rgba(255, 255, 255, 0.8); padding: 0 10px 0 10px !important; line-height: 22px; background: rgba(51, 51, 51, 0.9); z-index: 3; top: 0 !important; bottom: auto !important; border-radius: 3px 0 0 3px; }
+#header-bottom-right:hover { background: #333333; }
+#header-bottom-right a { color: rgba(255, 255, 255, 0.8); }
+#header-bottom-right a:hover { text-decoration: underline; }
+#header-bottom-right .user { color: rgba(255, 255, 255, 0.6); }
+#header-bottom-right .gearIcon::after { color: #e6e6e6; text-shadow: none; }
+#header-bottom-right .userkarma, #header-bottom-right .userkarma a { font-weight: normal; color: #999999; }
+#header-bottom-right .message-count { color: black; display: inline; }
+
+#userbarToggle { min-height: 0 !important; border: none !important; padding: 0 5px !important; background: none !important; text-align: left !important; left: 0 !important; bottom: auto !important; width: auto !important; height: 22px !important; }
+
+.pref-lang { font-weight: normal; }
+
+body.res .RESDropdownList { width: 200px; border-radius: 0; border: none; color: black; background-color: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+body.res .RESDropdownList li { font-weight: normal; font-size: 1.2rem; line-height: 1.5; height: auto; padding: 6px 10px; width: auto; border: none; }
+body.res .RESDropdownList li, body.res .RESDropdownList li:hover, body.res .RESDropdownList a, body.res .RESDropdownList a:visited { color: inherit; }
+body.res .RESDropdownList li:hover, body.res .RESDropdownList li a:hover { color: inherit; background-color: #e0e0e0; }
+body.res .RESDropdownList .RESMenuItemButton { position: static; margin-left: -100%; float: right; }
+body.res .RESDropdownList .RESMenuItemButton:hover { color: inherit; background-color: #e0e0e0; }
+
+.subreddit-rule-form .c-form-group .label, .subreddit-rule-form .c-form-group .text-counter { color: inherit; }
+
+body.res-v430:not(.res-v4) #RESSearchMenuItem { margin: 0px; border: none; width: 13px; height: 16px; background: url(%%sprite%%) no-repeat -21px 3px; }
+
+body.res-v430:not(.res-v4) .RESDropdownList .toggleButton { margin: 0; line-height: 1; }
+
+.side { width: 310px; margin: 20px 10px 0 0; padding: 0; background: transparent; }
+.side > .spacer { display: inline; }
+.side .linkinfo { padding: 10px; line-height: 1.5; font-family: verdana, sans-serif; }
+.side .linkinfo .shortlink, .side .linkinfo .shortlink input, .side .linkinfo .score .number, .side .linkinfo .score .word { font-size: inherit; }
+.side .shortlink input { color: blue; border-color: #e6e6e6; }
+.side #search { position: relative; margin: 0 0 25px; }
+.side #search input[type=text] { width: 310px; margin-bottom: 1px; padding: 8px 8px 8px 0px; border-width: 0 0 1px; border-color: #cccccc; background: transparent; transition: all .2s; }
+.side #search input[type=text]:hover, .side #search input[type=text]:focus { box-shadow: 0 1px 0px 0 #F44336; border-color: #F44336; outline: none; }
+.side #search input[type=submit] { width: 30px; height: 30px; margin-left: -30px; opacity: .5; background: url(%%sprite%%) no-repeat -13px 9px; }
+.side #search input[type=submit]:hover { background: url(%%sprite%%) no-repeat -13px 9px; }
+.side #search #searchexpando { margin: 0px 0 0 0; padding: 20px 10px 0 10px; border: transparent; border-top: none; border-radius: 0; background: #edebe9; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); position: absolute; width: 310px; box-sizing: border-box; }
+.side #search #search_showmore:after { display: inline-block; margin: 1rem 0; }
+.side #search #moresearchinfo { padding: 20px 0 20px 0; border-width: 0; position: relative; }
+.side #search #moresearchinfo + p { margin: 10px 0 0 0; }
+.side #search #moresearchinfo + p a { line-height: 0; font-size: 0; }
+.side #search #moresearchinfo + p a:after { text-indent: 0; height: auto; line-height: 1; content: "More options..."; font-size: 12px; }
+.side #search #moresearchinfo p:first-of-type { font-weight: bold; line-height: 1; }
+.side #search #moresearchinfo #search_hidemore { display: block; color: transparent; float: none; text-align: center; margin: 0 -10px 0px -10px; padding: 0; position: absolute; top: auto; right: 0; bottom: 0; left: 0; font-size: 0; line-height: 0; border-bottom: 5px solid #F44336; }
+.side #search #moresearchinfo #search_hidemore:after { content: ""; display: inline-block; border: 8px solid transparent; border-bottom-color: #F44336; }
+.side #search dt { font-weight: normal; margin-left: 0; }
+.side #search dd { margin: 0 0 5px; color: #969696; }
+.side .morelink .nub, .side .morelink:hover .nub { display: none; }
+
+#login_login-main, #moderation_tools, #ad_main, .sidebox.create, .sidecontentbox, .account-activity-box, .linkinfo, .titlebox { margin: 10px 0 10px 0; clear: both; }
+
+body:not(.res-console-open) #RESNotifications, body:not(.res-console-open) #RESShortcutsAddFormContainer, body:not(.res-console-open) .RESDropdownList, body:not(.res-console-open):not(.modal-open) .side #search { z-index: 2147483647 !important; }
+
+.sidebox.submit { display: inline-block; box-sizing: border-box; position: absolute; top: 114px; z-index: 100; width: 136px; }
+.sidebox.submit .mod-override .morelink a:after { margin: 0; left: 0; top: -8px; }
+.sidebox.submit .mod-override .morelink:hover a:after { opacity: 1; }
+.sidebox.submit-text { right: 10px; width: 166px; }
+.sidebox:not(.create) .morelink { font: normal 1.2rem/1 tahoma, arial, sans-serif; text-transform: uppercase; font-size: 1.2rem; border: none; background: none; height: auto; letter-spacing: 0; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2); }
+.sidebox:not(.create) .morelink a { display: block; height: auto; line-height: 32px; white-space: nowrap; padding: 0px 1px; width: auto; background: rgba(255, 255, 255, 0.9); color: black; border-radius: 2px; box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); transition: all .3s; }
+.sidebox:not(.create) .morelink a:active { background: gray; }
+.sidebox:not(.create) .morelink:hover { background: none; }
+.sidebox:not(.create) .morelink:hover a { background: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+.sidebox.submit.disabled { width: 310px; }
+.sidebox.submit.disabled .morelink { display: inline-block; width: 149px; margin-right: 1px; text-transform: none; }
+.sidebox.submit.disabled .morelink a { padding-left: 5px; padding-right: 5px; color: #666666; background: #cccccc; }
+.sidebox.submit.disabled .spacer { display: inline-block; width: 150px; vertical-align: top; font-family: arial, sans-serif; background: none; box-shadow: none; border: none; }
+.sidebox.submit.disabled .spacer .subtitle { color: white; font-weight: bold; font-size: 1rem; }
+
+h1.redditname { display: none; }
+
+h1.redditname + div { text-align: right; }
+
+.side form.usertext { margin: 10px 0px 0 0; padding: 20px 10px 0px 10px; }
+.side form.usertext .md { line-height: 1.5; }
+
+.subscribe-button { margin: 5px 5px 5px 0; }
+.subscribe-button .option.active { display: block; }
+
+.subButtons { border-width: 10px 0 10px 0; border-style: solid; border-color: transparent; }
+.subButtons span { width: 100%; margin: 0; box-sizing: border-box; }
+.subButtons span:first-child { margin-right: 8px; }
+.subButtons span:last-child { margin-left: 8px; }
+.subButtons + .subscribers, .subButtons + .subscribers + .users-online { margin: 0; font-size: 1.2rem; }
+
+.side .subscribe-button a, .subButtons .RESshortcut, .subButtons .RESDashboardToggle { font: 1.3rem/32px tahoma, arial, sans-serif; text-align: center; text-transform: uppercase; transition: box-shadow .25s, background .25s, color .25s; padding: 0; border: none; white-space: nowrap; }
+
+.side .subscribe-button a { padding: 0 8px; color: white; background: #F44336; }
+
+.subButtons .subscribe-button a { padding: 0; }
+.subButtons .RESshortcut, .subButtons .RESDashboardToggle { background: white; color: #333333; border-radius: 2px; }
+
+.side .subscribe-button a.remove, .subButtons .RESshortcut.remove, .subButtons .RESDashboardToggle.remove { color: #333333; border-color: transparent; background: inherit; }
+
+.side .subscribe-button a.remove:hover, .subButtons .RESshortcut.remove:hover, .subButtons .RESDashboardToggle.remove:hover { box-shadow: none; }
+
+.titlebox { margin-left: 0; margin-right: 0; background: transparent; color: gray; }
+.titlebox .subscribers, .titlebox .users-online { display: inline-block; font-size: 1.1rem; font-family: arial, sans-serif; vertical-align: baseline; margin-top: 0; margin-bottom: 0; }
+.titlebox .subscribers { margin-right: 1rem; }
+.titlebox .users-online:before { content: none; }
+.titlebox .users-online .number:after { content: " here now"; }
+.titlebox .users-online .word { display: none; }
+.titlebox .bottom { color: #999999; border: none; padding: 10px 0 0 0; }
+.titlebox .bottom a { color: inherit; }
+
+.titlebox form.toggle, .leavemoderator { font-size: 1.1rem; color: #666666; background: none; padding: 10px 0 0 0; clear: left; }
+
+.link .usertext-body .md { border: none; background: none; border-radius: 0; padding: 0 0 10px; }
+
+.usertext-body > .md { padding-right: 0; }
+
+ul.tabmenu.formtab { margin: 0 0 5px; padding: 0; font-size: 1.3rem; text-transform: uppercase; text-align: center; }
+ul.tabmenu.formtab li { display: inline-block; }
+ul.tabmenu.formtab li.selected a { font-size: inherit; background: none; color: inherit; border-bottom: 2px solid; }
+ul.tabmenu.formtab a { display: block; padding: 5px 15px; border: none; color: gray; background: none; }
+ul.tabmenu.formtab a:hover { color: inherit; }
+
+.formtabs-content { border-top: none; }
+.formtabs-content .roundfield { border-radius: 0; }
+
+form .spacer + .spacer { margin: 0px 0; }
+
+.organic-listing.loading { display: none; }
+
+.md hr { height: 1px; margin: 10px 0px; background: #e0e0e0; }
+
+.side .md hr { margin: 10px -10px; }
+.side .md > blockquote hr { width: auto; background: rgba(255, 255, 255, 0.12); }
+
+.link { margin: 0 -10px; padding: 10px 10px 0 10px; }
+.link .flat-list { padding: 0; margin-bottom: 8px; }
+.link .entry { overflow: visible; margin-left: 64px; }
+.link .title { font: 1.8rem/1.1 arial, sans-serif; text-rendering: optimizeLegibility; margin: 0; }
+.link .title + .expando-button { margin: 7px 5px 0 0; }
+.link .midcol { font-weight: normal; margin-top: 1px; }
+.link .tagline { margin: 2px 0; }
+.link .tagline:first-letter { text-transform: capitalize; }
+.link .rank { position: absolute; font-size: 1.2rem; left: -10px; line-height: 2em; padding: 0px 3px; background: #e6e6e6; color: #999999; border-radius: 50%; text-align: center; opacity: 0; transition: opacity .1s; }
+.link:hover .rank { opacity: 1; }
+
+body.listing-page .link .entry { border-bottom: 1px solid #e0e0e0; }
+
+.link .thumbnail + .entry { margin-left: 165px; }
+
+body.comments-page .link:not(.self) .thumbnail:not(.default) + .entry { margin-left: 210px; }
+
+.link div.madeVisible { overflow: visible; position: relative; background: white; }
+
+.link .thumbnail + .entry div.madeVisible { margin-left: -101px; }
+
+body.comments-page .link .thumbnail + .entry div.madeVisible { margin-left: -156px; }
+
+div.madeVisible a.madeVisible { overflow: visible; }
+div.madeVisible a.madeVisible video, div.madeVisible a.madeVisible img { display: block; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+
+.error { color: #d92626; }
+
+#noresults { font-size: 0; text-align: center; margin-right: 0; color: transparent; }
+#noresults:after { font-size: 2rem; content: "Why not add something?"; color: gray; display: block; margin: 2rem 0; }
+
+.thing.stickied.link a.title { font-weight: normal; }
+
+body > .content .link .midcol, .midcol-spacer { width: 50px !important; }
+
+.tagline { line-height: 1.4; transition: background .1s; }
+
+.comment .tagline { display: block; }
+
+.tagline, .search-result-meta { color: #333333; font-size: 1.1rem; }
+
+.tagline a, .search-result-meta a { color: inherit; }
+
+.entry .buttons li, .entry .buttons li + li { padding: 0; }
+.entry .buttons li a { font-weight: normal; font-size: 1.1rem; color: #7b929d; text-transform: capitalize; padding: 2px 6px; border-radius: 3px; }
+.entry .buttons li a:hover { color: black; text-decoration: none; }
+.entry .buttons li:first-of-type a { padding-left: 0; }
+
+.panestack-title { margin: 10px -10px; padding: 15px 20px 10px 20px; border-top: 1px solid #e0e0e0; border-bottom: none; text-transform: capitalize; }
+
+.wiki-page .wikititle, .wiki-page .pageactions { display: inline-block; margin: 0 10px 15px 0; }
+.wiki-page .wiki-page-content { margin: 0; }
+
+.wiki-page-content .md pre { border-color: #cccccc; }
+
+.commentarea .menuarea, .sheets { margin-right: 0; }
+
+.gold-accent.comment-visits-box { max-width: none !important; display: block; }
+
+.rounded { border-radius: 3px; }
+
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .side .md h1, .side .md h2, .side .md h3, .side .md h4, .side .md h5, .side .md h6, .wiki-page-content .md h1, .wiki-page-content .md h2, .wiki-page-content .md h3, .wiki-page-content .md h4, .wiki-page-content .md h5, .wiki-page-content .md h6, h2#wiki_heading_2 { color: inherit; font-weight: normal; font-family: tahoma, arial, sans-serif; line-height: 1; margin: 1.2em 0 .5em; }
+
+.md h1 { font-size: 2rem; }
+
+.side .md h1, .wiki-page-content .md h1 { font-size: 2.25rem; margin: .5em 0 .5em; }
+
+.side .md h2, .wiki-page-content .md h2 { font-size: 2rem; }
+
+.side .md h3, .wiki-page-content .md h3 { font-size: 1.75rem; font-weight: normal; }
+
+.side .md h4, .wiki-page-content .md h4 { font-size: 1.6rem; font-style: normal; }
+
+.side .md h5, .wiki-page-content .md h5 { font-size: 1.4rem; text-decoration: none; }
+
+.side .md h6, .wiki-page-content .md h6 { font-size: 1.3rem; text-decoration: none; text-transform: none; }
+
+.side .md ul { padding-left: 16px; }
+.side .md ul, .side .md ol { margin-top: 10px; margin-bottom: 10px; }
+.side .md ul li, .side .md ol li { line-height: 1.6; }
+.side .md p { line-height: inherit; }
 
 /* addon blockquote-cards */
-.side .md > blockquote,
-.side .md > blockquote blockquote {
-	color: hsl(0,0%,100%);
-}
-.side .md > blockquote {
-	margin: 15px 10px 20px 10px;
-	padding: 10px;
-	border: none;
-	background: hsl(200,20%,50%);
-	border-radius: 3px;
-}
-.side .md > blockquote h2 {
-	margin-right:-10px;
-	margin-left:-10px;
-	margin-top: .5em;
-	padding: 3px 10px;
-	color: inherit;
-	text-decoration: none;
-}
-.side .md > blockquote a {
-	color: white;
-	border-bottom: 1px solid hsla(0,0%,100%,.4);
-}
-.side .md > blockquote a:hover {
-	border-bottom-color: hsla(0,0%,100%,.8);
-}
-/* .end */
+.side .md > blockquote { margin: 15px 10px 20px 10px; padding: 10px; color: white; border: none; background: #668899; border-radius: 3px; }
+.side .md > blockquote blockquote { color: white; }
+.side .md > blockquote h2 { margin-right: -10px; margin-left: -10px; margin-top: .5em; padding: 3px 10px; color: inherit; text-decoration: none; }
+.side .md > blockquote a { color: white; border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
+.side .md > blockquote a:hover { border-bottom-color: rgba(255, 255, 255, 0.8); }
 
-/* button common styles */
-.side .md a[title="click"],
-.usertext button,
-#url-field button,
-.usertext-buttons button.save  {
-	display: inline-block;
-	margin: 0;
-	padding: 0 8px;
-	border-radius: 2px;
-	text-transform: uppercase;
-	font: 1.3rem/32px tahoma, arial, sans-serif;
-	border: none;
-	background: none;
-	transition: all .25s;
-}
-.content .RESBigEditorPop,
-.usertext button.cancel,
-#url-field button  {
-	margin: 0 0 0 8px;
-}
-/* addon flat-button */
-.side .md > blockquote a[title="click"],
-.usertext button,
-#url-field button {
-	color: hsla(0,0%,100%,.8);
-}
-.side .md > blockquote a[title="click"]:hover,
-.usertext button:hover,
-#url-field button:hover  {
-	background: hsla(200,100%,0%,.12);
-	text-decoration: none;
-}
-.usertext button,
-#url-field button {
-	color: hsl(200,70%,0%);
-}
 /* .end */
+.content .RESBigEditorPop, .usertext button.cancel, #url-field button { margin: 0 0 0 8px; }
 
-/* addon raised-button */
-.side .md > p a[title="click"],
-.usertext-buttons button.save {
-	color: white;
-	background: hsl(200,20%,50%);
-	transition: box-shadow .25s;
-}
-.side .md > p a[title="click"]:hover,
-.side .subscribe-button a:hover,
-.side .subButtons .RESshortcut:hover,
-.side .subButtons .RESDashboardToggle:hover,
-.usertext-buttons button.save:hover {
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-/* .end */
+.usertext button, #url-field button { color: black; }
 
-.res-commentBoxes .comment {
-	overflow: visible;
-}
-.link .usertext .usertext-edit > .md {
-	padding-left: 0;
-}
-body:not(.submit-page) .usertext .bottom-area {
-	overflow: visible;
-	width: auto;
-}
-.usertext .help-toggle,
-.usertext a.reddiquette {
-	line-height: 32px;
-	margin: 0 5px;
-}
-.usertext .help-toggle a,
-.usertext a.reddiquette {
-	color: hsl(0,0%,60%);
-}
-body:not(.submit-page) .usertext-buttons {
-	padding-bottom: 7px;
-}
-.usertext-buttons .status {
-	font-size: 1rem;
-}
+.side .subscribe-button a:hover, .side .subButtons .RESshortcut:hover, .side .subButtons .RESDashboardToggle:hover { box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
+
+.link .usertext .usertext-edit > .md { padding-left: 0; }
+
+body:not(.submit-page) .usertext .bottom-area { overflow: visible; width: auto; }
+
+.usertext .help-toggle, .usertext a.reddiquette { line-height: 32px; margin: 0 5px; }
+
+.usertext .help-toggle a, .usertext a.reddiquette { color: #999999; }
+
+body:not(.submit-page) .usertext-buttons { padding-bottom: 7px; }
+
+.usertext-buttons .status { font-size: 1rem; }
 
 /* addon side-menu */
-.side .md > h5 + ul {
-	margin: 10px -10px 20px -10px;
-	padding: 0;
-	list-style: none;
-	font-size: 1.4rem;
-	cursor: default;
-}
-.side .md > h5 + ul > li {
-	padding: 6px 10px 6px 30px;
-	position: relative;
-	transition: background .1s;
-}
-.side .md > h5 + ul > li > sup,
-.side .md > h5 + ul > li > p sup {
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	display: block;
-	overflow: hidden;
-	text-indent: -1000px;
-	width: 10px;
-	height: 12px;
-	opacity: .4;
-	background-position: -20px -22px;
-	background-image: url(%%sprite%%);
-	pointer-events: none;
-}
-.side .md > h5 + ul > li:hover > sup,
-.side .md > h5 + ul > li:hover > p sup{
-	left: 8px;
-}
-.side .md > h5 + ul > li > p,
-.side .md > h5 + ul > li > ul > li > p {
-	margin: 0;
-}
-.side .md > h5 + ul > li > a,
-.side .md > h5 + ul > li > p > a {
-	display: block;
-	margin: -6px -10px -6px -30px;
-	padding: 6px 10px 6px 30px;
-	white-space: nowrap;
-	overflow-x: hidden;
-	text-overflow: ellipsis;
-}
-.side .md > h5 + ul > li:hover,
-.side .md > h5 + ul > li > ul > li:hover > a {
-	background: hsl(0,0%,93%);
-}
-.side .md > h5 + ul > li:hover > p > a,
-.side .md > h5 + ul > li > ul > li > a:hover,
-.side .md > h5 + ul > li > ul > li > p a:hover {
-	color: #0079d3;
-}
-/* .end */
+.side .md > h5 + ul { margin: 10px -10px 20px -10px; padding: 0; list-style: none; font-size: 1.4rem; cursor: default; }
+.side .md > h5 + ul > li { padding: 6px 10px 6px 30px; position: relative; transition: background .1s; }
+.side .md > h5 + ul > li:hover > ul { visibility: visible; opacity: 1; right: 300px; }
+.side .md > h5 + ul > li > sup, .side .md > h5 + ul > li > p sup { position: absolute; top: 11px; left: 10px; display: block; overflow: hidden; text-indent: -1000px; width: 10px; height: 12px; opacity: .4; background-position: -20px -22px; background-image: url(%%sprite%%); pointer-events: none; }
+.side .md > h5 + ul > li:hover > sup, .side .md > h5 + ul > li:hover > p sup { left: 8px; }
+.side .md > h5 + ul > li > p, .side .md > h5 + ul > li > ul > li > p { margin: 0; }
+.side .md > h5 + ul > li > a, .side .md > h5 + ul > li > p > a { display: block; margin: -6px -10px -6px -30px; padding: 6px 10px 6px 30px; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
+.side .md > h5 + ul > li:hover, .side .md > h5 + ul > li > ul > li:hover > a { background: #e0e0e0; }
+.side .md > h5 + ul > li:hover > p > a, .side .md > h5 + ul > li > ul > li > a:hover, .side .md > h5 + ul > li > ul > li > p a:hover { color: #0079d3; }
+.side .md > h5 + ul > li > ul { visibility: hidden; opacity: 0; position: absolute; top: 0px; right: 295px; width: 300px; max-height: 700px; overflow-y: auto; list-style: none; margin: 0; padding: 8px 0; z-index: 101; border-radius: 2px; background: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); transition-property: visibility opacity; transition-duration: .2s; transition-delay: .12s; }
+.side .md > h5 + ul > li > ul > li { padding: 6px 10px; }
+.side .md > h5 + ul > li > ul > li > a, .side .md > h5 + ul > li > ul > li > p a { display: block; margin: -6px -10px; padding: 6px 10px; }
 
-/* addon side-menu-dropdown */
-.side .md > h5 + ul > li > ul {
-	visibility: hidden;
-	opacity: 0;
-	position: absolute;
-	top: 0px;
-	right: 295px;
-	width: 300px;
-	max-height: 700px;
-	overflow-y: auto;
-	list-style: none;
-	margin: 0;
-	padding: 8px 0;
-	z-index: 101;
-	border-radius: 2px;
-	background: white;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	transition-property: visibility opacity;
-	transition-duration: .2s;
-	transition-delay: .12s;
-}
-.side .md > h5 + ul > li:hover > ul {
-	visibility: visible;
-	opacity: 1;
-	right: 300px;
-}
-.side .md > h5 + ul > li > ul > li {
-	padding: 6px 10px;
-}
-.side .md > h5 + ul > li > ul > li > a,
-.side .md > h5 + ul > li > ul > li > p a {
-	display: block;
-	margin: -6px -10px;
-	padding: 6px 10px;
-}
 /* .end */
+body.submit-page > .content { border: none; background: none; padding: 0; }
+body.submit-page .formtabs-content { width: auto; }
+body.submit-page .formtabs-content .roundfield { max-width: 520px; width: auto; box-sizing: border-box; background-color: white; }
+body.submit-page .formtabs-content .submit_text > h1 { display: none; }
+body.submit-page:not(.res-nightmode) .formtabs-content .submit_text { padding: 20px 10px; }
+body.submit-page form .spacer:first-of-type, body.submit-page form .spacer:last-of-type { margin: 0 auto 15px auto; width: 520px; }
 
-body.submit-page .formtabs-content .roundfield {
-  max-width: 520px;
-  width: auto;
-  box-sizing: border-box;
-	background-color: white;
-}
-body.submit-page:not(.res-nightmode) .formtabs-content .submit_text {
-  padding: 20px 10px;
-}
-body.submit-page .formtabs-content .submit_text > h1 {
-  display: none;
-}
-.submit_text.enabled {
-	display: block;
-	max-height: 500px;
-}
-body.submit-page .formtabs-content {
-  width: auto;
-}
-body.submit-page > .content {
-	border: none;
-	background: none;
-	padding: 0;
-}
-body.submit-page form .spacer:first-of-type,
-body.submit-page form .spacer:last-of-type {
-	margin: 0 auto 15px auto;
-	width: 520px;
-}
-.roundfield,
-.linefield {
-	margin: 1px auto;
-	padding: 5px 10px 15px;
-}
-div.save-button,
-form.submit > .spacer {
-	margin: 20px auto;
-	width: 520px;
-}
-#suggested-reddits {
-	font-size: 1.2rem;
-	font-family: arial;
-	text-align: center;
-	overflow-y: auto;
-	margin: 10px -10px -10px;
-	padding: 1px 0;
-}
-#suggested-reddits > h3 {
-	display: none;
-}
-#suggested-reddits li {
-	display: inline-block;
-	margin: 0 0 4px 0;
-}
-#suggested-reddits li a {
-	display: block;
-	padding: 2px 8px;
-	color: hsl(0,0%,50%);
-}
-#suggested-reddits li a:hover {
-	color: hsl(0,0%,30%);
-	outline: 1px solid hsl(0,0%,80%);
-}
-/**
- * Boxes
- */
-body > div.content,
-.linkinfo,
-.sidecontentbox,
-.login-form-side,
-.sidebox .spacer,
-.side form.usertext {
-	background: white;
-	border: 1px solid hsl(30,20%,85%);
-	border-radius: 2px;
-}
-.sidecontentbox,
-.login-form-side {
-	padding: 10px;
-}
-.sidecontentbox .content {
-	border: none;
-	font-size: 1.2rem;
-}
-.sidebox .spacer {
-	margin-top: 0;
-	padding: 10px 10px 10px 54px;
-}
-.sidebox .spacer a {
-	top: 10px;
-	left: 10px;
-}
-.side .subscribe-button a,
-.side .subButtons .RESshortcut,
-.side .subButtons .RESDashboardToggle {
-	font: 1.3rem/32px tahoma, arial, sans-serif;
-	text-align: center;
-	text-transform: uppercase;
-	transition: box-shadow .25s, background .25s, color .25s;
-	padding: 0;
-	border: none;
-	white-space: nowrap;
-}
-.side .subscribe-button a {
-	padding: 0 8px;
-	color: white;
-	background: #F44336;
-}
-.side .subButtons .subscribe-button a {
-	padding: 0;
-}
-.side .subButtons .RESshortcut,
-.side .subButtons .RESDashboardToggle {
-	background: white;
-	color: hsl(0,0%,20%);
-	border-radius: 2px;
-}
-/* subscribe */
-.side .subscribe-button {
-	margin: 5px 5px 5px 0;
-}
-.side .subscribe-button .option.active {
-	display: block;
-}
-/* selected */
-.side .subscribe-button a.remove,
-.side .subButtons .RESshortcut.remove,
-.side .subButtons .RESDashboardToggle.remove {
-	color: hsl(0,0%,20%);
-	border-color: transparent;
-	background: inherit;
-}
-.side .subscribe-button a.remove:hover,
-.side .subButtons .RESshortcut.remove:hover,
-.side .subButtons .RESDashboardToggle.remove:hover {
-	box-shadow: none;
-}
-/**
- * links
- */
-.thing .title {
-	color: hsl(210,100%,45%);
-}
-.thing .title:visited, .thing.visited .title {
-	color: hsl(300,10%,50%);
-}
-body:not(.res-styleTweaks-visitedStyle) .comment .md a:visited,
-body:not(.res-styleTweaks-visitedStyle) .link.self .md a:visited {
-	color: hsl(280,60%,40%);
-}
-body.comments-page .link a.title {
-	/*color: black;*/
-	font-size: 2.2rem;
-}
-/* hide redundant headings */
-body.submit-page > div.content > h1,
-.searchpane h4,
-body.submit-page .formtabs-content .spacer:last-of-type .title {
-	display: none;
-}
-#reddit-field .title {
-	font-size: 0;
-	line-height: 0;
-}
-#reddit-field .title:after {
-	content: "subreddit";
-	font-size: large;
-	line-height: 1;
-}
-#progressIndicator, .NERPageMarker {
-	width: auto;
-	margin: 20px 0px 10px 0px;
-	color: black;
-	font-size: 1.2rem;
-	border-color: hsl(0,0%,85%);
-	background-color: hsl(0,0%,97%);
-}
-.NERPageMarker {
-	font-size: 1.2rem;
-	line-height: 1.4;
-	color: hsl(0,0%,100%);
-	border-color: transparent;
-	background-color: hsl(250,5%,30%);
-}
-#progressIndicator h2 {
-	display: none;
-}
-#progressIndicator:hover {
-	background-color: transparent;
-}
-.link .rank {
-	position: absolute;
-	font-size: 1.2rem;
-	left: -10px;
-	line-height: 2em;
-	padding: 0px 3px;
-	background: hsl(0,0%,90%);
-	color: hsl(0,0%,60%);
-	border-radius: 50%;
-	text-align: center;
-	opacity: 0;
-	transition: opacity .1s;
-}
-.link:hover .rank {
-	opacity: 1;
-}
-/**
- * Thumbnails
- */
-.link .thumbnail {
-	margin-bottom: 10px;
-}
-.thing:not(.self) .thumbnail:not(.default):not(.nsfw) {
-	width: 90px;
-	height: 60px;
-	margin: -5px 0 10px 0;
-	position: relative;
-}
-.thing:not(.self) .thumbnail:not(.default) img {
-	width: 90px;
-	height: auto;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default):hover img {
-	width: 140px;
-	top: -30px;
-	left: -25px;
-}
-body.comments-page .thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default) {
-	width: auto;
-	height: auto;
-	margin: 0 10px 0 0;
-	position: static;
-}
-body.comments-page .thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default) img {
-	width: auto;
-	position: static;
-}
-.commentarea .menuarea {
-	margin-right: 0;
-}
-.commentarea>.usertext {
-	margin: 0 -10px 20px;
-	padding: 10px 10px 7px 20px;
-}
-.wiki-page .wikititle,
-.wiki-page .pageactions {
-	display: inline-block;
-	margin: 0 10px 15px 0;
-}
-.wiki-page-content .md pre {
-	border-color: hsl(0,0%,80%);
-}
-.login-form-side input[type=text],
-.login-form-side input[type=password] {
-	box-sizing: border-box;
-	border-color: hsl(0,0%,70%);
-	margin: 0;
-	width: 142px;
-}
-.login-form-side input[type=text] {
-	margin-right: 4px;
-}
-.login-form-side .submit {
-	margin-right: 0;
-}
-ul#image-preview-list {
-	margin-right: 0;
-	font-size: 1.2rem;
-}
-ul#image-preview-list li {
-	margin-bottom: 0;
-	width: 50%;
-	height: auto;
-	float: none;
-	display: inline-block;
-}
-/**
- * addon search-results
- */
-.search-result-group {
-	max-width: none;
-	padding: 0;
-}
-.search-summary {
-  display: none;
-}
-.combined-search-page .search-result-group .search-result-group-header {
-  margin: 0;
-}
-.combined-search-page .search-result {
-  margin: 0;
-  position: relative;
-	transition: background-color 1s ease 1s;
-}
-.combined-search-page .search-result:not(.search-result-subreddit) > div {
-	padding: 10px 0;
-	border-bottom: 1px solid hsl(0,0%,93%);
-}
-.combined-search-page .search-result:hover {
-  background-color: rgb(250,250,250);
-}
-.search-result.has-thumbnail>.thumbnail {
-	margin: 10px 10px 0 0;
-}
-.combined-search-page .search-result.has-thumbnail .thumbnail.self {
-  visibility: hidden;
-  display: block;
-}
-/* Submission with no thumbnail */
-.combined-search-page .search-result-link:not(.has-thumbnail) {
-	margin-left: 80px;
-}
-/* create empty thumbnail */
-.combined-search-page .search-result-link:not(.has-thumbnail):before {
-  content: " ";
-  display: block;
-  margin: 0 10px 0 0;
-}
-.combined-search-page .search-result .search-result-header .search-title {
-  font-size: 14px;
-}
-.combined-search-page .search-result .search-result-meta {
-  font-size: 11px;
-}
-.combined-search-page .search-result .search-result-icon-score {
-  display: none;
-}
-.combined-search-page .search-result .search-subreddit-link {
-  font-weight: bold;
-}
-.combined-search-page .search-result-subreddit .search-subscribe-button .add, .combined-search-page .search-result-subreddit .search-subscribe-button .remove {
-  width: auto;
-}
-.combined-search-page .search-result-link .search-expando.collapsed {
-  height: 0px;
-  max-height: none;
-  width: 24px;
-  position: absolute;
-  margin-left: -35px;
-  top: 30px;
-  overflow: visible;
-}
-.combined-search-page .search-result-link .search-expando.collapsed:before {
-  width: 24px;
-  height: 24px;
-  font: 16px/1 "times";
-  color: rgb(51, 102, 153);
-  border: 1px solid rgb(51, 102, 153);
-  border-radius: 5px;
-  background: rgb(255,255,255);
-  top: -24px;
-  content: "Aa";
-  display: block;
-  text-align: center;
-  cursor: default;
-}
-.combined-search-page .search-result-link .search-expando.collapsed:hover {
-  width: 90%;
-  height: auto;
-  z-index: 1;
-}
-.combined-search-page .search-result-link .search-result-body {
-  padding: 10px;
-  background-color: white;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.combined-search-page .search-result-link .search-expando.collapsed .search-result-body {
-  visibility: hidden;
-  opacity: 0;
-	transition: opacity .1s;
-}
-.combined-search-page .search-result-link .search-expando.collapsed:hover .search-result-body {
-	visibility: visible;
-  opacity: 1;
-}
-.combined-search-page .search-result-link .search-result-body .md {
-  overflow: auto;
-  height: auto;
-  max-height: 300px;
-	max-width: none;
-	background: white;
-	padding: 10px;
-}
-.combined-search-page .search-expando-button {
-  display: none;
-}
-/* facets */
-.combined-search-page .searchfacets:not(.res-search-pane) {
-  position: fixed;
-  top: 40%;
-  left: 0px;
-  margin: 0;
-  padding: 0;
-  border: 1px solid rgb(95, 153, 207);
-  background-color: rgb(255,255,255);
-  z-index: 2;
-  overflow: hidden;
-  width: 19px;
-  height: 125px;
-  min-width: 0;
-  transition: width .2s, padding .2s;
-  box-shadow: none;
-  box-sizing: content-box;
-}
-.combined-search-page .searchfacets:not(.res-search-pane):hover {
-  width: 600px;
-  height: auto;
-  max-width: none;
-  min-width: 0;
-  padding: 10px 20px 10px 40px;
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,.2);
-}
-.combined-search-page .searchfacets:not(.res-search-pane):before {
-  content: "Filter by sub";
-  font: normal normal 12px/20px sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgb(50,100,150);
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  transform: rotate(270deg);
-  display: block;
-  width: 125px;
-  height: 20px;
-  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(220, 220, 220));
-  left: -53px;
-  top: 52px;
-  position: absolute;
-  cursor: default;
-}
-.combined-search-page .searchfacets:not(.res-search-pane) h4.title,
-.combined-search-page .searchfacets:not(.res-search-pane) .list {
-  width: 600px;
-}
-.combined-search-page .searchfacets .list {
-  line-height: 0;
-}
-.searchfacets:not(.res-search-pane) .title {
-  margin: 0;
-}
-/* RES nightmode */
-.res-nightmode .combined-search-page .search-result-link .search-result-body {
-  background-color: rgb(34,34,34);
-  border-color: rgb(80,80,80);
-}
-.res-nightmode .combined-search-page .search-result {
-  border-bottom-color: rgba(255,255,255,.2);
-}
-.res-nightmode .combined-search-page .search-result:hover {
-  background-color: rgb(44,44,44);
-}
-.res-nightmode .combined-search-page .search-result .search-expando.collapsed {
-  color: rgb(150,150,150);
-}
-.res-nightmode .combined-search-page .search-result-link .search-expando.collapsed:before {
-  color: rgb(150, 150, 150);
-  border-color: rgb(150, 150, 150);
-  background-color: transparent;
-}
-.res-nightmode .combined-search-page .search-result .search-result-body,
-.res-nightmode .combined-search-page .search-result .md {
-  color: rgb(150,150,150);
-}
-.res-nightmode .combined-search-page .searchfacets a {
-  color: rgb(20, 150, 220);
-}
-.res-nightmode .combined-search-page .searchfacets {
-  border-color: rgb(80, 80, 80);
-  background-color: rgb(34,34,34);
-}
-.res-nightmode .combined-search-page .searchfacets:before {
-  color: rgb(150,150,150);
-  background: linear-gradient(to bottom, rgb(80, 80, 80), rgb(60, 60, 60));
-}
+.submit_text.enabled { display: block; max-height: 500px; }
+
+.roundfield, .linefield { margin: 1px auto; padding: 5px 10px 15px; }
+
+div.save-button, form.submit > .spacer { margin: 20px auto; width: 520px; }
+
+#suggested-reddits { font-size: 1.2rem; font-family: arial; text-align: center; overflow-y: auto; margin: 10px -10px -10px; padding: 1px 0; }
+#suggested-reddits > h3 { display: none; }
+#suggested-reddits li { display: inline-block; margin: 0 0 4px 0; }
+#suggested-reddits li a { display: block; padding: 2px 8px; color: gray; }
+#suggested-reddits li a:hover { color: #4d4d4d; outline: 1px solid #cccccc; }
+
+.sidecontentbox, .login-form-side { padding: 10px; }
+
+.sidecontentbox .content { border: none; font-size: 1.2rem; }
+
+.sidebox .spacer { margin-top: 0; padding: 10px 10px 10px 54px; }
+.sidebox .spacer a { top: 10px; left: 10px; }
+
+.thing .title { color: #0073e6; }
+
+.thing .title:visited, .thing.visited .title { color: #8c738c; }
+
+body:not(.res-styleTweaks-visitedStyle) .comment .md a:visited, body:not(.res-styleTweaks-visitedStyle) .link.self .md a:visited { color: #8114b8; }
+
+body.comments-page .link a.title { font-size: 2.2rem; }
+
+body.submit-page > div.content > h1, .searchpane h4, body.submit-page .formtabs-content .spacer:last-of-type .title { display: none; }
+
+#reddit-field .title { font-size: 0; line-height: 0; }
+#reddit-field .title:after { content: "subreddit"; font-size: large; line-height: 1; }
+
+body.res #progressIndicator { font-size: 1.2rem; width: auto; margin: 20px 0px 10px 0px; color: black; border-color: #d9d9d9; background-color: #f7f7f7; }
+body.res #progressIndicator h2 { display: none; }
+body.res #progressIndicator:hover { background-color: transparent; }
+
+body.res .NERPageMarker { font-size: 1.2rem; width: auto; margin: 20px 0px 10px 0px; line-height: 1.4; color: white; border-color: transparent; background-color: #4a4950; }
+
+.link .thumbnail { margin-bottom: 10px; }
+
+.thing:not(.self) .thumbnail:not(.default):not(.nsfw) { width: 90px; height: 60px; margin: -5px 0 10px 0; position: relative; }
+.thing:not(.self) .thumbnail:not(.default) img { width: 90px; height: auto; display: block; position: absolute; top: 0; left: 0; }
+.thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default):hover img { width: 140px; top: -30px; left: -25px; }
+
+body.comments-page .thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default) { width: auto; height: auto; margin: 0 10px 0 0; position: static; }
+
+body.comments-page .thing:not(.self):not([data-domain="reddit.com"]) .thumbnail:not(.default) img { width: auto; position: static; }
+
+.commentarea .menuarea { margin-right: 0; color: #b3b3b3; }
+.commentarea .menuarea > div:hover { color: black; }
+.commentarea > .usertext { margin: 0 -10px 20px; padding: 10px 10px 7px 20px; }
+
+.login-form-side input[type=text], .login-form-side input[type=password] { box-sizing: border-box; border-color: #b3b3b3; margin: 0; width: 142px; }
+.login-form-side input[type=text] { margin-right: 4px; }
+.login-form-side .submit { margin-right: 0; }
+
+ul#image-preview-list { margin-right: 0; font-size: 1.2rem; }
+ul#image-preview-list li { margin-bottom: 0; width: 50%; height: auto; float: none; display: inline-block; }
+
+/* addon search-results */
+#previoussearch label { display: inline-block; }
+
+.search-summary { display: none; }
+
+.combined-search-page .searchpane { margin: 10px 0 20px 0; padding: 0; }
+.combined-search-page #search { padding: 0; white-space: normal; }
+.combined-search-page #search input[type="text"] { max-width: none; margin-right: -35px; padding-right: 35px; border-color: #4f86b5; }
+.combined-search-page #search .search-submit-button { margin: 0; width: 35px; height: 2.5em; padding: 0; border: none; border-radius: 0 3px 3px 0; }
+.combined-search-page .search-result-group { max-width: none; padding: 0; }
+.combined-search-page .search-result-group .search-result-group-header { margin: 0; }
+.combined-search-page .search-result { margin: 0; position: relative; transition: background-color 1s ease 1s; }
+.combined-search-page .search-result:not(.search-result-subreddit) > div { padding: 10px 0; border-bottom: 1px solid #ededed; }
+.combined-search-page .search-result:hover { background-color: #fafafa; }
+.combined-search-page .search-result.has-thumbnail .thumbnail { margin: 10px 10px 0 0; }
+.combined-search-page .search-result.has-thumbnail .thumbnail.self { visibility: hidden; display: block; }
+.combined-search-page .search-result .search-result-header .search-title { font-size: 14px; }
+.combined-search-page .search-result .search-result-meta { font-size: 11px; }
+.combined-search-page .search-result .search-result-icon-score { display: none; }
+.combined-search-page .search-result .search-subreddit-link { font-weight: bold; }
+.combined-search-page .search-result-subreddit { padding: 5px 0; }
+.combined-search-page .search-result-subreddit .search-subscribe-button .add, .combined-search-page .search-result-subreddit .search-subscribe-button .remove { width: auto; }
+.combined-search-page .search-result-link:not(.has-thumbnail) { margin-left: 80px; display: block; }
+.combined-search-page .search-result-link:not(.has-thumbnail):before { content: " "; display: block; margin: 0 10px 0 0; }
+.combined-search-page .search-result-link .search-expando.collapsed { height: 0px; max-height: none; width: 24px; position: absolute; margin-left: -35px; top: 30px; overflow: visible; }
+.combined-search-page .search-result-link .search-expando.collapsed:before { width: 24px; height: 24px; font: 16px/1 "times"; color: #336699; border: 1px solid #336699; border-radius: 5px; background: white; top: -24px; content: "Aa"; display: block; text-align: center; cursor: default; }
+.combined-search-page .search-result-link .search-expando.collapsed:hover { width: 90%; height: auto; z-index: 1; }
+.combined-search-page .search-result-link .search-result-body { padding: 10px; background-color: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+.combined-search-page .search-result-link .search-expando.collapsed .search-result-body { visibility: hidden; opacity: 0; transition: opacity .1s; }
+.combined-search-page .search-result-link .search-expando.collapsed:hover .search-result-body { visibility: visible; opacity: 1; }
+.combined-search-page .search-result-link .search-result-body .md { overflow: auto; height: auto; max-height: 300px; max-width: none; background: white; padding: 10px; }
+.combined-search-page .search-expando-button { display: none; }
+.combined-search-page .searchfacets .list { line-height: 0; }
+.combined-search-page .searchfacets:not(.res-search-pane) { position: fixed; top: 40%; left: 0px; margin: 0; padding: 0; border: 1px solid #5f99cf; background-color: white; z-index: 2; overflow: hidden; width: 19px; height: 125px; min-width: 0; transition: width .2s, padding .2s; box-shadow: none; box-sizing: content-box; }
+.combined-search-page .searchfacets:not(.res-search-pane):hover { width: 600px; height: auto; max-width: none; min-width: 0; padding: 10px 20px 10px 40px; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+.combined-search-page .searchfacets:not(.res-search-pane):before { content: "Filter by sub"; font: normal normal 12px/20px sans-serif; text-align: center; text-transform: uppercase; letter-spacing: 1px; color: #326496; display: block; width: 125px; height: 20px; background: linear-gradient(to bottom, white, gainsboro); left: -53px; top: 52px; position: absolute; cursor: default; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -ms-transform: rotate(270deg); transform: rotate(270deg); }
+.combined-search-page .searchfacets:not(.res-search-pane) h4.title, .combined-search-page .searchfacets:not(.res-search-pane) .list { width: 600px; }
+
+.searchfacets:not(.res-search-pane) .title { margin: 0; }
+
 /* .end */
-.commentarea .menuarea {
-	color: hsl(0,0%,70%);
-}
-.commentarea .menuarea > div:hover {
-	color: black;
-}
-#REScommentNavToggle {
-	display: inline;
-	padding-left: 1rem;
-}
-#REScommentNavToggle > .commentNavSortType {
-	font-weight: normal;
-	color: hsl(0,0%,40%);
-	border: none;
-	margin: 0 5px;
-	padding: 0;
-}
-#REScommentNavToggle > span:not(:first-of-type) {
-	display: none;
-}
-body.moderator #REScommentNavToggle {
-	display: block;
-	padding: 1em 0 0;
-}
-.infobar {
-	margin: 10px 0;
-	padding: 10px;
-	border-color: hsl(50, 70%, 70%);
-	background: hsl(50, 90%, 90%);
-}
-.RESDialogSmall {
-	z-index: 100 !important;
-}
-.res-commentBoxes body > .content {
-	padding-right: 10px !important;
-}
-.link.last-clicked {
-	border: none;
-}
-.nav-buttons {
-	margin: 10px -10px 0 -10px;
-	padding: 20px 10px 10px 10px;
-	border-top: 1px solid hsl(0,0%,90%);
-}
-.nextprev a, .next-suggestions a {
-	display: inline-block;
-}
-body.with-listing-chooser #header .pagename {
-	position: relative;
-	bottom: auto;
-}
-body.with-listing-chooser .listing-chooser {
-	z-index: 100;
-	border-radius: 0 10px 0 0;
-}
-body.with-listing-chooser #header .tabmenu {
-	margin-left: 0;
-}
-#header-bottom-right .userkarma,
-#header-bottom-right .userkarma a {
-	font-weight: normal;
-	color: hsl(0,0%,60%);
-}
-#header-bottom-right .message-count {
-	color: black;
-	display: inline;
-}
-.sidebox.submit.disabled {
-	width: 310px;
-}
-.sidebox.submit.disabled .morelink {
-	display: inline-block;
-	width: 149px;
-	margin-right: 1px;
-	text-transform: none;
-}
-.sidebox.submit.disabled .morelink a {
-	padding-left: 5px;
-	padding-right: 5px;
-	color: hsl(0,0%,40%);
-	background: hsl(0,0%,80%);
-}
-.sidebox.submit.disabled .spacer {
-	display: inline-block;
-	width: 150px;
-	vertical-align: top;
-	font-family: arial, sans-serif;
-	background: none;
-	box-shadow: none;
-	border: none;
-}
-.sidebox.submit.disabled .spacer .subtitle {
-	color: white;
-	font-weight: bold;
-	font-size: 1rem;
-}
-.icon-menu a {
-	background-color: transparent !important;
-}
-.side .drop-choices {
-	z-index: 101;
-}
-.domain {
-	font-family: verdana, sans-serif;
-	color: hsl(0,0%,100%);
-	vertical-align: middle;
-}
-.domain a {
-	color: hsl(0,0%,60%);
-}
-.domain a:hover {
-	color: hsl(0,0%,20%);
-	text-decoration: none;
-}
-body.pinHeader-header .side #search,
-body.pinHeader-header .sidebox.submit {
-	position: fixed;
-}
-body.pinHeader-header > div.content {
-	position: fixed;
-	overflow: auto;
-	top: 160px;
-	bottom: 0;
-}
-body.pinHeader-sub div#header-bottom-right {
-	top: 22px !important;
-}
-body.pinHeader-userbar #header-bottom-right {
-	height: 22px;
-}
-div.imgCaptions, .md div.imgCaptions {
-	white-space: normal;
-}
-.entry.RES-keyNav-activeElement,
-.entry.RES-keyNav-activeElement .md-container {
-	background-color: transparent !important;
-}
-.entry.RES-keyNav-activeElement .tagline,
-.thing.morechildren .entry.RES-keyNav-activeElement {
-	color: black;
-	background-color: hsl(0,0%,90%) !important;
-	border-radius: 5px;
-}
-.hover-bubble {
-	border: 1px solid hsla(0,0%,0%,.3);
-	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
-}
-.hover-bubble.multi-selector .title {
-	padding: 5px 12px;
-}
-.hover-bubble.multi-selector strong,
-.hover-bubble.multi-selector a.sr {
-	font-weight: normal;
-	text-align: left;
-	font-size: 1.2rem;
-	margin: 0;
-}
-.hover-bubble.multi-selector strong {
-	font-size: 1.8rem;
-	line-height: 1.4;
-	text-transform: capitalize;
-}
-.hover-bubble.multi-selector a.sr {
-	display: inline;
-	color: hsl(0,0%,60%);
-}
-.hover-bubble.multi-selector .throbber {
-	opacity: .2;
-}
-.create-reddit .linefield:nth-of-type(3) .usertext::before {
-	content: 'h5 followed by "* text" = menu | > = card | [text](/r/a "click") = button';
-	display: block;
-	margin: 10px -22px;
-	padding: 5px;
-	color: white;
-	font: 1.2rem/1.2 consolas, monospace;
-	background: hsl(250,5%,30%);
-	text-align: center;
-}
-html.res-nightmode .create-reddit .linefield:nth-of-type(3) .usertext::before {
-	color: white;
-	background: hsla(0,0%,100%,.1);
-}
-.livePreview {
-	margin: 7px 0;
-	background-color: white !important;
-}
-html.res-nightmode .livePreview {
-	background-color: hsl(0,0%,15%);
-}
-.usertext-body > .md {
-	padding-right: 0;
-}
-.subreddit-rules-page:before {
-	top: auto;
-}
+#REScommentNavToggle { display: inline; padding-left: 1rem; }
+#REScommentNavToggle > .commentNavSortType { font-weight: normal; color: #666666; border: none; margin: 0 5px; padding: 0; }
+#REScommentNavToggle > span:not(:first-of-type) { display: none; }
+
+body.moderator #REScommentNavToggle { display: block; padding: 1em 0 0; }
+
+.infobar { margin: 10px 0; padding: 10px; border-color: #e8d67d; background: #fcf5cf; }
+
+.RESDialogSmall { z-index: 100 !important; }
+
+.link.last-clicked { border: none; }
+
+.nav-buttons { margin: 10px -10px 0 -10px; padding: 20px 10px 10px 10px; border-top: 1px solid #e6e6e6; }
+
+.nextprev a, .next-suggestions a { display: inline-block; }
+
+body.with-listing-chooser #header .pagename { position: relative; bottom: auto; }
+body.with-listing-chooser .listing-chooser { z-index: 100; border-radius: 0 10px 0 0; }
+body.with-listing-chooser #header .tabmenu { margin-left: 0; }
+
+.icon-menu a { background-color: transparent !important; }
+
+.side .drop-choices { z-index: 101; }
+
+.domain { font-family: verdana, sans-serif; color: white; vertical-align: middle; }
+
+.domain a { color: #999999; }
+
+.domain a:hover { color: #333333; text-decoration: none; }
+
+body.pinHeader-header .side #search, body.pinHeader-header .sidebox.submit { position: fixed; }
+body.pinHeader-header > div.content { position: fixed; overflow: auto; top: 160px; bottom: 0; }
+
+body.pinHeader-sub div#header-bottom-right { top: 22px !important; }
+
+body.pinHeader-userbar #header-bottom-right { height: 22px; }
+
+div.imgCaptions, .md div.imgCaptions { white-space: normal; }
+
+.entry.RES-keyNav-activeElement, .entry.RES-keyNav-activeElement .md-container { background-color: transparent !important; }
+
+.entry.RES-keyNav-activeElement .tagline, .thing.morechildren .entry.RES-keyNav-activeElement { color: black; background-color: #e6e6e6 !important; border-radius: 5px; }
+
+.hover-bubble { border: 1px solid rgba(0, 0, 0, 0.3); box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+.hover-bubble.multi-selector .title { padding: 5px 12px; }
+.hover-bubble.multi-selector strong, .hover-bubble.multi-selector a.sr { font-weight: normal; text-align: left; font-size: 1.2rem; margin: 0; }
+.hover-bubble.multi-selector strong { font-size: 1.8rem; line-height: 1.4; text-transform: capitalize; }
+.hover-bubble.multi-selector a.sr { display: inline; color: #999999; }
+.hover-bubble.multi-selector .throbber { opacity: .2; }
+
+.create-reddit .linefield:nth-of-type(3) .usertext::before { content: 'h5 followed by "* text" = menu | > = card | [text](/r/a "click") = button'; display: block; margin: 10px -22px; padding: 5px; color: white; font: 1.2rem/1.2 consolas, monospace; background: #4a4950; text-align: center; }
+
+.livePreview { margin: 7px 0; background-color: white !important; }
+
+.subreddit-rules-page { max-width: none; }
+.subreddit-rules-page .subreddit-rule-item { border-top: 1px solid #e0e0e0; }
+.subreddit-rules-page .subreddit-rule-item:hover { background: none; }
+.subreddit-rules-page:before { top: auto; }
+
+#srList { border: none; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
 
 /* addon animate-thumbs */
 .thing:not(.self) .thumbnail:not(.default) img { transition: width .1s, left .1s, top 1s .75s; }
-/* .end */
 
-/* addon flair-basic */
-.tagline .flair {
-	padding: 0 5px;
-	font-size: inherit;
-	font-style: italic;
-	border: none;
-	color: inherit;
-	background: none;
-	max-width: 200px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	vertical-align: bottom;
-}
-.linkflairlabel {
-	padding: 0 0px 0 0;
-	max-width: 150px;
-	font-size: 1.2rem;
-	font-family: "arial black";
-	color: hsl(200,20%,60%);
-	border: none;
-	background: none;
-	line-height: 1;
-	vertical-align: middle;
-	text-transform: uppercase;
-}
-.title + .linkflairlabel {
-	padding: 0 0 0 5px;
-}
 /* .end */
+/* addon flair-basic */
+.tagline .flair { padding: 0 5px; font-size: inherit; font-style: italic; border: none; color: inherit; background: none; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+
+.linkflairlabel { padding: 0 0px 0 0; max-width: 150px; font-size: 1.2rem; font-family: "arial black", sans-serif; font-weight: 900; color: #85a0ad; border: none; background: none; line-height: 1; vertical-align: middle; text-transform: uppercase; }
+
+.title + .linkflairlabel { padding: 0 0 0 5px; }
+
+/* .end */
+body.res-nightmode .livePreview { background-color: #262626 !important; }
+
+/*# sourceMappingURL=stylesheet.css.map */
