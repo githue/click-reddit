@@ -145,12 +145,6 @@ h1.redditname + div { text-align: right; }
 .subscribe-button { margin: 5px 5px 5px 0; }
 .subscribe-button .option.active { display: block; }
 
-.subButtons { border-width: 10px 0 10px 0; border-style: solid; border-color: transparent; }
-.subButtons span { width: 100%; margin: 0; box-sizing: border-box; }
-.subButtons span:first-child { margin-right: 8px; }
-.subButtons span:last-child { margin-left: 8px; }
-.subButtons + .subscribers, .subButtons + .subscribers + .users-online { margin: 0; font-size: 1.2rem; }
-
 .side .subscribe-button a, .subButtons .RESshortcut, .subButtons .RESDashboardToggle { font: 1.3rem/32px tahoma, arial, sans-serif; text-align: center; text-transform: uppercase; transition: box-shadow .25s, background .25s, color .25s; padding: 0; border: none; white-space: nowrap; }
 
 .side .subscribe-button a { padding: 0 8px; color: white; background: #F44336; }
@@ -170,6 +164,12 @@ h1.redditname + div { text-align: right; }
 .titlebox .users-online .word { display: none; }
 .titlebox .bottom { color: #999999; border: none; padding: 10px 0 0 0; }
 .titlebox .bottom a { color: inherit; }
+
+.subButtons { border-width: 10px 0 10px 0; border-style: solid; border-color: transparent; }
+.subButtons span { width: 100%; margin: 0; box-sizing: border-box; }
+.subButtons span:first-child { margin-right: 8px; }
+.subButtons span:last-child { margin-left: 8px; }
+.subButtons + .subscribers, .subButtons + .subscribers + .users-online { font-size: 1.2rem; }
 
 .titlebox form.toggle, .leavemoderator { font-size: 1.1rem; color: #666666; background: none; padding: 10px 0 0 0; clear: left; }
 

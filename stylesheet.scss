@@ -729,33 +729,6 @@ h1.redditname + div {
 	}
 }
 
-.subButtons {
-	@extend %flexbox;
-	border-width: 10px 0 10px 0;
-	border-style: solid;
-	border-color: transparent;
-
-	span {
-		width: 100%;
-		margin: 0;
-		box-sizing: border-box;
-
-		&:first-child {
-			margin-right: 8px;
-		}
-
-		&:last-child {
-			margin-left: 8px;
-		}
-	}
-
-	&+.subscribers,
-	&+.subscribers + .users-online {
-		margin: 0;
-		font-size: 1.2rem;
-	}
-}
-
 .side .subscribe-button a,
 .subButtons .RESshortcut,
 .subButtons .RESDashboardToggle {
@@ -845,6 +818,32 @@ h1.redditname + div {
 		a {
 			color: inherit;
 		}
+	}
+}
+
+.subButtons {
+	@extend %flexbox;
+	border-width: 10px 0 10px 0;
+	border-style: solid;
+	border-color: transparent;
+
+	span {
+		width: 100%;
+		margin: 0;
+		box-sizing: border-box;
+
+		&:first-child {
+			margin-right: 8px;
+		}
+
+		&:last-child {
+			margin-left: 8px;
+		}
+	}
+
+	&+.subscribers,
+	&+.subscribers + .users-online {
+		font-size: 1.2rem;
 	}
 }
 
