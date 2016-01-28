@@ -9,6 +9,6 @@
 
 To contribute changes to the main project you will need the CSS preprocessor SASS.
 
-Make your changes to one of the SCSS files and then run the commaned:
+Make your changes in /lib and then run this commaned from the root directory:
 
-`sass stylesheet.scss stylesheet.css -t compact`.
+`sass lib/stylesheet.scss stylesheet.css -t compact`.
