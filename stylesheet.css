@@ -6,7 +6,7 @@
  */
 .subButtons { display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; }
 
-body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spacer, .side form.usertext { background: white; border: 1px solid #e0d9d1; border-radius: 2px; }
+body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spacer, .side form.usertext { background: white; border: 1px solid #e0e0e0; border-radius: 2px; }
 
 .side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
 
@@ -18,7 +18,7 @@ body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spac
 
 html { font: normal 10px/1 verdana, arial, sans-serif; }
 
-body { background: #edebe9; }
+body { background: #ededed; }
 body > div.content, body.modtools-page > div.content { margin: 20px 330px 0 10px; padding: 0px 10px 40px 10px; position: relative; z-index: 100; }
 body.res #header-bottom-right .separator { margin: 0; visibility: hidden; }
 body:not(.res-v4) #header-bottom-right #RESSettingsButton { margin: 0; vertical-align: middle; }

@@ -28,7 +28,7 @@ $shadow-8dp: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18);
 
 %sheet {
 	background: white;
-	border: 1px solid hsl(30,20%,85%);
+	border: 1px solid hsl(0,0%,88%);
 	border-radius: 2px;
 }
 
@@ -68,7 +68,7 @@ html {
 }
 
 body {
-	background: hsl(30,10%,92%);
+	background: hsl(0,0%,93%);
 
 	&>div.content,
 	&.modtools-page > div.content {
