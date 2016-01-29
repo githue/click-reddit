@@ -81,8 +81,6 @@ body {
 	&.modtools-page > div.content {
 		margin: 20px 330px 0 10px;
 		padding: 0px 10px 40px 10px;
-		position: relative;
-		z-index: 100;
 	}
 
 	&.res #header-bottom-right .separator {
@@ -174,9 +172,10 @@ body {
 		}
 	}
 
-	a.RESShortcutsCurrentSub,
+	#RESShortcuts a.RESShortcutsCurrentSub,
 	.selected a {
 		color: white !important;
+		font-weight: normal;
 	}
 }
 
@@ -207,14 +206,11 @@ body {
 
 #sr-header-area {
 
-	a {
+	a, .separator {
 		color: hsla(0,0%,100%,.6);
 	}
 
 	.drop-choices.srdrop {
-		max-height: 152px;
-		overflow-y: auto;
-		width: 200px;
 		border: none;
 		box-shadow: $shadow-8dp;
 
@@ -985,6 +981,10 @@ form .spacer+.spacer {
 		transition: opacity .1s;
 	}
 
+	.expando {
+		position: relative; // place over sidebar
+	}
+
 	&:hover .rank {
 		opacity: 1;
 	}
@@ -1353,6 +1353,7 @@ body:not(.submit-page) .usertext-buttons {
 			white-space: nowrap;
 			overflow-x: hidden;
 			text-overflow: ellipsis;
+			text-decoration: none;
 		}
 
 		&:hover,
@@ -1753,27 +1754,22 @@ body.with-listing-chooser {
 	text-decoration: none;
 }
 // RES pinHeader
-body.pinHeader-header {
-
-	.side #search,
-	.sidebox.submit {
-		position: fixed;
-	}
-
-	&>div.content {
-		position: fixed;
-		overflow: auto;
-		top: 160px;
-		bottom: 0;
-	}
+body.res>#sr-header-area {
+	background: hsla(0,0%,0%,.8);
 }
 
 body.pinHeader-sub div#header-bottom-right {
 	top: 22px !important;
+	opacity: .8;
 }
 
 body.pinHeader-userbar #header-bottom-right {
 	height: 22px;
+}
+
+body.pinHeader-subanduser #header-bottom-right {
+	height: 22px;
+	top: 22px;
 }
 
 div.imgCaptions,

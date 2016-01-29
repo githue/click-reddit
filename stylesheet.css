@@ -20,7 +20,7 @@ body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spac
 html { font: normal 10px/1 verdana, arial, sans-serif; }
 
 body { background: #ededed; }
-body > div.content, body.modtools-page > div.content { margin: 20px 330px 0 10px; padding: 0px 10px 40px 10px; position: relative; z-index: 100; }
+body > div.content, body.modtools-page > div.content { margin: 20px 330px 0 10px; padding: 0px 10px 40px 10px; }
 body.res #header-bottom-right .separator { margin: 0; visibility: hidden; }
 body:not(.res-v4) #header-bottom-right #RESSettingsButton { margin: 0; vertical-align: middle; }
 body > .content .spacer { margin: 0; }
@@ -42,15 +42,15 @@ body.res-commentBoxes .comment { overflow: visible; }
 #sr-header-area:hover { background: rgba(0, 0, 0, 0.8); height: 30px; margin-bottom: -8px; z-index: 4; }
 #sr-header-area:hover #sr-more-link { background: #1a1a1a; }
 #sr-header-area:hover a, #sr-header-area:hover #RESShortcutsEditContainer { opacity: 1; color: rgba(255, 255, 255, 0.8); }
-#sr-header-area a.RESShortcutsCurrentSub, #sr-header-area .selected a { color: white !important; }
+#sr-header-area #RESShortcuts a.RESShortcutsCurrentSub, #sr-header-area .selected a { color: white !important; font-weight: normal; }
 
 .sr-bar .separator { color: rgba(255, 255, 255, 0.3); }
 
 .dropdown.srdrop .selected { color: rgba(255, 255, 255, 0.6); background: none; padding-right: 5px; }
 .dropdown.srdrop .selected:after { content: ""; display: inline-block; height: 0px; width: 1px; border: 5px solid transparent; border-top-color: rgba(255, 255, 255, 0.6); position: relative; left: 5px; top: 3px; }
 
-#sr-header-area a { color: rgba(255, 255, 255, 0.6); }
-#sr-header-area .drop-choices.srdrop { max-height: 152px; overflow-y: auto; width: 200px; border: none; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
+#sr-header-area a, #sr-header-area .separator { color: rgba(255, 255, 255, 0.6); }
+#sr-header-area .drop-choices.srdrop { border: none; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
 #sr-header-area .drop-choices.srdrop a { color: black; }
 
 #header-bottom-left { padding: 30px 0 0 0; min-height: 104px; position: relative; }
@@ -206,6 +206,7 @@ form .spacer + .spacer { margin: 0px 0; }
 .link .tagline { margin: 2px 0; }
 .link .tagline:first-letter { text-transform: capitalize; }
 .link .rank { position: absolute; font-size: 1.2rem; left: -10px; line-height: 2em; padding: 0px 3px; background: #e6e6e6; color: #999999; border-radius: 50%; text-align: center; opacity: 0; transition: opacity .1s; }
+.link .expando { position: relative; }
 .link:hover .rank { opacity: 1; }
 
 body.listing-page .link .entry { border-bottom: 1px solid #e0e0e0; }
@@ -312,7 +313,7 @@ body:not(.submit-page) .usertext-buttons { padding-bottom: 7px; }
 .side .md > h5 + ul > li > sup, .side .md > h5 + ul > li > p sup { position: absolute; top: 11px; left: 10px; display: block; overflow: hidden; text-indent: -1000px; width: 10px; height: 12px; opacity: .4; background-position: -20px -22px; background-image: url(%%sprite%%); pointer-events: none; }
 .side .md > h5 + ul > li:hover > sup, .side .md > h5 + ul > li:hover > p sup { left: 8px; }
 .side .md > h5 + ul > li > p, .side .md > h5 + ul > li > ul > li > p { margin: 0; }
-.side .md > h5 + ul > li > a, .side .md > h5 + ul > li > p > a { color: #0079d3; display: block; margin: -6px -10px -6px -30px; padding: 6px 10px 6px 30px; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
+.side .md > h5 + ul > li > a, .side .md > h5 + ul > li > p > a { color: #0079d3; display: block; margin: -6px -10px -6px -30px; padding: 6px 10px 6px 30px; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; text-decoration: none; }
 .side .md > h5 + ul > li:hover, .side .md > h5 + ul > li > ul > li:hover > a { background: #e0e0e0; }
 .side .md > h5 + ul > li:hover > p > a, .side .md > h5 + ul > li > ul > li > a:hover, .side .md > h5 + ul > li > ul > li > p a:hover { color: #0079d3; text-decoration: none; }
 .side .md > h5 + ul > li > ul { visibility: hidden; opacity: 0; position: absolute; top: 0px; right: 295px; width: 300px; max-height: 700px; overflow-y: auto; list-style: none; margin: 0; padding: 8px 0; z-index: 101; border-radius: 2px; background: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); transition-property: visibility opacity; transition-duration: .2s; transition-delay: .12s; }
@@ -459,12 +460,13 @@ body.with-listing-chooser #header .tabmenu { margin-left: 0; }
 
 .domain a:hover { color: #333333; text-decoration: none; }
 
-body.pinHeader-header .side #search, body.pinHeader-header .sidebox.submit { position: fixed; }
-body.pinHeader-header > div.content { position: fixed; overflow: auto; top: 160px; bottom: 0; }
+body.res > #sr-header-area { background: rgba(0, 0, 0, 0.8); }
 
-body.pinHeader-sub div#header-bottom-right { top: 22px !important; }
+body.pinHeader-sub div#header-bottom-right { top: 22px !important; opacity: .8; }
 
 body.pinHeader-userbar #header-bottom-right { height: 22px; }
+
+body.pinHeader-subanduser #header-bottom-right { height: 22px; top: 22px; }
 
 div.imgCaptions, .md div.imgCaptions { white-space: normal; }
 
