@@ -8,10 +8,11 @@
 
 body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spacer, .side form.usertext { background: white; border: 1px solid #e0e0e0; border-radius: 2px; }
 
-.side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
+.side .subscribe-button a.active, .subButtons .RESshortcut, .subButtons .RESDashboardToggle, .side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; text-align: center; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
+.side .subscribe-button a.active:hover, .subButtons .RESshortcut:hover, .subButtons .RESDashboardToggle:hover, .side .md a[title="click"]:hover, .usertext button:hover, #url-field button:hover, .usertext-buttons button.save:hover { text-decoration: none; }
 
 .side .md > blockquote a[title="click"], .usertext button, #url-field button { color: rgba(255, 255, 255, 0.8); }
-.side .md > blockquote a[title="click"]:hover, .usertext button:hover, #url-field button:hover { background: rgba(0, 0, 0, 0.12); text-decoration: none; }
+.side .md > blockquote a[title="click"]:hover, .usertext button:hover, #url-field button:hover { background: rgba(0, 0, 0, 0.12); }
 
 .side .md > p a[title="click"], .usertext-buttons button.save { color: white; background: #668899; transition: box-shadow .25s; }
 .side .md > p a[title="click"]:hover, .usertext-buttons button.save:hover { box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
@@ -145,14 +146,13 @@ h1.redditname + div { text-align: right; }
 .side form.usertext .md { line-height: 1.5; }
 
 .subscribe-button { margin: 5px 5px 5px 0; }
-.subscribe-button .option.active { display: block; }
 
-.side .subscribe-button a, .subButtons .RESshortcut, .subButtons .RESDashboardToggle { font: 1.3rem/32px tahoma, arial, sans-serif; text-align: center; text-transform: uppercase; transition: box-shadow .25s, background .25s, color .25s; padding: 0; border: none; white-space: nowrap; }
+.side .subscribe-button a.active, .subButtons .RESshortcut, .subButtons .RESDashboardToggle { display: block; white-space: nowrap; }
 
-.side .subscribe-button a { padding: 0 8px; color: white; background: #F44336; }
+.side .subscribe-button a.add.active { color: white; background: #F44336; }
 
-.subButtons .subscribe-button a { padding: 0; }
-.subButtons .RESshortcut, .subButtons .RESDashboardToggle { background: white; color: #333333; border-radius: 2px; }
+.subButtons .subscribe-button a.active { padding: 0; }
+.subButtons .RESshortcut, .subButtons .RESDashboardToggle { padding: 0; color: #333333; background: white; border-radius: 2px; }
 
 .side .subscribe-button a.remove, .subButtons .RESshortcut.remove, .subButtons .RESDashboardToggle.remove { color: #333333; border-color: transparent; background: inherit; }
 
@@ -214,7 +214,7 @@ body.listing-page .link .entry { border-bottom: 1px solid #e0e0e0; }
 
 body.comments-page .link:not(.self) .thumbnail:not(.default) + .entry { margin-left: 210px; }
 
-.link div.madeVisible { overflow: visible; position: relative; background: white; }
+.link div.madeVisible { overflow: visible; position: relative; background: white; margin-bottom: 10px; }
 
 .link .thumbnail + .entry div.madeVisible { margin-left: -101px; }
 
@@ -283,8 +283,8 @@ body > .content .link .midcol, .midcol-spacer { width: 50px !important; }
 .side .md > blockquote { margin: 15px 10px 20px 10px; padding: 10px; color: white; border: none; background: #668899; border-radius: 3px; }
 .side .md > blockquote blockquote { color: white; }
 .side .md > blockquote h2 { margin-right: -10px; margin-left: -10px; margin-top: .5em; padding: 3px 10px; color: inherit; text-decoration: none; }
-.side .md > blockquote a { color: white; border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
-.side .md > blockquote a:hover { border-bottom-color: rgba(255, 255, 255, 0.8); }
+.side .md > blockquote a { color: white !important; border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
+.side .md > blockquote a:hover { border-bottom-color: rgba(255, 255, 255, 0.8); text-decoration: none; }
 
 /* .end */
 .content .RESBigEditorPop, .usertext button.cancel, #url-field button { margin: 0 0 0 8px; }
@@ -312,12 +312,12 @@ body:not(.submit-page) .usertext-buttons { padding-bottom: 7px; }
 .side .md > h5 + ul > li > sup, .side .md > h5 + ul > li > p sup { position: absolute; top: 11px; left: 10px; display: block; overflow: hidden; text-indent: -1000px; width: 10px; height: 12px; opacity: .4; background-position: -20px -22px; background-image: url(%%sprite%%); pointer-events: none; }
 .side .md > h5 + ul > li:hover > sup, .side .md > h5 + ul > li:hover > p sup { left: 8px; }
 .side .md > h5 + ul > li > p, .side .md > h5 + ul > li > ul > li > p { margin: 0; }
-.side .md > h5 + ul > li > a, .side .md > h5 + ul > li > p > a { display: block; margin: -6px -10px -6px -30px; padding: 6px 10px 6px 30px; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
+.side .md > h5 + ul > li > a, .side .md > h5 + ul > li > p > a { color: #0079d3; display: block; margin: -6px -10px -6px -30px; padding: 6px 10px 6px 30px; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
 .side .md > h5 + ul > li:hover, .side .md > h5 + ul > li > ul > li:hover > a { background: #e0e0e0; }
-.side .md > h5 + ul > li:hover > p > a, .side .md > h5 + ul > li > ul > li > a:hover, .side .md > h5 + ul > li > ul > li > p a:hover { color: #0079d3; }
+.side .md > h5 + ul > li:hover > p > a, .side .md > h5 + ul > li > ul > li > a:hover, .side .md > h5 + ul > li > ul > li > p a:hover { color: #0079d3; text-decoration: none; }
 .side .md > h5 + ul > li > ul { visibility: hidden; opacity: 0; position: absolute; top: 0px; right: 295px; width: 300px; max-height: 700px; overflow-y: auto; list-style: none; margin: 0; padding: 8px 0; z-index: 101; border-radius: 2px; background: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); transition-property: visibility opacity; transition-duration: .2s; transition-delay: .12s; }
 .side .md > h5 + ul > li > ul > li { padding: 6px 10px; }
-.side .md > h5 + ul > li > ul > li > a, .side .md > h5 + ul > li > ul > li > p a { display: block; margin: -6px -10px; padding: 6px 10px; }
+.side .md > h5 + ul > li > ul > li > a, .side .md > h5 + ul > li > ul > li > p a { color: #0079d3; display: block; margin: -6px -10px; padding: 6px 10px; }
 
 /* .end */
 body.submit-page > .content { border: none; background: none; padding: 0; }
@@ -348,9 +348,11 @@ div.save-button, form.submit > .spacer { margin: 20px auto; width: 520px; }
 
 .thing .title { color: #0073e6; }
 
-.thing .title:visited, .thing.visited .title { color: #8c738c; }
+.thing .title:visited, .thing.visited .title { color: #846284; }
 
-body:not(.res-styleTweaks-visitedStyle) .comment .md a:visited, body:not(.res-styleTweaks-visitedStyle) .link.self .md a:visited { color: #8114b8; }
+.thing a.title:hover, .md a:hover { text-decoration: underline; }
+
+.md a:visited { color: #8114b8; }
 
 body.comments-page .link a.title { font-size: 2.2rem; }
 

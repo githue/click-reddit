@@ -8,6 +8,9 @@
 $shadow-2dp: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
 $shadow-8dp: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18);
 
+$linkDefault: #0079d3;
+$linkVisited: #8114b8;
+
 @mixin transform($args) {
 	-webkit-transform: $args;
 	-moz-transform: $args;
@@ -38,10 +41,15 @@ $shadow-8dp: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18);
 	padding: 0 8px;
 	border-radius: 2px;
 	text-transform: uppercase;
+	text-align: center;
 	font: 1.3rem/32px tahoma, arial, sans-serif;
 	border: none;
 	background: none;
 	transition: all .25s;
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 %button-flat {
@@ -49,7 +57,6 @@ $shadow-8dp: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18);
 
 	&:hover {
 		background: hsla(200,100%,0%,.12);
-		text-decoration: none;
 	}
 }
 
@@ -727,40 +734,32 @@ h1.redditname + div {
 // subscribe button and its neighbors
 .subscribe-button {
 	margin: 5px 5px 5px 0;
-
-	.option.active {
-		display: block;
-	}
 }
 
-.side .subscribe-button a,
+.side .subscribe-button a.active,
 .subButtons .RESshortcut,
 .subButtons .RESDashboardToggle {
-	font: 1.3rem/32px tahoma, arial, sans-serif;
-	text-align: center;
-	text-transform: uppercase;
-	transition: box-shadow .25s, background .25s, color .25s;
-	padding: 0;
-	border: none;
+	@extend %button-base;
+	display: block;
 	white-space: nowrap;
 }
 
-.side .subscribe-button a {
-	padding: 0 8px;
+.side .subscribe-button a.add.active {
 	color: white;
 	background: #F44336;
 }
 
 .subButtons {
 
-	.subscribe-button a {
+	.subscribe-button a.active {
 		padding: 0;
 	}
 
 	.RESshortcut,
 	.RESDashboardToggle {
-		background: white;
+		padding: 0;
 		color: hsl(0,0%,20%);
+		background: white;
 		border-radius: 2px;
 	}
 }
@@ -1004,6 +1003,7 @@ body.comments-page .link:not(.self) .thumbnail:not(.default) + .entry {
 	overflow: visible;
 	position: relative;
 	background: white;
+	margin-bottom: 10px;
 }
 .link .thumbnail + .entry div.madeVisible {
 	margin-left: -101px;
@@ -1228,11 +1228,12 @@ h2#wiki_heading_2 {
 	}
 
 	a {
-		color: white;
+		color: white !important;
 		border-bottom: 1px solid hsla(0,0%,100%,.4);
 
 		&:hover {
 			border-bottom-color: hsla(0,0%,100%,.8);
+			text-decoration: none;
 		}
 	}
 }
@@ -1345,6 +1346,7 @@ body:not(.submit-page) .usertext-buttons {
 
 		&>a,
 		&>p > a {
+			color: $linkDefault;
 			display: block;
 			margin: -6px -10px -6px -30px;
 			padding: 6px 10px 6px 30px;
@@ -1361,7 +1363,8 @@ body:not(.submit-page) .usertext-buttons {
 		&:hover > p > a,
 		&>ul > li > a:hover,
 		&>ul > li > p a:hover {
-			color: #0079d3;
+			color: $linkDefault;
+			text-decoration: none;
 		}
 
 		&>ul {
@@ -1389,6 +1392,7 @@ body:not(.submit-page) .usertext-buttons {
 
 				&>a,
 				&>p a {
+					color: $linkDefault;
 					display: block;
 					margin: -6px -10px;
 					padding: 6px 10px;
@@ -1515,12 +1519,16 @@ body > div.content,
 
 .thing .title:visited,
 .thing.visited .title {
-	color: hsl(300,10%,50%);
+	color: hsl(300,15%,45%);
 }
 
-body:not(.res-styleTweaks-visitedStyle) .comment .md a:visited,
-body:not(.res-styleTweaks-visitedStyle) .link.self .md a:visited {
-	color: hsl(280,80%,40%);
+.thing a.title:hover,
+.md a:hover {
+	text-decoration: underline;
+}
+
+.md a:visited {
+	color: $linkVisited;
 }
 
 body.comments-page .link a.title {
