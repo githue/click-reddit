@@ -9,6 +9,6 @@
 
 To contribute changes to the main project you will need the CSS preprocessor SASS.
 
-Make your changes in /lib and then run this commaned from the root directory:
+Make your changes in /lib and then run this command from the root directory:
 
 `sass lib/stylesheet.scss stylesheet.css -t compact`.
