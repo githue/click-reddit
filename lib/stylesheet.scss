@@ -1226,8 +1226,8 @@ h2#wiki_heading_2 {
 		text-decoration: none;
 	}
 
-	a {
-		color: white !important;
+	a, a:visited {
+		color: white;
 		border-bottom: 1px solid hsla(0,0%,100%,.4);
 
 		&:hover {
