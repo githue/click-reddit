@@ -171,12 +171,12 @@ body {
 			color: hsla(0,0%,100%,.8);
 		}
 	}
+}
 
-	#RESShortcuts a.RESShortcutsCurrentSub,
-	.selected a {
-		color: white !important;
-		font-weight: normal;
-	}
+body.res #sr-header-area a.RESShortcutsCurrentSub,
+#sr-header-area .selected a {
+	color: white !important;
+	font-weight: normal;
 }
 
 .sr-bar .separator {

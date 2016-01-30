@@ -42,7 +42,8 @@ body.res-commentBoxes .comment { overflow: visible; }
 #sr-header-area:hover { background: rgba(0, 0, 0, 0.8); height: 30px; margin-bottom: -8px; z-index: 4; }
 #sr-header-area:hover #sr-more-link { background: #1a1a1a; }
 #sr-header-area:hover a, #sr-header-area:hover #RESShortcutsEditContainer { opacity: 1; color: rgba(255, 255, 255, 0.8); }
-#sr-header-area #RESShortcuts a.RESShortcutsCurrentSub, #sr-header-area .selected a { color: white !important; font-weight: normal; }
+
+body.res #sr-header-area a.RESShortcutsCurrentSub, #sr-header-area .selected a { color: white !important; font-weight: normal; }
 
 .sr-bar .separator { color: rgba(255, 255, 255, 0.3); }
 
