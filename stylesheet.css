@@ -53,7 +53,7 @@ body.res-commentBoxes .comment { overflow: visible; }
 #sr-header-area .drop-choices.srdrop { border: none; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
 #sr-header-area .drop-choices.srdrop a { color: black; }
 
-#header-bottom-left { padding: 30px 0 0 0; min-height: 104px; position: relative; }
+#header-bottom-left { padding: 0px 0 0 0; position: relative; }
 
 #header .tabmenu { position: absolute; bottom: 0; width: 100%; box-sizing: border-box; display: block !important; font-size: 1.2rem; font-family: tahoma, arial, sans-serif; text-transform: uppercase; margin: 0; padding: 29px 0 0px 10px; z-index: 1; }
 #header .tabmenu li { display: inline-block; margin: 0; padding: 0; position: relative; }
@@ -61,12 +61,12 @@ body.res-commentBoxes .comment { overflow: visible; }
 #header .tabmenu a:hover { color: white; }
 #header .tabmenu .selected a, #header .tabmenu a:active { color: white; border-bottom-color: white; }
 
-#header-img-a { display: inline-block; margin: 0 0 45px 20px; position: relative; z-index: 2; }
+#header-img-a { display: inline-block; margin: 0 0 52px 20px; position: relative; z-index: 2; }
 
 #header-img { margin: 0; display: block; }
-#header-img.default-header { position: relative; margin: 0 0 45px 20px; width: 32px; z-index: 2; }
+#header-img.default-header { position: relative; margin: 0 0 52px 20px; width: 32px; z-index: 2; }
 
-.pagename { display: inline-block; margin: 0px 10px 45px 10px; color: white; font: normal 24px/1 tahoma, arial, sans-serif; position: relative; z-index: 2; }
+.pagename { display: inline-block; margin: 0px 10px 52px 10px; color: white; font: normal 24px/1 tahoma, arial, sans-serif; position: relative; z-index: 2; }
 .pagename a { letter-spacing: 1px; font-size: 36px; color: white; position: relative; text-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); transition: text-shadow .3s; }
 .pagename a:hover { text-decoration: none; }
 
@@ -123,7 +123,7 @@ body.res-v430:not(.res-v4) .RESDropdownList .toggleButton { margin: 0; line-heig
 
 body:not(.res-console-open) #RESNotifications, body:not(.res-console-open) #RESShortcutsAddFormContainer, body:not(.res-console-open) .RESDropdownList, body:not(.res-console-open):not(.modal-open) .side #search { z-index: 2147483647 !important; }
 
-.sidebox.submit { display: inline-block; box-sizing: border-box; position: absolute; top: 114px; z-index: 100; width: 136px; }
+.sidebox.submit { display: inline-block; box-sizing: border-box; position: absolute; top: 77px; z-index: 100; width: 136px; }
 .sidebox.submit .mod-override .morelink a:after { margin: 0; left: 0; top: -8px; }
 .sidebox.submit .mod-override .morelink:hover a:after { opacity: 1; }
 .sidebox.submit-text { right: 10px; width: 166px; }

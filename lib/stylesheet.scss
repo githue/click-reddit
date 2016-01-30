@@ -221,8 +221,7 @@ body {
 }
 
 #header-bottom-left {
-	padding: 30px 0 0 0;
-	min-height: 104px;
+	padding: 0px 0 0 0;
 	position: relative;
 }
 
@@ -276,7 +275,7 @@ body {
 
 #header-img-a {
 	display: inline-block;
-	margin: 0 0 45px 20px;
+	margin: 0 0 52px 20px;
 	position: relative;
 	z-index: 2;
 }
@@ -287,7 +286,7 @@ body {
 
 	&.default-header {
 		position: relative;
-		margin: 0 0 45px 20px;
+		margin: 0 0 52px 20px;
 		width: 32px;
 		z-index: 2;
 	}
@@ -295,7 +294,7 @@ body {
 
 .pagename {
 	display: inline-block;
-	margin: 0px 10px 45px 10px;
+	margin: 0px 10px 52px 10px;
 	color: hsla(0,0%,100%,1);
 	font: normal 24px/1 tahoma, arial, sans-serif;
 	position: relative;
@@ -614,7 +613,7 @@ body:not(.res-console-open):not(.modal-open) .side #search {
 		display: inline-block;
 		box-sizing: border-box;
 		position: absolute;
-		top: 114px;
+		top: 77px;
 		z-index: 100;
 		width: 136px;
 
