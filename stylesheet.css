@@ -11,10 +11,10 @@ body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spac
 .side .subscribe-button a.active, .subButtons .RESshortcut, .subButtons .RESDashboardToggle, .side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; text-align: center; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
 .side .subscribe-button a.active:hover, .subButtons .RESshortcut:hover, .subButtons .RESDashboardToggle:hover, .side .md a[title="click"]:hover, .usertext button:hover, #url-field button:hover, .usertext-buttons button.save:hover { text-decoration: none; }
 
-.side .md > blockquote a[title="click"], .usertext button, #url-field button { color: rgba(255, 255, 255, 0.8); }
+.side .md > blockquote a[title="click"], .side .md > blockquote a[title="click"]:visited, .usertext button, #url-field button { color: rgba(255, 255, 255, 0.8) !important; }
 .side .md > blockquote a[title="click"]:hover, .usertext button:hover, #url-field button:hover { background: rgba(0, 0, 0, 0.12); }
 
-.side .md > p a[title="click"], .usertext-buttons button.save { color: white; background: #668899; transition: box-shadow .25s; }
+.side .md > p a[title="click"], .usertext-buttons button.save { color: white !important; background: #668899; transition: box-shadow .25s; }
 .side .md > p a[title="click"]:hover, .usertext-buttons button.save:hover { box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
 
 html { font: normal 10px/1 verdana, arial, sans-serif; }
@@ -87,9 +87,9 @@ body.res #sr-header-area a.RESShortcutsCurrentSub, #sr-header-area .selected a {
 body.res .RESDropdownList { width: 200px; border-radius: 0; border: none; color: black; background-color: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
 body.res .RESDropdownList li { font-weight: normal; font-size: 1.2rem; line-height: 1.5; height: auto; padding: 6px 10px; width: auto; border: none; }
 body.res .RESDropdownList li, body.res .RESDropdownList li:hover, body.res .RESDropdownList a, body.res .RESDropdownList a:visited { color: inherit; }
-body.res .RESDropdownList li:hover, body.res .RESDropdownList li a:hover { color: inherit; background-color: #e0e0e0; }
+body.res .RESDropdownList li:hover, body.res .RESDropdownList li a:hover { color: inherit; background-color: rgba(0, 0, 0, 0.12); }
 body.res .RESDropdownList .RESMenuItemButton { position: static; margin-left: -100%; float: right; }
-body.res .RESDropdownList .RESMenuItemButton:hover { color: inherit; background-color: #e0e0e0; }
+body.res .RESDropdownList .RESMenuItemButton:hover { color: inherit; background-color: rgba(0, 0, 0, 0.12); }
 
 .subreddit-rule-form .c-form-group .label, .subreddit-rule-form .c-form-group .text-counter { color: inherit; }
 
@@ -97,7 +97,7 @@ body.res-v430:not(.res-v4) #RESSearchMenuItem { margin: 0px; border: none; width
 
 body.res-v430:not(.res-v4) .RESDropdownList .toggleButton { margin: 0; line-height: 1; }
 
-.side { width: 310px; margin: 20px 10px 0 0; padding: 0; background: transparent; }
+.side { width: 310px; margin: 20px 10px 0 0; padding: 0; background: transparent !important; }
 .side > .spacer { display: inline; }
 .side .linkinfo { padding: 10px; line-height: 1.5; font-family: verdana, sans-serif; }
 .side .linkinfo .shortlink, .side .linkinfo .shortlink input, .side .linkinfo .score .number, .side .linkinfo .score .word { font-size: inherit; }
@@ -206,7 +206,7 @@ form .spacer + .spacer { margin: 0px 0; }
 .link .midcol { font-weight: normal; margin-top: 1px; }
 .link .tagline { margin: 2px 0; }
 .link .tagline:first-letter { text-transform: capitalize; }
-.link .rank { position: absolute; font-size: 1.2rem; left: -10px; line-height: 2em; padding: 0px 3px; background: #e6e6e6; color: #999999; border-radius: 50%; text-align: center; opacity: 0; transition: opacity .1s; }
+.link .rank { position: absolute; font-size: 1.2rem; left: 0; line-height: 2em; padding: 0px 5px; background: #e6e6e6; color: #999999; border-radius: 50%; text-align: center; opacity: 0; transition: opacity .1s; }
 .link .expando { position: relative; }
 .link:hover .rank { opacity: 1; }
 
@@ -315,7 +315,7 @@ body:not(.submit-page) .usertext-buttons { padding-bottom: 7px; }
 .side .md > h5 + ul > li:hover > sup, .side .md > h5 + ul > li:hover > p sup { left: 8px; }
 .side .md > h5 + ul > li > p, .side .md > h5 + ul > li > ul > li > p { margin: 0; }
 .side .md > h5 + ul > li > a, .side .md > h5 + ul > li > p > a { color: #0079d3; display: block; margin: -6px -10px -6px -30px; padding: 6px 10px 6px 30px; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; text-decoration: none; }
-.side .md > h5 + ul > li:hover, .side .md > h5 + ul > li > ul > li:hover > a { background: #e0e0e0; }
+.side .md > h5 + ul > li:hover, .side .md > h5 + ul > li > ul > li:hover > a { background: rgba(0, 0, 0, 0.12); }
 .side .md > h5 + ul > li:hover > p > a, .side .md > h5 + ul > li > ul > li > a:hover, .side .md > h5 + ul > li > ul > li > p a:hover { color: #0079d3; text-decoration: none; }
 .side .md > h5 + ul > li > ul { visibility: hidden; opacity: 0; position: absolute; top: 0px; right: 295px; width: 300px; max-height: 700px; overflow-y: auto; list-style: none; margin: 0; padding: 8px 0; z-index: 101; border-radius: 2px; background: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); transition-property: visibility opacity; transition-duration: .2s; transition-delay: .12s; }
 .side .md > h5 + ul > li > ul > li { padding: 6px 10px; }
@@ -420,7 +420,7 @@ ul#image-preview-list li { margin-bottom: 0; width: 50%; height: auto; float: no
 .combined-search-page .search-result-link .search-result-body { padding: 10px; background-color: white; box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
 .combined-search-page .search-result-link .search-expando.collapsed .search-result-body { visibility: hidden; opacity: 0; transition: opacity .1s; }
 .combined-search-page .search-result-link .search-expando.collapsed:hover .search-result-body { visibility: visible; opacity: 1; }
-.combined-search-page .search-result-link .search-result-body .md { overflow: auto; height: auto; max-height: 300px; max-width: none; background: white; padding: 10px; }
+.combined-search-page .search-result-link .search-result-body .md { overflow: auto; height: auto; max-height: 300px; max-width: none; background: inherit; padding: 10px; }
 .combined-search-page .search-expando-button { display: none; }
 .combined-search-page .searchfacets .list { line-height: 0; }
 .combined-search-page .searchfacets:not(.res-search-pane) { position: fixed; top: 40%; left: 0px; margin: 0; padding: 0; border: 1px solid #5f99cf; background-color: white; z-index: 2; overflow: hidden; width: 19px; height: 125px; min-width: 0; transition: width .2s, padding .2s; box-shadow: none; box-sizing: content-box; }
@@ -455,7 +455,7 @@ body.with-listing-chooser #header .tabmenu { margin-left: 0; }
 
 .side .drop-choices { z-index: 101; }
 
-.domain { font-family: verdana, sans-serif; color: white; vertical-align: middle; }
+.domain { font-family: verdana, sans-serif; color: transparent; vertical-align: middle; }
 
 .domain a { color: #999999; }
 
@@ -473,7 +473,7 @@ div.imgCaptions, .md div.imgCaptions { white-space: normal; }
 
 .entry.RES-keyNav-activeElement, .entry.RES-keyNav-activeElement .md-container { background-color: transparent !important; }
 
-.entry.RES-keyNav-activeElement .tagline, .thing.morechildren .entry.RES-keyNav-activeElement { color: black; background-color: #e6e6e6 !important; border-radius: 5px; }
+.entry.RES-keyNav-activeElement .tagline, .thing.morechildren .entry.RES-keyNav-activeElement { color: black; background-color: rgba(0, 0, 0, 0.12) !important; border-radius: 5px; }
 
 .hover-bubble { border: 1px solid rgba(0, 0, 0, 0.3); box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18); }
 .hover-bubble.multi-selector .title { padding: 5px 12px; }
@@ -505,6 +505,63 @@ div.imgCaptions, .md div.imgCaptions { white-space: normal; }
 .title + .linkflairlabel { padding: 0 0 0 5px; }
 
 /* .end */
+/* addon nightmode */
+body.res-nightmode > div.content, body.res-nightmode .side .linkinfo, body.res-nightmode .sidecontentbox, body.res-nightmode .login-form-side, body.res-nightmode .sidebox .spacer, body.res-nightmode .side form.usertext { color: #dedede; border-color: rgba(255, 255, 255, 0.12); background-color: #212121; }
+
+body.res-nightmode { color: #dedede; background-color: #151515; }
+body.res-nightmode #header { background-color: #424242; }
+body.res-nightmode #sr-header-area { background: none; }
+body.res-nightmode #sr-header-area:hover { background-color: black; }
+body.res-nightmode .pagename { opacity: .88; }
 body.res-nightmode .livePreview { background-color: #262626 !important; }
+body.res-nightmode .link .rank { color: gray; background-color: #151515; }
+body.res-nightmode .link div.madeVisible { color: #dedede; background-color: #212121; }
+body.res-nightmode .thing .title { color: #dedede; }
+body.res-nightmode .thing .title:visited, body.res-nightmode .thing.visited .title, body.res-nightmode .combined-search-page .search-result a:visited, body.res-nightmode .combined-search-page .search-result a:visited > mark { color: #a6a6a6; /* see also styleTweaks.js */ }
+body.res-nightmode .tagline, body.res-nightmode .search-result-meta { color: #bfbfbf; }
+body.res-nightmode .tagline a, body.res-nightmode .search-result-meta a { color: inherit; }
+body.res-nightmode .entry .buttons li a:hover { color: #bfbfbf; }
+body.res-nightmode.listing-page .link .entry { border-bottom-color: rgba(255, 255, 255, 0.12); }
+body.res-nightmode .entry.RES-keyNav-activeElement .tagline, body.res-nightmode .thing.morechildren .entry.RES-keyNav-activeElement { color: inherit !important; background-color: rgba(255, 255, 255, 0.12) !important; }
+body.res-nightmode .RES-keyNav-activeElement > .tagline, body.res-nightmode .RES-keyNav-activeElement .md-container > .md, body.res-nightmode .RES-keyNav-activeElement .md-container > .md p { color: inherit !important; }
+body.res-nightmode .sidebox { background: none; }
+body.res-nightmode .md a:visited { color: #ad85ad; }
+body.res-nightmode .side { color: #dedede; }
+body.res-nightmode .side .titlebox, body.res-nightmode .side .content, body.res-nightmode .side .leavemoderator, body.res-nightmode .side .leavecontributor-button { background-color: transparent; }
+body.res-nightmode .side .titlebox form.flairtoggle { background-color: transparent; }
+body.res-nightmode .side .shortlink input { border-color: rgba(255, 255, 255, 0.1); }
+body.res-nightmode .side .md > blockquote { color: white; }
+body.res-nightmode .side .md > blockquote a, body.res-nightmode .side .md > blockquote a:visited { color: inherit; }
+body.res-nightmode .side .md > blockquote ul, body.res-nightmode .side .md > blockquote ol { background-color: transparent; }
+body.res-nightmode .side .md > blockquote li, body.res-nightmode .side .md > blockquote p { color: white; }
+body.res-nightmode .side .md ul { color: #dedede; background-color: #212121; }
+body.res-nightmode .side .md hr { background: rgba(255, 255, 255, 0.12); }
+body.res-nightmode .side .md h5 + ul > li:hover, body.res-nightmode .side .md h5 + ul > li > ul > li:hover > a { background-color: rgba(255, 255, 255, 0.12); }
+body.res-nightmode .side .md h5 + ul > li > sup, body.res-nightmode .side .md h5 + ul > li > p sup { background-position: 0px -22px; }
+body.res-nightmode .side #search input[type=text] { border-bottom-color: rgba(255, 255, 255, 0.12); }
+body.res-nightmode .side #search input[type=submit] { background-position: 9px 9px; }
+body.res-nightmode .side #search #searchexpando { background-color: #151515; }
+body.res-nightmode .panestack-title, body.res-nightmode .nav-buttons { border-top-color: rgba(255, 255, 255, 0.12); }
+body.res-nightmode .flair, body.res-nightmode .linkflairlabel { color: gray; background-color: transparent; }
+body.res-nightmode .RESDropdownList { color: #dedede; background-color: #303030; }
+body.res-nightmode .RESDropdownList li, body.res-nightmode .RESDropdownList a, body.res-nightmode .RESDropdownList li:hover a, body.res-nightmode .RESDropdownList a:hover { background: none; }
+body.res-nightmode .RESDropdownList li:hover { background: rgba(255, 255, 255, 0.12); }
+body.res-nightmode .sidebox:not(.create) .morelink a { color: white; background: rgba(0, 0, 0, 0.8); }
+body.res-nightmode .sidebox:not(.create) .morelink a:hover { background: black; }
+body.res-nightmode .commentarea .menuarea > div:hover, body.res-nightmode .commentarea .menuarea > div a:hover { color: #dedede; }
+body.res-nightmode #REScommentNavToggle > .commentNavSortType { color: gray; }
+body.res-nightmode #REScommentNavToggle > .commentNavSortType:hover { color: #dedede; }
+body.res-nightmode.combined-search-page .search-result header a, body.res-nightmode.combined-search-page .search-result a > mark { color: #dedede; }
+body.res-nightmode.combined-search-page .search-result:hover { background-color: #292929; }
+body.res-nightmode.combined-search-page .search-result:not(.search-result-subreddit) > div { border-bottom-color: rgba(255, 255, 255, 0.12); }
+body.res-nightmode.combined-search-page .search-result-link .search-expando.collapsed:before { color: gray; border-color: gray; }
+body.res-nightmode.combined-search-page .search-result-link .search-result-body { background-color: #303030; }
+body.res-nightmode #progressIndicator { color: #dedede; border-color: rgba(255, 255, 255, 0.12); background-color: #424242; }
+body.res-nightmode .entry.RES-keyNav-activeElement, body.res-nightmode .entry.RES-keyNav-activeElement .md-container { background-color: transparent !important; }
+body.res-nightmode .entry.RES-keyNav-activeElement .tagline, body.res-nightmode .thing.morechildren .entry.RES-keyNav-activeElement { color: #dedede; }
+body.res-nightmode .side .subscribe-button a.remove, body.res-nightmode .subButtons .RESshortcut.remove, body.res-nightmode .subButtons .RESDashboardToggle.remove { color: #dedede; }
+body.res-nightmode .subButtons .RESshortcut:not(.remove), body.res-nightmode .subButtons .RESDashboardToggle:not(.remove) { color: #dedede; background-color: #303030; }
+
+/* .end */
 
 /*# sourceMappingURL=stylesheet.css.map */

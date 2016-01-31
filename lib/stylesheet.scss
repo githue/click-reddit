@@ -53,7 +53,7 @@ $linkVisited: #8114b8;
 }
 
 %button-flat {
-	color: hsla(0,0%,100%,.8);
+	color: hsla(0,0%,100%,.8) !important;
 
 	&:hover {
 		background: hsla(200,100%,0%,.12);
@@ -61,7 +61,7 @@ $linkVisited: #8114b8;
 }
 
 %button-raised {
-	color: white;
+	color: white !important;
 	background: hsl(200,20%,50%);
 	transition: box-shadow .25s;
 
@@ -402,7 +402,7 @@ body.res .RESDropdownList {
 	li:hover,
 	li a:hover {
 		color: inherit;
-		background-color: hsl(0, 0%, 88%);
+		background-color: hsla(0, 0%, 0%, .12);
 	}
 
 	.RESMenuItemButton {
@@ -412,7 +412,7 @@ body.res .RESDropdownList {
 
 		&:hover {
 			color: inherit;
-			background-color: hsl(0, 0%, 88%);
+			background-color: hsla(0, 0%, 0%, .12);
 		}
 	}
 }
@@ -443,7 +443,7 @@ body.res-v430:not(.res-v4) .RESDropdownList .toggleButton {
 	width: 310px;
 	margin: 20px 10px 0 0;
 	padding: 0;
-	background: transparent;
+	background: transparent !important;
 
 	// the spacer divs can be a nuisance, so make them do nothing
 	&>.spacer {
@@ -969,9 +969,9 @@ form .spacer+.spacer {
 	.rank {
 		position: absolute;
 		font-size: 1.2rem;
-		left: -10px;
+		left: 0;
 		line-height: 2em;
-		padding: 0px 3px;
+		padding: 0px 5px;
 		background: hsl(0,0%,90%);
 		color: hsl(0,0%,60%);
 		border-radius: 50%;
@@ -1253,6 +1253,7 @@ h2#wiki_heading_2 {
 
 // Flat buttons
 .side .md > blockquote a[title="click"],
+.side .md > blockquote a[title="click"]:visited,
 .usertext button,
 #url-field button {
 	@extend %button-flat;
@@ -1357,7 +1358,7 @@ body:not(.submit-page) .usertext-buttons {
 
 		&:hover,
 		&>ul > li:hover > a {
-			background: hsl(0,0%,88%);
+			background: hsla(0,0%,0%,.12);
 		}
 
 		&:hover > p > a,
@@ -1742,7 +1743,7 @@ body.with-listing-chooser {
 }
 .domain {
 	font-family: verdana, sans-serif;
-	color: hsl(0,0%,100%);
+	color: transparent;
 	vertical-align: middle;
 }
 .domain a {
@@ -1782,7 +1783,7 @@ div.imgCaptions,
 .entry.RES-keyNav-activeElement .tagline,
 .thing.morechildren .entry.RES-keyNav-activeElement {
 	color: black;
-	background-color: hsl(0,0%,90%) !important;
+	background-color: hsla(0,0%,0%,.12) !important;
 	border-radius: 5px;
 }
 .hover-bubble {
@@ -1893,4 +1894,6 @@ div.imgCaptions,
 }
 /* .end */
 
+/* addon nightmode */
 @import 'nightmode';
+/* .end */
