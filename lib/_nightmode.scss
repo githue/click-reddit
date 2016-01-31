@@ -1,10 +1,314 @@
-// RES nightmode
+$nm_dark1: #151515;
+$nm_dark2: #212121;
+$nm_dark3: #303030;
+$nm_dark4: #424242;
+$nm_primaryText: hsl(0,0%,87%);
+$nm_linkVisited: hsl(300,20%,60%);
+$nm_divider: hsla(0,0%,100%,.12);
+$nm_cardBackground: $nm_dark2;
+
+%nm_sheet {
+	color: $nm_primaryText;
+	border-color: $nm_divider;
+	background-color: $nm_cardBackground;
+}
+
 body.res-nightmode {
+	color: $nm_primaryText;
+	background-color: $nm_dark1;
+
+	#header {
+		background-color: $nm_dark4;
+	}
+
+	#sr-header-area {
+		background: none;
+
+		&:hover {
+			background-color: black;
+		}
+	}
+
+	.pagename {
+		opacity: .88;
+	}
 
 	.livePreview {
 		background-color: hsl(0,0%,15%) !important;
 	}
 
-	// TODO: everything else
+	.link {
 
+		.rank {
+			color: hsl(0,0%,50%);
+			background-color: $nm_dark1;
+		}
+
+		div.madeVisible {
+			color: $nm_primaryText;
+			background-color: $nm_dark2;
+		}
+	}
+
+	.thing .title {
+		color: $nm_primaryText;
+	}
+
+	.thing .title:visited,
+	.thing.visited .title,
+	.combined-search-page .search-result a:visited,
+	.combined-search-page .search-result a:visited > mark {
+		color: hsl(0,0%,65%); /* see also styleTweaks.js */
+	}
+
+	.tagline,
+	.search-result-meta {
+		color: hsl(0,0%,75%);
+	}
+
+	.tagline a,
+	.search-result-meta a {
+		color: inherit;
+	}
+
+	.entry .buttons li a:hover {
+		color: hsl(0,0%,75%);
+	}
+
+	&.listing-page .link .entry {
+		border-bottom-color: $nm_divider;
+	}
+
+	.entry.RES-keyNav-activeElement .tagline,
+	.thing.morechildren .entry.RES-keyNav-activeElement {
+		color: inherit !important;
+		background-color: hsla(0,0%,100%,.12) !important;
+	}
+
+	.RES-keyNav-activeElement > .tagline,
+	.RES-keyNav-activeElement .md-container > .md,
+	.RES-keyNav-activeElement .md-container > .md p {
+		color: inherit !important;
+	}
+
+	&> div.content,
+	.side .linkinfo,
+	.sidecontentbox,
+	.login-form-side,
+	.sidebox .spacer,
+	.side form.usertext {
+		@extend %nm_sheet;
+	}
+
+	.sidebox {
+		background: none;
+	}
+
+	.md a:visited {
+		color: $nm_linkVisited;
+	}
+
+	.side {
+		color: $nm_primaryText;
+
+		.titlebox,
+		.content,
+		.leavemoderator,
+		.leavecontributor-button {
+			background-color: transparent;
+		}
+
+		.titlebox {
+
+			form.flairtoggle {
+				background-color: transparent;
+			}
+		}
+
+		.shortlink input {
+			border-color: hsla(0,0%,100%,.1);
+		}
+
+		.md {
+
+			&>blockquote {
+				color: white;
+
+				a,
+				a:visited {
+					color: inherit;
+				}
+
+				ul, ol {
+					background-color: transparent;
+				}
+
+				li,
+				p {
+					color: white;
+				}
+			}
+
+			ul {
+				color: $nm_primaryText;
+				background-color: $nm_cardBackground;
+			}
+
+			hr {
+				background: hsla(0,0%,100%,.12);
+			}
+
+			h5 + ul {
+
+				&>li {
+
+					&:hover,
+					&>ul > li:hover > a {
+						background-color: hsla(0,0%,100%,.12);
+					}
+
+					&>sup,
+					&>p sup {
+						background-position: 0px -22px;
+					}
+				}
+			}
+
+		}
+
+		#search {
+
+			input[type=text] {
+				border-bottom-color: $nm_divider;
+			}
+
+			input[type=submit] {
+				background-position: 9px 9px;
+			}
+
+			#searchexpando {
+				background-color: $nm_dark1;
+			}
+		}
+	}
+
+	.panestack-title,
+	.nav-buttons {
+		border-top-color: $nm_divider;
+	}
+
+	.flair,
+	.linkflairlabel {
+		color: hsl(0,0%,50%);
+		background-color: transparent;
+	}
+
+	.RESDropdownList {
+		color: $nm_primaryText;
+		background-color: $nm_dark3;
+
+		li,
+		a,
+		li:hover a,
+		a:hover {
+			background: none;
+		}
+
+		li:hover {
+			background: hsla(0,0%,100%,.12);
+		}
+	}
+
+	.sidebox:not(.create) .morelink a {
+		color: white;
+		background: hsla(0,0%,0%,.8);
+
+		&:hover {
+			background: hsla(0,0%,0%,1);
+		}
+	}
+
+	.commentarea {
+
+		.menuarea {
+
+			&>div:hover,
+			&>div a:hover {
+				color: $nm_primaryText;
+			}
+		}
+	}
+
+	#REScommentNavToggle {
+
+		&>.commentNavSortType {
+			color: hsl(0,0%,50%);
+
+			&:hover {
+				color: $nm_primaryText;
+			}
+		}
+	}
+
+	&.combined-search-page {
+
+		.search-result {
+
+			header a,
+			a > mark {
+				color: $nm_primaryText;
+			}
+		}
+
+		.search-result:hover {
+			background-color: hsl(0, 0%, 16%);
+		}
+
+		.search-result:not(.search-result-subreddit) > div {
+			border-bottom-color: $nm_divider;
+		}
+
+		.search-result-link {
+
+			.search-expando.collapsed:before {
+				color: hsl(0,0%,50%);
+				border-color: hsl(0,0%,50%);
+			}
+
+			.search-result-body {
+				background-color: $nm_dark3;
+			}
+		}
+	}
+
+	#progressIndicator {
+		color: $nm_primaryText;
+		border-color: $nm_divider;
+		background-color: $nm_dark4;
+	}
+
+	.entry.RES-keyNav-activeElement,
+	.entry.RES-keyNav-activeElement .md-container {
+		background-color: transparent !important;
+	}
+
+	.entry.RES-keyNav-activeElement .tagline,
+	.thing.morechildren .entry.RES-keyNav-activeElement {
+		color: $nm_primaryText;
+	}
+
+	.side .subscribe-button a.remove,
+	.subButtons .RESshortcut.remove,
+	.subButtons .RESDashboardToggle.remove {
+		color: $nm_primaryText;
+	}
+
+	.subButtons {
+
+		.RESshortcut:not(.remove),
+		.RESDashboardToggle:not(.remove) {
+			color: $nm_primaryText;
+			background-color: $nm_dark3;
+		}
+	}
 }
