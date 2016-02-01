@@ -56,9 +56,9 @@ body.res #sr-header-area a.RESShortcutsCurrentSub, #sr-header-area .selected a {
 
 #header-bottom-left { padding: 0px 0 0 0; position: relative; }
 
-#header .tabmenu { position: absolute; bottom: 0; width: 100%; box-sizing: border-box; display: block !important; font-size: 1.2rem; font-family: tahoma, arial, sans-serif; text-transform: uppercase; margin: 0; padding: 29px 0 0px 10px; z-index: 1; }
+#header .tabmenu { position: absolute; bottom: 0; width: 100%; box-sizing: border-box; display: block !important; font-size: 1.2rem; font-family: arial, sans-serif; text-transform: uppercase; margin: 0; padding: 40px 0 0px 10px; z-index: 1; }
 #header .tabmenu li { display: inline-block; margin: 0; padding: 0; position: relative; }
-#header .tabmenu a { display: block; font-weight: bold; color: rgba(255, 255, 255, 0.8); border: none; border-bottom: 4px solid transparent; background: none; line-height: 40px; padding: 0 10px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); position: relative; z-index: 1; }
+#header .tabmenu a { display: block; font-weight: bold; color: rgba(255, 255, 255, 0.8); border: none; border-bottom: 2px solid transparent; background: none; line-height: 30px; padding: 0 10px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); position: relative; z-index: 1; }
 #header .tabmenu a:hover { color: white; }
 #header .tabmenu .selected a, #header .tabmenu a:active { color: white; border-bottom-color: white; }
 
