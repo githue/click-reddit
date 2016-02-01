@@ -199,8 +199,11 @@ body.res-nightmode {
 
 	.flair,
 	.linkflairlabel {
-		color: hsl(0,0%,50%);
 		background-color: transparent;
+	}
+
+	.linkflairlabel {
+		color: hsl(200, 30%, 55%);
 	}
 
 	.RESDropdownList {
@@ -301,6 +304,15 @@ body.res-nightmode {
 	.subButtons .RESshortcut.remove,
 	.subButtons .RESDashboardToggle.remove {
 		color: $nm_primaryText;
+	}
+
+	.usertext button:not(.save),
+	#url-field button {
+		color: $nm_primaryText;
+
+		&:hover {
+			background-color: hsla(0,0%,100%,.12);
+		}
 	}
 
 	.subButtons {

@@ -8,10 +8,10 @@
 
 body > div.content, .linkinfo, .sidecontentbox, .login-form-side, .sidebox .spacer, .side form.usertext { background: white; border: 1px solid #e0e0e0; border-radius: 2px; }
 
-.side .subscribe-button a.active, .subButtons .RESshortcut, .subButtons .RESDashboardToggle, .side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; text-align: center; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
-.side .subscribe-button a.active:hover, .subButtons .RESshortcut:hover, .subButtons .RESDashboardToggle:hover, .side .md a[title="click"]:hover, .usertext button:hover, #url-field button:hover, .usertext-buttons button.save:hover { text-decoration: none; }
+.side .md a[title="click"], .usertext button, #url-field button, .usertext-buttons button.save, .side .subscribe-button a.active, .subButtons .RESshortcut, .subButtons .RESDashboardToggle { display: inline-block; margin: 0; padding: 0 8px; border-radius: 2px; text-transform: uppercase; text-align: center; font: 1.3rem/32px tahoma, arial, sans-serif; border: none; background: none; transition: all .25s; }
+.side .md a[title="click"]:hover, .usertext button:hover, #url-field button:hover, .usertext-buttons button.save:hover, .side .subscribe-button a.active:hover, .subButtons .RESshortcut:hover, .subButtons .RESDashboardToggle:hover { text-decoration: none; }
 
-.side .md > blockquote a[title="click"], .side .md > blockquote a[title="click"]:visited, .usertext button, #url-field button { color: rgba(255, 255, 255, 0.8) !important; }
+.side .md > blockquote a[title="click"], .side .md > blockquote a[title="click"]:visited, .usertext button, #url-field button { color: rgba(255, 255, 255, 0.8); }
 .side .md > blockquote a[title="click"]:hover, .usertext button:hover, #url-field button:hover { background: rgba(0, 0, 0, 0.12); }
 
 .side .md > p a[title="click"], .usertext-buttons button.save { color: white !important; background: #668899; transition: box-shadow .25s; }
@@ -146,6 +146,12 @@ h1.redditname + div { text-align: right; }
 .side form.usertext { margin: 10px 0px 0 0; padding: 20px 10px 0px 10px; }
 .side form.usertext .md { line-height: 1.5; }
 
+.content .RESBigEditorPop, .usertext button.cancel, #url-field button { margin: 0 0 0 8px; }
+
+.usertext button, #url-field button { color: black; }
+
+.side .subscribe-button a:hover, .side .subButtons .RESshortcut:hover, .side .subButtons .RESDashboardToggle:hover { box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
+
 .subscribe-button { margin: 5px 5px 5px 0; }
 
 .side .subscribe-button a.active, .subButtons .RESshortcut, .subButtons .RESDashboardToggle { display: block; white-space: nowrap; }
@@ -230,11 +236,13 @@ div.madeVisible a.madeVisible video, div.madeVisible a.madeVisible img { display
 #noresults { font-size: 0; text-align: center; margin-right: 0; color: transparent; }
 #noresults:after { font-size: 2rem; content: "Why not add something?"; color: gray; display: block; margin: 2rem 0; }
 
-.thing.stickied.link a.title { font-weight: normal; }
+.thing.stickied.link a.title { font-weight: normal; color: #1b9844; }
 
 body > .content .link .midcol, .midcol-spacer { width: 50px !important; }
 
 .tagline { line-height: 1.4; transition: background .1s; }
+
+.tagline .stickied-tagline, .search-result-meta .stickied-tagline, .tagline .moderator, .green, .search-result-meta .moderator, .res-nightmode .tagline .moderator, .res-nightmode .tagline .moderator:visited { color: #1b9844; }
 
 .comment .tagline { display: block; }
 
@@ -289,12 +297,6 @@ body > .content .link .midcol, .midcol-spacer { width: 50px !important; }
 .side .md > blockquote a:hover, .side .md > blockquote a:visited:hover { border-bottom-color: rgba(255, 255, 255, 0.8); text-decoration: none; }
 
 /* .end */
-.content .RESBigEditorPop, .usertext button.cancel, #url-field button { margin: 0 0 0 8px; }
-
-.usertext button, #url-field button { color: black; }
-
-.side .subscribe-button a:hover, .side .subButtons .RESshortcut:hover, .side .subButtons .RESDashboardToggle:hover { box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24); }
-
 .link .usertext .usertext-edit > .md { padding-left: 0; }
 
 body:not(.submit-page) .usertext .bottom-area { overflow: visible; width: auto; }
@@ -542,7 +544,8 @@ body.res-nightmode .side #search input[type=text] { border-bottom-color: rgba(25
 body.res-nightmode .side #search input[type=submit] { background-position: 9px 9px; }
 body.res-nightmode .side #search #searchexpando { background-color: #151515; }
 body.res-nightmode .panestack-title, body.res-nightmode .nav-buttons { border-top-color: rgba(255, 255, 255, 0.12); }
-body.res-nightmode .flair, body.res-nightmode .linkflairlabel { color: gray; background-color: transparent; }
+body.res-nightmode .flair, body.res-nightmode .linkflairlabel { background-color: transparent; }
+body.res-nightmode .linkflairlabel { color: #6a98af; }
 body.res-nightmode .RESDropdownList { color: #dedede; background-color: #303030; }
 body.res-nightmode .RESDropdownList li, body.res-nightmode .RESDropdownList a, body.res-nightmode .RESDropdownList li:hover a, body.res-nightmode .RESDropdownList a:hover { background: none; }
 body.res-nightmode .RESDropdownList li:hover { background: rgba(255, 255, 255, 0.12); }
@@ -560,6 +563,8 @@ body.res-nightmode #progressIndicator { color: #dedede; border-color: rgba(255, 
 body.res-nightmode .entry.RES-keyNav-activeElement, body.res-nightmode .entry.RES-keyNav-activeElement .md-container { background-color: transparent !important; }
 body.res-nightmode .entry.RES-keyNav-activeElement .tagline, body.res-nightmode .thing.morechildren .entry.RES-keyNav-activeElement { color: #dedede; }
 body.res-nightmode .side .subscribe-button a.remove, body.res-nightmode .subButtons .RESshortcut.remove, body.res-nightmode .subButtons .RESDashboardToggle.remove { color: #dedede; }
+body.res-nightmode .usertext button:not(.save), body.res-nightmode #url-field button { color: #dedede; }
+body.res-nightmode .usertext button:not(.save):hover, body.res-nightmode #url-field button:hover { background-color: rgba(255, 255, 255, 0.12); }
 body.res-nightmode .subButtons .RESshortcut:not(.remove), body.res-nightmode .subButtons .RESDashboardToggle:not(.remove) { color: #dedede; background-color: #303030; }
 
 /* .end */
