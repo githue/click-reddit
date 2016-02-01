@@ -10,6 +10,7 @@ $shadow-8dp: 0 0px 8px rgba(0, 0, 0, 0.12), 0 8px 8px 1px rgba(0, 0, 0, 0.18);
 
 $linkDefault: #0079d3;
 $linkVisited: #8114b8;
+$sticky: hsl(140, 70%, 35%);
 
 @mixin transform($args) {
 	-webkit-transform: $args;
@@ -53,7 +54,7 @@ $linkVisited: #8114b8;
 }
 
 %button-flat {
-	color: hsla(0,0%,100%,.8) !important;
+	color: hsla(0,0%,100%,.8);
 
 	&:hover {
 		background: hsla(200,100%,0%,.12);
@@ -725,6 +726,45 @@ h1.redditname + div {
 	}
 }
 
+// Buttons
+.side .md a[title="click"],
+.usertext button,
+#url-field button,
+.usertext-buttons button.save  {
+	@extend %button-base;
+}
+
+.content .RESBigEditorPop,
+.usertext button.cancel,
+#url-field button  {
+	margin: 0 0 0 8px;
+}
+
+// Flat buttons
+.side .md > blockquote a[title="click"],
+.side .md > blockquote a[title="click"]:visited,
+.usertext button,
+#url-field button {
+	@extend %button-flat;
+}
+
+.usertext button,
+#url-field button {
+	color: hsl(200,70%,0%);
+}
+
+// Raised buttons
+.side .md > p a[title="click"],
+.usertext-buttons button.save {
+	@extend %button-raised;
+}
+
+.side .subscribe-button a:hover,
+.side .subButtons .RESshortcut:hover,
+.side .subButtons .RESDashboardToggle:hover {
+	box-shadow: $shadow-2dp;
+}
+
 // The ordering of this section is important.
 // subscribe button and its neighbors
 .subscribe-button {
@@ -1042,7 +1082,9 @@ div.madeVisible a.madeVisible {
 
 .thing.stickied.link a.title {
 	font-weight: normal;
+	color: $sticky;
 }
+
 body > .content .link .midcol, .midcol-spacer {
 	width: 50px !important;
 }
@@ -1050,6 +1092,17 @@ body > .content .link .midcol, .midcol-spacer {
 	line-height: 1.4;
 	transition: background .1s;
 }
+
+.tagline .stickied-tagline,
+.search-result-meta .stickied-tagline,
+.tagline .moderator,
+.green,
+.search-result-meta .moderator,
+.res-nightmode .tagline .moderator,
+.res-nightmode .tagline .moderator:visited {
+	color: $sticky;
+}
+
 .comment .tagline {
 	display: block; // RES fix
 }
@@ -1237,44 +1290,6 @@ h2#wiki_heading_2 {
 	}
 }
 /* .end */
-
-.side .md a[title="click"],
-.usertext button,
-#url-field button,
-.usertext-buttons button.save  {
-	@extend %button-base;
-}
-
-.content .RESBigEditorPop,
-.usertext button.cancel,
-#url-field button  {
-	margin: 0 0 0 8px;
-}
-
-// Flat buttons
-.side .md > blockquote a[title="click"],
-.side .md > blockquote a[title="click"]:visited,
-.usertext button,
-#url-field button {
-	@extend %button-flat;
-}
-
-.usertext button,
-#url-field button {
-	color: hsl(200,70%,0%);
-}
-
-// Raised buttons
-.side .md > p a[title="click"],
-.usertext-buttons button.save {
-	@extend %button-raised;
-}
-
-.side .subscribe-button a:hover,
-.side .subButtons .RESshortcut:hover,
-.side .subButtons .RESDashboardToggle:hover {
-	box-shadow: $shadow-2dp;
-}
 
 .link .usertext .usertext-edit > .md {
 	padding-left: 0;
