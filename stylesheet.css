@@ -143,7 +143,7 @@ h1.redditname { display: none; }
 
 h1.redditname + div { text-align: right; }
 
-.side form.usertext { margin: 10px 0px 0 0; padding: 20px 10px 0px 10px; }
+.side form.usertext { margin: 10px 0px 0 0; padding: 0px 10px 0px 10px; }
 .side form.usertext .md { line-height: 1.5; }
 
 .content .RESBigEditorPop, .usertext button.cancel, #url-field button { margin: 0 0 0 8px; }
@@ -268,7 +268,9 @@ body > .content .link .midcol, .midcol-spacer { width: 50px !important; }
 
 .rounded { border-radius: 3px; }
 
-.md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .side .md h1, .side .md h2, .side .md h3, .side .md h4, .side .md h5, .side .md h6, .wiki-page-content .md h1, .wiki-page-content .md h2, .wiki-page-content .md h3, .wiki-page-content .md h4, .wiki-page-content .md h5, .wiki-page-content .md h6, h2#wiki_heading_2 { color: inherit; font-weight: normal; font-family: tahoma, arial, sans-serif; line-height: 1; margin: 1.2em 0 .5em; }
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .side .md h1, .side .md h2, .side .md h3, .side .md h4, .side .md h5, .side .md h6, .wiki-page-content .md h1, .wiki-page-content .md h2, .wiki-page-content .md h3, .wiki-page-content .md h4, .wiki-page-content .md h5, .wiki-page-content .md h6, h2#wiki_heading_2 { color: inherit; font-weight: normal; font-family: tahoma, arial, sans-serif; line-height: 1; margin: 1em 0 .5em; }
+
+.md h1 a:visited, .md h2 a:visited, .md h3 a:visited, .md h4 a:visited, .md h5 a:visited, .md h6 a:visited { color: inherit; }
 
 .md h1 { font-size: 2rem; }
 
