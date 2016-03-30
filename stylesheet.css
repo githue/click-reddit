@@ -501,14 +501,6 @@ div.imgCaptions, .md div.imgCaptions { white-space: normal; }
 .thing:not(.self) .thumbnail:not(.default) img { transition: width .1s, left .1s, top 1s .75s; }
 
 /* .end */
-/* addon flair-basic */
-.tagline .flair { padding: 0 5px; font-size: inherit; font-style: italic; border: none; color: inherit; background: none; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
-
-.linkflairlabel { padding: 0 0px 0 0; max-width: 150px; font-size: 1.2rem; font-family: "arial black", sans-serif; font-weight: 900; color: #85a0ad; border: none; background: none; line-height: 1; vertical-align: middle; text-transform: uppercase; }
-
-.title + .linkflairlabel { padding: 0 0 0 5px; }
-
-/* .end */
 /* addon nightmode */
 body.res-nightmode > div.content, body.res-nightmode .side .linkinfo, body.res-nightmode .sidecontentbox, body.res-nightmode .login-form-side, body.res-nightmode .sidebox .spacer, body.res-nightmode .side form.usertext { color: #dedede; border-color: rgba(255, 255, 255, 0.12); background-color: #212121; }
 
