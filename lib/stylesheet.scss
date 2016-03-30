@@ -1888,38 +1888,6 @@ div.imgCaptions,
 .thing:not(.self) .thumbnail:not(.default) img { transition: width .1s, left .1s, top 1s .75s; }
 /* .end */
 
-/* addon flair-basic */
-.tagline .flair {
-	padding: 0 5px;
-	font-size: inherit;
-	font-style: italic;
-	border: none;
-	color: inherit;
-	background: none;
-	max-width: 200px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	vertical-align: bottom;
-}
-.linkflairlabel {
-	padding: 0 0px 0 0;
-	max-width: 150px;
-	font-size: 1.2rem;
-	font-family: "arial black", sans-serif;
-	font-weight: 900; // Firefox fix for arial black
-	color: hsl(200,20%,60%);
-	border: none;
-	background: none;
-	line-height: 1;
-	vertical-align: middle;
-	text-transform: uppercase;
-}
-.title + .linkflairlabel {
-	padding: 0 0 0 5px;
-}
-/* .end */
-
 /* addon nightmode */
 @import 'nightmode';
 /* .end */
