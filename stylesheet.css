@@ -332,6 +332,7 @@ body.submit-page .formtabs-content .roundfield { max-width: 520px; width: auto; 
 body.submit-page .formtabs-content .submit_text > h1 { display: none; }
 body.submit-page:not(.res-nightmode) .formtabs-content .submit_text { padding: 20px 10px; }
 body.submit-page form .spacer:first-of-type, body.submit-page form .spacer:last-of-type { margin: 0 auto 15px auto; width: 520px; }
+body.submit-page #items-required { width: 520px; margin: auto; text-align: right; }
 
 .submit_text.enabled { display: block; max-height: 500px; }
 
